@@ -9,7 +9,7 @@ public class Conexion {
     
     private String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
     private String url = "jdbc:sqlserver://localhost:1433;databaseName=BDHostal";
-    private String user = "user";
+    private String user = "devp";
     private String pass = "123456";
 
     Conexion() {

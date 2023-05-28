@@ -16,8 +16,8 @@ import java.sql.DriverManager;
 public class Conexion {
 
     private String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
-    private String url = "jdbc:sqlserver://localhost:1433;databaseName=Tienda1";
-    private String user = "Gabita";
+    private String url = "jdbc:sqlserver://localhost:1433;databaseName=BDHostal";
+    private String user = "devp";
     private String pass = "123";
 
     Conexion() {
