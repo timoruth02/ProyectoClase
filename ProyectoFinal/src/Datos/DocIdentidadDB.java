@@ -6,7 +6,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
-public class DocIdentidad_DT {
+public class DocIdentidadDB {
     Connection cn;
     Conexion conect = new Conexion();
     

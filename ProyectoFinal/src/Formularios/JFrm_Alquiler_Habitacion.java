@@ -1,6 +1,6 @@
 package Formularios;
 
-import Datos.DocIdentidad_DT;
+import Datos.DocIdentidadDB;
 import Entidades.DocIdentidadEntity;
 import java.awt.Color;
 import java.awt.Image;
@@ -19,7 +19,7 @@ import javax.swing.table.DefaultTableModel;
 
 public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
     //Llenar el combobox segun la base de datos
-    DocIdentidad_DT docIdentidad_dt = new DocIdentidad_DT();
+    DocIdentidadDB docIdentidad_dt = new DocIdentidadDB();
     ArrayList<DocIdentidadEntity> ListaDocIDentidad = new ArrayList<>();
 
         //DECLARAR VARIABLES PARA LAS LISTAS A UTILIZAR
