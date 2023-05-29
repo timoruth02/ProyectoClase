@@ -10,7 +10,8 @@ package Entidades;
  * @author PRV
  */
 public class NivelEntity {
-       private String CodNivel = "";
+
+    private String CodNivel = "";
     private String Nivel_Piso = "";
 
     /**
@@ -40,5 +41,5 @@ public class NivelEntity {
     public void setNivel_Piso(String Nivel_Piso) {
         this.Nivel_Piso = Nivel_Piso;
     }
-    
+
 }
