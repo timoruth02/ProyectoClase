@@ -7,12 +7,13 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 
 public class DocIdentidadDB {
+
     Connection cn;
     Conexion conect = new Conexion();
-    
+
     public ArrayList<DocIdentidadEntity> getCodDoc_IdentidadItems() {
         ArrayList<DocIdentidadEntity> Lista = new ArrayList<>();
-    
+
         try {
             cn = conect.conectar();
             String sql = "select CodDoc_Identidad, Tipo_Doc_Identidad from Documento_Identidad";
@@ -33,6 +34,7 @@ public class DocIdentidadDB {
             System.out.println(e.getMessage());
         }
 
-        return  Lista;
-    } 
+        return Lista;
+    }
+
 }
