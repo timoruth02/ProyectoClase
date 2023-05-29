@@ -9,9 +9,17 @@
  * @author David
  */
 public class Pruebaclase {
+
+    public void limpiar() {
     
+
+        }
  
-    public void Proteger (){
-        
+    
+
+    
+
+    public void Proteger() {
+
     }
 }
