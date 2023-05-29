@@ -10,13 +10,11 @@
  */
 public class Pruebaclase {
 
+    private String d = "";
 
-//HOLA COMO ESTAS
-    private String d="";
+    public int numero() {
+        return 0;
+//data
+    }
 
-public int numero(){
-    return 0;
-
-}
-    
 }
