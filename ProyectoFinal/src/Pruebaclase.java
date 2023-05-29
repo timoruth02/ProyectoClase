@@ -10,4 +10,8 @@
  */
 public class Pruebaclase {
     
+ 
+    public void Proteger (){
+        
+    }
 }
