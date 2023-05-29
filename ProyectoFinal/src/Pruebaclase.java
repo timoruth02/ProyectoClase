@@ -10,6 +10,13 @@
  */
 public class Pruebaclase {
 
+
 //HOLA COMO ESTAS
     private String d="";
+
+public int numero(){
+    return 0;
+
+}
+    
 }
