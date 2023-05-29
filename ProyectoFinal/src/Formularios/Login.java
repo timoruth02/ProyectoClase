@@ -128,7 +128,7 @@ public class Login extends javax.swing.JFrame {
         jPanel1.add(userLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, -1, -1));
 
         userTxt.setBackground(new java.awt.Color(255, 255, 255));
-        userTxt.setForeground(new java.awt.Color(204, 204, 204));
+        userTxt.setForeground(new java.awt.Color(0, 0, 0));
         userTxt.setBorder(null);
         userTxt.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -144,6 +144,7 @@ public class Login extends javax.swing.JFrame {
         jPanel1.add(passLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 270, -1, -1));
 
         passTxt.setBackground(new java.awt.Color(255, 255, 255));
+        passTxt.setForeground(new java.awt.Color(0, 0, 0));
         passTxt.setBorder(null);
         passTxt.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
