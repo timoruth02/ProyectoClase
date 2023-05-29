@@ -10,16 +10,5 @@
  */
 public class Pruebaclase {
 
-    public void limpiar() {
-    
 
-        }
- 
-    
-
-    
-
-    public void Proteger() {
-
-    }
 }
