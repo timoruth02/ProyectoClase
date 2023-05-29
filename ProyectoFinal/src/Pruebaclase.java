@@ -10,5 +10,9 @@
  */
 public class Pruebaclase {
 
+public int numero(){
+    return 0;
 
+}
+    
 }
