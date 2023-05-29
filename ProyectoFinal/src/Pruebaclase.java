@@ -9,5 +9,8 @@
  * @author David
  */
 public class Pruebaclase {
+    public void limpiar()
+    {
     
+    }
 }
