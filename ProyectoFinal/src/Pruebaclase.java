@@ -10,5 +10,6 @@
  */
 public class Pruebaclase {
 
-
+//HOLA COMO ESTAS
+    private String d="";
 }
