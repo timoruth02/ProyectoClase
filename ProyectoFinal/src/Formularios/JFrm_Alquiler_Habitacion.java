@@ -66,7 +66,7 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
         ListaSede = docIdentidad_dt.getCodSedeItems();
         
         for (SedeEntity item : ListaSede) {
-            CBO_Sede.addItem(item.getCodSedeItems());
+            CBO_Sede.addItem(item.getNombre_SedeItems());
         }
         CBO_Sede.setSelectedIndex(-1);
         
