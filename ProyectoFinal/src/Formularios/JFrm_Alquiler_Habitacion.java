@@ -489,7 +489,6 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
 
         CBO_Sede.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         CBO_Sede.setForeground(new java.awt.Color(0, 0, 0));
-        CBO_Sede.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         CBO_TipoHabitacion.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         CBO_TipoHabitacion.setForeground(new java.awt.Color(0, 0, 0));
@@ -733,7 +732,6 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
         BTN_Nuevo.setBackground(new java.awt.Color(153, 153, 153));
         BTN_Nuevo.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         BTN_Nuevo.setForeground(new java.awt.Color(0, 0, 0));
-        BTN_Nuevo.setIcon(new javax.swing.ImageIcon("C:\\Users\\Ruth Sayuri\\Dropbox\\TAREA02\\ProyectoFinal\\src\\Iconos\\Nuevo.png")); // NOI18N
         BTN_Nuevo.setText("Nuevo");
         BTN_Nuevo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -744,7 +742,6 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
         BTN_Guardar.setBackground(new java.awt.Color(153, 153, 153));
         BTN_Guardar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         BTN_Guardar.setForeground(new java.awt.Color(0, 0, 0));
-        BTN_Guardar.setIcon(new javax.swing.ImageIcon("C:\\Users\\Ruth Sayuri\\Dropbox\\TAREA02\\ProyectoFinal\\src\\Iconos\\Guardar.png")); // NOI18N
         BTN_Guardar.setText("Guardar");
         BTN_Guardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -755,7 +752,6 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
         BTN_Anular.setBackground(new java.awt.Color(153, 153, 153));
         BTN_Anular.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         BTN_Anular.setForeground(new java.awt.Color(0, 0, 0));
-        BTN_Anular.setIcon(new javax.swing.ImageIcon("C:\\Users\\Ruth Sayuri\\Dropbox\\TAREA02\\ProyectoFinal\\src\\Iconos\\X.png")); // NOI18N
         BTN_Anular.setText("Anular");
 
         jPanel6.setBackground(new java.awt.Color(204, 204, 255));
@@ -812,7 +808,6 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
         BTN_Salir.setBackground(new java.awt.Color(204, 0, 51));
         BTN_Salir.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         BTN_Salir.setForeground(new java.awt.Color(255, 255, 255));
-        BTN_Salir.setIcon(new javax.swing.ImageIcon("C:\\Users\\Ruth Sayuri\\Dropbox\\TAREA02\\ProyectoFinal\\src\\Iconos\\salir.png")); // NOI18N
         BTN_Salir.setText("Salir");
         BTN_Salir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -946,6 +941,8 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
     
     void Cargar_Datos_CBO()
     {
+        //this.CBO_Sede.removeAllItems();
+        
         this.CBO_Piso.removeAllItems();
         
         //CAARGAR DATOS
