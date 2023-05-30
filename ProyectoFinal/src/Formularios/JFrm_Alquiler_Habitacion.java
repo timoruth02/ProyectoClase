@@ -63,10 +63,10 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
         CBO_DocIdentidad.setSelectedIndex(-1);
   
         //combobox sede
-        ListaSede = docIdentidad_dt.getCodSedeItems();
+        ListaSede = Sede_db.getCodSedeItems();
         
         for (SedeEntity item : ListaSede) {
-            CBO_Sede.addItem(item.getNombre_SedeItems());
+            CBO_Sede.addItem(item.getCodSede());
         }
         CBO_Sede.setSelectedIndex(-1);
         
