@@ -119,7 +119,7 @@ public class Login extends javax.swing.JFrame {
 
         title.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
         title.setForeground(new java.awt.Color(0, 0, 0));
-        title.setText("INICAR SESIÓN");
+        title.setText("INICIAR SESIÓN");
         jPanel1.add(title, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, -1, 40));
 
         userLabel.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N

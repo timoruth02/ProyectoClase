@@ -2,6 +2,7 @@ package Datos;
 
 import Entidades.DocIdentidadEntity;
 import Entidades.SedeEntity;
+import Entidades.Tipo_HabitacionEntity;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -39,6 +40,10 @@ public class DocIdentidadDB {
     }
 
     public ArrayList<SedeEntity> getCodSedeItems() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public ArrayList<Tipo_HabitacionEntity> getCodTipo_HabitacionItems() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

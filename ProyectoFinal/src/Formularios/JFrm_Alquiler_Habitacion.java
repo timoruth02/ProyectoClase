@@ -2,8 +2,10 @@ package Formularios;
 
 import Datos.DocIdentidadDB;
 import Datos.SedeDB;
+import Datos.Tipo_HabitacionDB;
 import Entidades.DocIdentidadEntity;
 import Entidades.SedeEntity;
+import Entidades.Tipo_HabitacionEntity;
 import java.awt.Color;
 import java.awt.Image;
 import java.awt.event.ItemEvent;
@@ -29,6 +31,9 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
     SedeDB Sede_db = new SedeDB();
     ArrayList<SedeEntity> ListaSede = new ArrayList<>();
 
+    //Llenar el combobox docIdentidad segun la base de datos
+    Tipo_HabitacionDB Tipo_Habitaciondb = new Tipo_HabitacionDB();
+    ArrayList<Tipo_HabitacionEntity> ListaTipo_Habitacion = new ArrayList<>();
     
         //DECLARAR VARIABLES PARA LAS LISTAS A UTILIZAR
         DefaultListModel ListaProd = new DefaultListModel();
@@ -69,6 +74,14 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
             CBO_Sede.addItem(item.getCodSede());
         }
         CBO_Sede.setSelectedIndex(-1);
+        
+        //combobox Tipo_Habitacion
+        ListaTipo_Habitacion = docIdentidad_dt.getCodTipo_HabitacionItems();
+        
+        for (Tipo_HabitacionEntity item : ListaTipo_Habitacion) {
+            CBO_TipoHabitacion.addItem(item.getDescripcion_TipoHabitacion());
+        }
+        CBO_TipoHabitacion.setSelectedIndex(-1);
         
         
         
@@ -192,6 +205,7 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
         jRadioButton5 = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1250, 700));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
@@ -653,7 +667,7 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(TXTImporte, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel4.setBackground(new java.awt.Color(204, 204, 255));

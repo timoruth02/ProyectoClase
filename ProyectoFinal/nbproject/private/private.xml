@@ -12,15 +12,12 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
             <file>file:/C:/proyecto/ProyectoClase/ProyectoFinal/src/Entidades/DocIdentidadEntity.java</file>
+            <file>file:/C:/proyecto/ProyectoClase/ProyectoFinal/src/Entidades/Tipo_HabitacionEntity.java</file>
             <file>file:/C:/proyecto/ProyectoClase/ProyectoFinal/src/Datos/SedeDB.java</file>
             <file>file:/C:/proyecto/ProyectoClase/ProyectoFinal/src/Datos/DocIdentidadDB.java</file>
-            <file>file:/C:/proyecto/ProyectoClase/ProyectoFinal/src/Entidades/SedeEntity.java</file>
+            <file>file:/C:/proyecto/ProyectoClase/ProyectoFinal/src/Datos/Tipo_HabitacionDB.java</file>
             <file>file:/C:/proyecto/ProyectoClase/ProyectoFinal/src/Formularios/JFrm_Alquiler_Habitacion.java</file>
-=======
-            <file>file:/C:/Users/David/Documents/ProyectoPruebaRuth/ProyectoClase/ProyectoFinal/src/ProyectoFinal/ProyectoFinal.java</file>
->>>>>>> 99b7cbbdce6cfa9ab7cb235dce73fdb25d87438f
         </group>
     </open-files>
 </project-private>
