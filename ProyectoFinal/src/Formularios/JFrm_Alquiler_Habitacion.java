@@ -1,7 +1,9 @@
 package Formularios;
 
 import Datos.DocIdentidadDB;
+import Datos.SedeDB;
 import Entidades.DocIdentidadEntity;
+import Entidades.SedeEntity;
 import java.awt.Color;
 import java.awt.Image;
 import java.awt.event.ItemEvent;
@@ -21,7 +23,11 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
     //Llenar el combobox segun la base de datos
     DocIdentidadDB docIdentidad_dt = new DocIdentidadDB();
     ArrayList<DocIdentidadEntity> ListaDocIDentidad = new ArrayList<>();
+    
+    SedeDB Sede_db = new SedeDB();
+    ArrayList<SedeEntity> ListaSede = new ArrayList<>();
 
+    
         //DECLARAR VARIABLES PARA LAS LISTAS A UTILIZAR
         DefaultListModel ListaProd = new DefaultListModel();
 
@@ -46,6 +52,7 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
     public JFrm_Alquiler_Habitacion() {
         initComponents();
         
+        //combobox docIdentidad
         ListaDocIDentidad = docIdentidad_dt.getCodDoc_IdentidadItems();
         
         for (DocIdentidadEntity item : ListaDocIDentidad) {
@@ -53,6 +60,14 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
         }
         CBO_DocIdentidad.setSelectedIndex(-1);
   
+        //combobox sede
+        ListaSede = docIdentidad_dt.getCodSedeItems();
+        
+        for (SedeEntity item : ListaSede) {
+            CBO_Sede.addItem(item.getCodSedeItems());
+        }
+        CBO_Sede.setSelectedIndex(-1);
+        
         
         
         //Establecer el color de fondo del formulario
@@ -929,20 +944,6 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
     
     void Cargar_Datos_CBO()
     {
-        //this.CBO_DocIdentidad.removeAllItems();
-        
-        //this.CBO_DocIdentidad.addItem("<Seleccione>");
-        //this.CBO_DocIdentidad.addItem("DNI");
-        //this.CBO_DocIdentidad.addItem("Pasaporte");
-        //this.CBO_DocIdentidad.addItem("Carnet de Extrangería");
-        
-        this.CBO_Sede.removeAllItems();
-        
-        //CARGAR DATOS
-        this.CBO_Sede.addItem("<Seleccione>");
-        this.CBO_Sede.addItem("Hotel Paraiso");
-        this.CBO_Sede.addItem("Hotel el Amanecer");        
-       
         this.CBO_Piso.removeAllItems();
         
         //CAARGAR DATOS
