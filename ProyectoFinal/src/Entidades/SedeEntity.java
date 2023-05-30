@@ -1,14 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Entidades;
 
-/**
- *
- * @author PRV
- */
 public class SedeEntity {
 
     private String CodSede = "";
@@ -115,6 +106,10 @@ public class SedeEntity {
      */
     public void setEstado_Sede(String Estado_Sede) {
         this.Estado_Sede = Estado_Sede;
+    }
+
+    public String getCodSedeItems() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

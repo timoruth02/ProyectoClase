@@ -20,10 +20,12 @@ import javax.swing.ListSelectionModel;
 import javax.swing.table.DefaultTableModel;
 
 public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
-    //Llenar el combobox segun la base de datos
+    
+    //Llenar el combobox docIdentidad segun la base de datos
     DocIdentidadDB docIdentidad_dt = new DocIdentidadDB();
     ArrayList<DocIdentidadEntity> ListaDocIDentidad = new ArrayList<>();
     
+    //Llenar el combobox sede segun la base de datos
     SedeDB Sede_db = new SedeDB();
     ArrayList<SedeEntity> ListaSede = new ArrayList<>();
 
