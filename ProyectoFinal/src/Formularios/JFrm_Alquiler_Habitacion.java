@@ -75,13 +75,7 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
         }
         CBO_Sede.setSelectedIndex(-1);
         
-        //combobox Tipo_Habitacion
-        ListaTipo_Habitacion = docIdentidad_dt.getCodTipo_HabitacionItems();
         
-        for (Tipo_HabitacionEntity item : ListaTipo_Habitacion) {
-            CBO_TipoHabitacion.addItem(item.getDescripcion_TipoHabitacion());
-        }
-        CBO_TipoHabitacion.setSelectedIndex(-1);
         
         
         
