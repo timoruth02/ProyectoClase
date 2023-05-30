@@ -941,7 +941,7 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
     
     void Cargar_Datos_CBO()
     {
-        //this.CBO_Sede.removeAllItems();
+        //this.CBO_Sede.removeAllItems();vghjk
         
         this.CBO_Piso.removeAllItems();
         
