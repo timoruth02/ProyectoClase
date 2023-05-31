@@ -43,8 +43,7 @@ public class DocIdentidadDB {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public ArrayList<Tipo_HabitacionEntity> getCodTipo_HabitacionItems() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+
+
 
 }
