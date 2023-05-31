@@ -33,6 +33,8 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
     //Llenar el combobox docIdentidad segun la base de datos
     Tipo_HabitacionDB Tipo_Habitaciondb = new Tipo_HabitacionDB();
     ArrayList<Tipo_HabitacionEntity> ListaTipo_Habitacion = new ArrayList<>();
+    
+    
 
     //DECLARAR VARIABLES PARA LAS LISTAS A UTILIZAR
     DefaultListModel ListaProd = new DefaultListModel();
@@ -74,6 +76,15 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
         }
         CBO_Sede.setSelectedIndex(-1);
 
+        //combobox Tipo Habitacion
+        ListaTipo_Habitacion = Tipo_Habitaciondb.getCodTipo_HabitacionItems();
+
+        for (Tipo_HabitacionEntity item : ListaTipo_Habitacion) {
+            CBO_TipoHabitacion.addItem(item.getDescripcion_TipoHabitacion());
+        }
+        CBO_TipoHabitacion.setSelectedIndex(-1);
+        
+        
         //Establecer el color de fondo del formulario
         this.getContentPane().setBackground(Color.WHITE);
 
