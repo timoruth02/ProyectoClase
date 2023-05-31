@@ -18,15 +18,14 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
-import javax.swing.ListSelectionModel;
 import javax.swing.table.DefaultTableModel;
 
 public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
-    
+
     //Llenar el combobox docIdentidad segun la base de datos
     DocIdentidadDB docIdentidad_dt = new DocIdentidadDB();
     ArrayList<DocIdentidadEntity> ListaDocIDentidad = new ArrayList<>();
-    
+
     //Llenar el combobox sede segun la base de datos
     SedeDB Sede_db = new SedeDB();
     ArrayList<SedeEntity> ListaSede = new ArrayList<>();
@@ -34,65 +33,59 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
     //Llenar el combobox docIdentidad segun la base de datos
     Tipo_HabitacionDB Tipo_Habitaciondb = new Tipo_HabitacionDB();
     ArrayList<Tipo_HabitacionEntity> ListaTipo_Habitacion = new ArrayList<>();
-    
-        //DECLARAR VARIABLES PARA LAS LISTAS A UTILIZAR
-        DefaultListModel ListaProd = new DefaultListModel();
 
-        //ESTABLECER EL DIREECTORIO DEL PROYECTO , DONDE SE DESEA GUARDAR EL ARCHIVO DE TEXTO
-        String Directorio_Clientes = new File("src/Archivo_Datos/Registro_Cliente.txt").getAbsolutePath();
-        String Directorio_Habitacion = new File("src/Archivo_Datos/Datos_Habitacion.txt").getAbsolutePath();
-        
-        //CREAR UN VECTOR DE DATOS BIDIMENSIONAL (STRING) MATRIZ DE DATOS
-         String[][]Clientes;
-         
-         String [][]TipoHabitacion = new String[9][4]; 
-         
-        //DECLARAR VARIABLE TIPO : DEFAULTTABLEMODEL(MODELI DE TABLA)
-        DefaultTableModel Modelo;
-        
-        //DECLARAR VARIABLE DE TIPO : ENTERO
-          int Codigo = 1, Filas;
-          
-         //Establecer el Directorio del Proyecto, donde se desea guardar el Archivo de Texto
-        String Directorio = new File("src/Archivo_Datos/Registro_DatosClientes.txt").getAbsolutePath();   
-        
+    //DECLARAR VARIABLES PARA LAS LISTAS A UTILIZAR
+    DefaultListModel ListaProd = new DefaultListModel();
+
+    //ESTABLECER EL DIREECTORIO DEL PROYECTO , DONDE SE DESEA GUARDAR EL ARCHIVO DE TEXTO
+    String Directorio_Clientes = new File("src/Archivo_Datos/Registro_Cliente.txt").getAbsolutePath();
+    String Directorio_Habitacion = new File("src/Archivo_Datos/Datos_Habitacion.txt").getAbsolutePath();
+
+    //CREAR UN VECTOR DE DATOS BIDIMENSIONAL (STRING) MATRIZ DE DATOS
+    String[][] Clientes;
+
+    String[][] TipoHabitacion = new String[9][4];
+
+    //DECLARAR VARIABLE TIPO : DEFAULTTABLEMODEL(MODELI DE TABLA)
+    DefaultTableModel Modelo;
+
+    //DECLARAR VARIABLE DE TIPO : ENTERO
+    int Codigo = 1, Filas;
+
+    //Establecer el Directorio del Proyecto, donde se desea guardar el Archivo de Texto
+    String Directorio = new File("src/Archivo_Datos/Registro_DatosClientes.txt").getAbsolutePath();
+
     public JFrm_Alquiler_Habitacion() {
         initComponents();
-        
+
         //combobox docIdentidad
         ListaDocIDentidad = docIdentidad_dt.getCodDoc_IdentidadItems();
-        
+
         for (DocIdentidadEntity item : ListaDocIDentidad) {
             CBO_DocIdentidad.addItem(item.getTipo_Doc_Identidad());
         }
         CBO_DocIdentidad.setSelectedIndex(-1);
-  
+
         //combobox sede
         ListaSede = Sede_db.getCodSedeItems();
-        
+
         for (SedeEntity item : ListaSede) {
             CBO_Sede.addItem(item.getCodSede());
         }
         CBO_Sede.setSelectedIndex(-1);
-        
-        
-        
-        
-        
+
         //Establecer el color de fondo del formulario
         this.getContentPane().setBackground(Color.WHITE);
-        
+
         //Establecer un Nuevo Modelo de la clase :DEfaultTableModel
-        Modelo = new DefaultTableModel()
-        {
+        Modelo = new DefaultTableModel() {
             //Crear funcion para bloquear la Edicion de Celdas
-            public boolean isCellEditable(int row, int column)
-            {
-            //Boquear Edicion 
-                return false;            
+            public boolean isCellEditable(int row, int column) {
+                //Boquear Edicion 
+                return false;
             }
         };
-        
+
         //Establecer Nombre de las Columnas para el control: Jtable_RegistroNotas(a travéz de la variable Modelo)
         Modelo.addColumn("Código");
         Modelo.addColumn("Apellidos");
@@ -105,21 +98,21 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
         Modelo.addColumn("Codigo Empleado");
         Modelo.addColumn("Apellidos y Nombres del Empleado");
         Modelo.addColumn("Sede");
-       // Modelo.addColumn("Tipo de Habitación");
-       // Modelo.addColumn("piso");
-       // Modelo.addColumn("N° de Habitación");
-       // Modelo.addColumn("Tirafa por hora");
-       // Modelo.addColumn("Tarifa por noche");
-       // Modelo.addColumn("Fecha de Alquiler");
-       // Modelo.addColumn("Hora de Ingreso");
-       // Modelo.addColumn("Fec. Termino de Alquiler");
-       // Modelo.addColumn("Hora de Salida");
-       // Modelo.addColumn("Importe");
-       // Modelo.addColumn("Estado Alquiler");
-        
+        // Modelo.addColumn("Tipo de Habitación");
+        // Modelo.addColumn("piso");
+        // Modelo.addColumn("N° de Habitación");
+        // Modelo.addColumn("Tirafa por hora");
+        // Modelo.addColumn("Tarifa por noche");
+        // Modelo.addColumn("Fecha de Alquiler");
+        // Modelo.addColumn("Hora de Ingreso");
+        // Modelo.addColumn("Fec. Termino de Alquiler");
+        // Modelo.addColumn("Hora de Salida");
+        // Modelo.addColumn("Importe");
+        // Modelo.addColumn("Estado Alquiler");
+
         //Establecer el Modelo al control Jtable_RegistroNotas
         this.jTable_RegistroCliente.setModel(Modelo);
-            }
+    }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -447,7 +440,7 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(TXTApellidos_Nombres, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel10))
-                .addContainerGap(10, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel3.setBackground(new java.awt.Color(204, 204, 255));
@@ -927,8 +920,7 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    void Limpiar()
-    {
+    void Limpiar() {
         //LIMPIAR LAS CAJAS DE TEXTO DEL CLIENTE
         this.Lb_Apellidos_Cliente.setText("");
         this.Lb_Nombre_Cliente.setText("");
@@ -936,30 +928,29 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
         this.Lb_Nacionalidad_Cliente.setText("");
         this.Lb_Distrito_Cliente.setText("");
         this.Lb_Direccion_Cliente.setText("");
-        
+
         //LIMPIAR LAS CAJAS DE TEXTO DEL EMPLEADO
         this.TXTApellidos_Nombres.setText("");
-        
+
         //LIMPIAR LAS CAJAS DE TEXTO DE LAS HABITACIONES
         this.TXTTarifa_Hora.setText("");
         this.TXTTarifa_Noche.setText("");
         this.TXTImporte.setText("");
-        
+
     }
-    
-    void Cargar_Datos_CBO()
-    {
+
+    void Cargar_Datos_CBO() {
         //this.CBO_Sede.removeAllItems();
-        
+
         this.CBO_Piso.removeAllItems();
-        
+
         //CAARGAR DATOS
         this.CBO_Piso.addItem("<Seleccione>");
         this.CBO_Piso.addItem("Piso 2 ");
         this.CBO_Piso.addItem("Piso 3");
-        
+
         this.CBO_N_Habitacion.removeAllItems();
-        
+
         this.CBO_N_Habitacion.addItem("<Seleccione>");
         this.CBO_N_Habitacion.addItem("101");
         this.CBO_N_Habitacion.addItem("102");
@@ -971,7 +962,7 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
         this.CBO_N_Habitacion.addItem("203");
         this.CBO_N_Habitacion.addItem("204");
         this.CBO_N_Habitacion.addItem("205");
-        
+
         this.CBO_H_Ingreso1.removeAllItems();
 
         this.CBO_H_Ingreso1.addItem("1");
@@ -998,14 +989,14 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
         this.CBO_H_Ingreso1.addItem("22");
         this.CBO_H_Ingreso1.addItem("23");
         this.CBO_H_Ingreso1.addItem("24");
-        
+
         this.CBO_H_Ingreso2.removeAllItems();
 
         this.CBO_H_Ingreso2.addItem(":00");
         this.CBO_H_Ingreso2.addItem(":15");
         this.CBO_H_Ingreso2.addItem(":30");
         this.CBO_H_Ingreso2.addItem(":45");
-        
+
         this.CBO_H_Salida_1.removeAllItems();
 
         this.CBO_H_Salida_1.addItem("1");
@@ -1032,234 +1023,203 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
         this.CBO_H_Salida_1.addItem("22");
         this.CBO_H_Salida_1.addItem("23");
         this.CBO_H_Salida_1.addItem("24");
-        
+
         this.CBO_H_Salida2.removeAllItems();
 
         this.CBO_H_Salida2.addItem(":00");
         this.CBO_H_Salida2.addItem(":15");
         this.CBO_H_Salida2.addItem(":30");
         this.CBO_H_Salida2.addItem(":45");
-       
-        
+
     }
-    
+
     //CREAR METODO :CARGAR_BEBIDAS()
-    void Cargar_TipoHabitacion()
-    {
+    void Cargar_TipoHabitacion() {
         //ELIMINAR LOS ELEMENTOS DEL COMBOBOX
         this.CBO_TipoHabitacion.removeAllItems();
-        
+
         //AGREGAR ELEMENTOS AL COMBOBOX
         this.CBO_TipoHabitacion.addItem("<Seleccione>");
 
         //RECORRER ELEMENTOS DE LA MATRIZ DE DATOS
-       for(int Fila=0;Fila<TipoHabitacion.length;Fila++)
-        {
+        for (int Fila = 0; Fila < TipoHabitacion.length; Fila++) {
             //AGREGAR LOS ELEMENTOS DE LA MATRIZ DE DATOS AL COMBOBOX 
-            this.CBO_TipoHabitacion.addItem(TipoHabitacion[Fila][0]);            
+            this.CBO_TipoHabitacion.addItem(TipoHabitacion[Fila][0]);
         }
     }
 
     //CREAR METODO LOCAL : LEER_TIPOHABITACION()
-    void Leer_TipoHabitacion()
-    {
+    void Leer_TipoHabitacion() {
         //OBTENER EL NOMBRE DEL ARCHIVO DE TEXTO
         File Leer_Doc = new File(Directorio_Habitacion);
         //DECLARAR VARIABLE DE TIPO CONTADOR
-        int Fila=0;
-        
+        int Fila = 0;
+
         //CREAR UN CONTROLADOR DE ERROR 
-        try
-        {
+        try {
             //LEER DOCUMENTO (NOMBRE DEL ARCHIVO)
             Scanner Linea = new Scanner(Leer_Doc);
-            
+
             //CREAR ESTRUCTURA REPETITIVA(BUCLE) WHILE(LEER LINEAS DE TEXTO DEL ARCHIVO)
-            while(Linea.hasNextLine())
-            {
+            while (Linea.hasNextLine()) {
                 //LEER LOS DATOS DEL ARCHIVO DE TEXTO
                 TipoHabitacion[Fila][0] = Linea.nextLine();
                 TipoHabitacion[Fila][1] = Linea.nextLine();
-           
+
                 //INCREMENTAR VALOR DE LA VARIABLE FILA
                 Fila++;
             }
-        }
-        catch(Exception Error)
-        {
+        } catch (Exception Error) {
             //MOSTRAR  MENSAJE DE EEROR
-            JOptionPane.showMessageDialog(null,"Error: "+Error.getMessage(),
+            JOptionPane.showMessageDialog(null, "Error: " + Error.getMessage(),
                     this.getTitle(), JOptionPane.ERROR_MESSAGE);
         }
     }
-    
+
     //CREAR METODO CARGAR IMAGEN
-    void Cargar_TipoHabitacion(String Imagen)
-    {
-        ImageIcon Foto = new ImageIcon("src/TipoHabitacion/"+Imagen);
-        
+    void Cargar_TipoHabitacion(String Imagen) {
+        ImageIcon Foto = new ImageIcon("src/TipoHabitacion/" + Imagen);
+
         //ESTABLECER ICONO
         Icon Icono = new ImageIcon(Foto.getImage().getScaledInstance(
-                this.Lb_Foto.getWidth(),this.Lb_Foto.getHeight(),
+                this.Lb_Foto.getWidth(), this.Lb_Foto.getHeight(),
                 Image.SCALE_DEFAULT));
-    
+
         //ASIGNAR IMAGEN AL CONTROL: JLABEL
         this.Lb_Foto.setIcon(Icono);
-        
+
         //REPRESENTAR IMAGEN
         this.repaint();
     }
-    
+
     //CREAR EL METODO LOCAL CARGAR DATOS
-    void Cargar_Datos(String NombreProducto)
-    {
+    void Cargar_Datos(String NombreProducto) {
         //CREAR UNA ESTRUCTURA REPETITIVA (BUCLE) 
-        for (int Fila=0; Fila < TipoHabitacion.length; Fila++)
-        {
+        for (int Fila = 0; Fila < TipoHabitacion.length; Fila++) {
             //EVALUAR SI EL NOMBRE DEL PRODUCTO SELECCIONADO EXISTE DENTRO DE LA MATRIZ
-            if(NombreProducto.equals(TipoHabitacion[Fila][0]))
-            {
+            if (NombreProducto.equals(TipoHabitacion[Fila][0])) {
                 //OBTENER EL NOMBRE DE LA IMAGEN
                 this.Cargar_TipoHabitacion(TipoHabitacion[Fila][1]);
-                
+
                 //FIN DEL BUCLE
                 break;
             }
         }
     }
-    
+
     //CREAR METODO LOCAL Agregar_Producto
-    void Agregar_Producto()
-    {
+    void Agregar_Producto() {
         //DECLARAR VARIABLE DE TIPO ENTERO
         int Rpta;
-        
+
         //EVALUAR SI EXISTE EL PRODUCTO SELECCIONADO DENTRO DE LA LISTA
-        if(ListaProd.contains(this.CBO_TipoHabitacion.getSelectedItem().toString())== true)
-        {
+        if (ListaProd.contains(this.CBO_TipoHabitacion.getSelectedItem().toString()) == true) {
             //MOSTRAR MENSAJE DE ADVERTENCIA
             JOptionPane.showMessageDialog(null,
                     "El Producto Seleccionado ya Existe en la Lista Productos",
                     this.getTitle(), JOptionPane.WARNING_MESSAGE);
-        }
-        else
-        {
+        } else {
             //  MOSTRAR EL MENSAJE  DE CONFIRMACION
             Rpta = JOptionPane.showConfirmDialog(null,
                     "¿Desea Agregar el Producto?", this.getTitle(),
                     JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-            
+
             // EVALUAR SI RPTA ES SI 
-            if(Rpta == 0)
-            {
+            if (Rpta == 0) {
                 //AGREGAR LOS ELEMENTOS A LA LISTAS}
                 ListaProd.add(ListaProd.size(), this.CBO_TipoHabitacion.getSelectedItem().toString());
-         
+
             }
         }
     }
-    
+
     //Crear metodo solo numeros
-    void Solo_Numeros(java.awt.event.KeyEvent evt)
-    {
+    void Solo_Numeros(java.awt.event.KeyEvent evt) {
         //CREAR CONTROLADOR DE ERROR
-        try
-        {
+        try {
             //DECLARAR VARAIBLE TIPO CHAR(CARACTER)
             char Caracter;
-            
-             //OBTENER EL CARACTER TIPEADO
+
+            //OBTENER EL CARACTER TIPEADO
             Caracter = evt.getKeyChar();
-            
+
             //EVALUAR SI EL CARACTER ESTA FUERA DE RANGO DEL 0  AL 9
-            if(Caracter <'0' || Caracter >'8')
-            {
+            if (Caracter < '0' || Caracter > '8') {
                 //DESHABILITAR TECLAS
                 evt.consume();
             }
-        }
-        catch(Exception Error)
-        {
-            
+        } catch (Exception Error) {
+
         }
     }
-    
-     //CREAR EL METODO LEER_CLIENTES
-    void Leer_Clientes()
-    {
+
+    //CREAR EL METODO LEER_CLIENTES
+    void Leer_Clientes() {
         //DECLARAR UNA VARIABLE TIPO SCANNER
         Scanner Linea;
-        
+
         //OBTENER EL NOMBRE DEL ARCHIVO DE TEXTO
-        File Leer_Doc= new File(Directorio_Clientes);
-    
+        File Leer_Doc = new File(Directorio_Clientes);
+
         //DECLARAR UNA VARIABLE DE TIPO CONTADOR
-        int Fila =0;
-        
+        int Fila = 0;
+
         //CREAR CONTROLADOR DE ERROR
-        try
-        {
+        try {
             //LEER DOCUMENTO(NOMBRE DEL ARCHIRVO)
             Linea = new Scanner(Leer_Doc);
-            
+
             //CREAR ESTRUCTURA REPETITIVA
-            while(Linea.hasNextLine())
-            {
+            while (Linea.hasNextLine()) {
                 //LEER LINEAS
                 Linea.nextLine();
-                
+
                 //INCREMENTAR EL VALOR DE LA VARIABLE
                 Fila++;
             }
             //ESTABLECER VALOR DE LA FILA
-            Fila =(Fila/8);
-            
+            Fila = (Fila / 8);
+
             //ASIGNAR TAMAÑO DE LA MATRIZ DE DATOS
             Clientes = new String[Fila][8];
-            
+
             //VOLVER A ASIGNAAR EL VALOR 0 
-            Fila=0;
-            
+            Fila = 0;
+
             //LEER DOCUMENTO(NOMBRE DEL ARCHIRVO)
             Linea = new Scanner(Leer_Doc);
-            
+
             //CREAR ESTRUCTURA REPETITIVA LEER LINEAS DE TEXTO DEL ARCHIVO
-            while(Linea.hasNextLine())
-            {
+            while (Linea.hasNextLine()) {
                 //LEER Y ASIGNAR DATOS DEL ARCHIVO DE TEXTO A LA MATRIZ DE DATOS
-                Clientes[Fila][0]= Linea.nextLine();
-                Clientes[Fila][1]= Linea.nextLine();
-                Clientes[Fila][2]= Linea.nextLine();
-                Clientes[Fila][3]= Linea.nextLine();
-                Clientes[Fila][4]= Linea.nextLine();
-                Clientes[Fila][5]= Linea.nextLine();
-                Clientes[Fila][6]= Linea.nextLine();
-                Clientes[Fila][7]= Linea.nextLine();
-                
+                Clientes[Fila][0] = Linea.nextLine();
+                Clientes[Fila][1] = Linea.nextLine();
+                Clientes[Fila][2] = Linea.nextLine();
+                Clientes[Fila][3] = Linea.nextLine();
+                Clientes[Fila][4] = Linea.nextLine();
+                Clientes[Fila][5] = Linea.nextLine();
+                Clientes[Fila][6] = Linea.nextLine();
+                Clientes[Fila][7] = Linea.nextLine();
+
                 //INCREMENTAR EL VALOR DE LA VARIABLE
                 Fila++;
             }
+        } catch (Exception Error) {
+            //MOSTRAR MENSAJE DE ERROR
+            JOptionPane.showMessageDialog(null, "Error" + Error.getMessage(), this.getTitle(),
+                    JOptionPane.ERROR_MESSAGE);
         }
-        catch(Exception Error)
-        {
-        //MOSTRAR MENSAJE DE ERROR
-        JOptionPane.showMessageDialog(null, "Error"+ Error.getMessage(),this.getTitle(),
-                                       JOptionPane.ERROR_MESSAGE);
-        } 
     }
-     
-    
+
     //CREAR METODO BUSCAR_CLIENTE
-    void Buscar_Cliente(String Ruc)
-    {
+    void Buscar_Cliente(String Ruc) {
         //CREAR UNA VARIABLE TIPO ENTERO
-        int Fila =0,FilaEncontrada = 0;
-      
+        int Fila = 0, FilaEncontrada = 0;
+
         //CREAR ESTRUCTURA REPETITIVA
-        while(Fila< Clientes.length)
-        {
+        while (Fila < Clientes.length) {
             //CREAR CONDICION PARA EVALUAR SI EL RUC ESPECIFICADO EXISTE DENTRO DE LA MATRIZ
-            if(Ruc.equals(Clientes[Fila][4]))   //4 ES LA COLUMNA DEL NUMEO RUC
+            if (Ruc.equals(Clientes[Fila][4])) //4 ES LA COLUMNA DEL NUMEO RUC
             {
                 //OBTENER DATOS DE LA MATRIZ DE DATOS Y PASAR DATOS A LOS CONTROLADORES
                 this.Lb_CodCliente.setText(Clientes[Fila][0]);
@@ -1268,23 +1228,22 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
                 this.Lb_Nacionalidad_Cliente.setText(Clientes[Fila][5]);
                 this.Lb_Distrito_Cliente.setText(Clientes[Fila][6]);
                 this.Lb_Direccion_Cliente.setText(Clientes[Fila][7]);
-                
+
                 //ASIGNAR VALOR A LA VARIABLE FILAENCONTRADA DE 1
-                FilaEncontrada =1;
-                
+                FilaEncontrada = 1;
+
                 //FIN DEL BUCLE
-                break;             
+                break;
             }
-            
+
             //INCREMENTAR EL VALOR DE LA FILA
             Fila++;
         }
         //EVALUAR SI EL VSALOR DE LA VARIABLE FILAENCONTRADA ES IGUAL 0
-       if(FilaEncontrada ==0)
-        {
-            JOptionPane.showMessageDialog(null,"El Cliente con el N° de Doc Identidad "+ this.TXTDoc_Identidad_Cliente.getText()+
-                    ",No Existe",this.getTitle(),JOptionPane.ERROR_MESSAGE);
-        
+        if (FilaEncontrada == 0) {
+            JOptionPane.showMessageDialog(null, "El Cliente con el N° de Doc Identidad " + this.TXTDoc_Identidad_Cliente.getText()
+                    + ",No Existe", this.getTitle(), JOptionPane.ERROR_MESSAGE);
+
             //LIMPIAR CONTROLES
             this.Lb_CodCliente.setText("");
             this.Lb_Apellidos_Cliente.setText("");
@@ -1292,45 +1251,41 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
             this.Lb_Nacionalidad_Cliente.setText("");
             this.Lb_Distrito_Cliente.setText("");
             this.Lb_Direccion_Cliente.setText("");
-            
+
             //UBICAR CURSOR EN EL CONTROL TXT RUC_CLIENTE
             this.TXTDoc_Identidad_Cliente.requestFocus();
-            
+
         }
     }
-    
-    
+
     //Crear el método :autoAjustar Columnas
-    void AutoAjustar_Columnas()
-    {
+    void AutoAjustar_Columnas() {
         //Establer Anchos de Columnas
         //Definir el Tamaño de cado Columna del control (JTable):JTable_RegistroNotas
-        int[] Anchos ={50,200,200,150,150,100,100,100,200,250,100}; 
-        
+        int[] Anchos = {50, 200, 200, 150, 150, 100, 100, 100, 200, 250, 100};
+
         //Recorrer el numero de columnas del objeto JTable 
-        for(int Columna = 0;Columna< this.jTable_RegistroCliente.getColumnCount();Columna++)
-        {
+        for (int Columna = 0; Columna < this.jTable_RegistroCliente.getColumnCount(); Columna++) {
             //Establecer el Ancho de Columna para cada columna del JTable
-            this.jTable_RegistroCliente.getColumnModel().getColumn(Columna).setPreferredWidth(Anchos[Columna]);        
-        } 
+            this.jTable_RegistroCliente.getColumnModel().getColumn(Columna).setPreferredWidth(Anchos[Columna]);
+        }
         //Establecer el Autorisade de tamaño del jtable
         this.jTable_RegistroCliente.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
-        
+
         //Mostrar las barrass de desplazamiento: Vertical y Horizontal
         this.jTable_RegistroCliente.setShowVerticalLines(true);
-        this.jTable_RegistroCliente.setShowHorizontalLines(true);                        
+        this.jTable_RegistroCliente.setShowHorizontalLines(true);
     }
-    
+
     //Crear Método Cargar_Fila
-    void Cargar_Fila()
-    {
-    //DECLARAR UNA VARIABLE DE TIPO ENTERO, OBTENER FILA SELECCIONADA DEL CONTROL JTABLE
+    void Cargar_Fila() {
+        //DECLARAR UNA VARIABLE DE TIPO ENTERO, OBTENER FILA SELECCIONADA DEL CONTROL JTABLE
         int Seleccion = this.jTable_RegistroCliente.getSelectedRow();
-        
+
         //Cargar Datos en Controles
-        this.Lb_CodCliente.setText(this.jTable_RegistroCliente.getValueAt(Seleccion,0).toString());
-        this.Lb_Apellidos_Cliente.setText(this.jTable_RegistroCliente.getValueAt(Seleccion,1).toString());
-        this.Lb_Nombre_Cliente.setText(this.jTable_RegistroCliente.getValueAt(Seleccion,2).toString());
+        this.Lb_CodCliente.setText(this.jTable_RegistroCliente.getValueAt(Seleccion, 0).toString());
+        this.Lb_Apellidos_Cliente.setText(this.jTable_RegistroCliente.getValueAt(Seleccion, 1).toString());
+        this.Lb_Nombre_Cliente.setText(this.jTable_RegistroCliente.getValueAt(Seleccion, 2).toString());
         this.CBO_DocIdentidad.setSelectedItem(this.jTable_RegistroCliente.getValueAt(Seleccion, 3).toString());
         this.TXTDoc_Identidad_Cliente.setText(this.jTable_RegistroCliente.getValueAt(Seleccion, 4).toString());
         this.Lb_Nacionalidad_Cliente.setText(this.jTable_RegistroCliente.getValueAt(Seleccion, 5).toString());
@@ -1339,132 +1294,121 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
         this.Lb_CodigoEmpleado.setText(this.jTable_RegistroCliente.getValueAt(Seleccion, 8).toString());
         this.TXTApellidos_Nombres.setText(this.jTable_RegistroCliente.getValueAt(Seleccion, 9).toString());
         this.CBO_Sede.setSelectedItem(this.jTable_RegistroCliente.getValueAt(Seleccion, 10).toString());
-        this.CBO_TipoHabitacion.setSelectedItem(this.jTable_RegistroCliente.getValueAt(Seleccion, 11).toString());    
+        this.CBO_TipoHabitacion.setSelectedItem(this.jTable_RegistroCliente.getValueAt(Seleccion, 11).toString());
     }
-    
+
     //Crear el metodo local: guardar fichero
-    void Guardar_Fichero()
-    {
+    void Guardar_Fichero() {
         //crear controlador de Errores
-        try
-        {
+        try {
             //Establecer ruta del Archivo de texto a escribir secuencia de datos
             FileWriter Guardar = new FileWriter(Directorio);
-            
+
             //Recorrer filas de modelos de datos
-            for(int i = 0;i<this.jTable_RegistroCliente.getRowCount();i++)
-            {
+            for (int i = 0; i < this.jTable_RegistroCliente.getRowCount(); i++) {
                 //Escribir secuencia de datos
-                Guardar.write(Modelo.getValueAt(i,0).toString()+"\n");
-                Guardar.write(Modelo.getValueAt(i,1).toString()+"\n");
-                Guardar.write(Modelo.getValueAt(i,2).toString()+"\n");
-                Guardar.write(Modelo.getValueAt(i,3).toString()+"\n");
-                Guardar.write(Modelo.getValueAt(i,4).toString()+"\n");
-                Guardar.write(Modelo.getValueAt(i,5).toString()+"\n");
-                Guardar.write(Modelo.getValueAt(i,6).toString()+"\n");
-                Guardar.write(Modelo.getValueAt(i,7).toString()+"\n");
-                Guardar.write(Modelo.getValueAt(i,8).toString()+"\n");
-                Guardar.write(Modelo.getValueAt(i,9).toString()+"\n");
-                Guardar.write(Modelo.getValueAt(i,10).toString()+"\n");
-                Guardar.write(Modelo.getValueAt(i,11).toString()+"\n");
-            //    Guardar.write(Modelo.getValueAt(i,12).toString()+"\n");
-            //    Guardar.write(Modelo.getValueAt(i,13).toString()+"\n");
-            //    Guardar.write(Modelo.getValueAt(i,14).toString()+"\n");
-            //    Guardar.write(Modelo.getValueAt(i,15).toString()+"\n");
-            //    Guardar.write(Modelo.getValueAt(i,16).toString()+"\n");
-             //   Guardar.write(Modelo.getValueAt(i,17).toString()+"\n");
-            //    Guardar.write(Modelo.getValueAt(i,18).toString()+"\n");
-            //    Guardar.write(Modelo.getValueAt(i,19).toString()+"\n");
-            //    Guardar.write(Modelo.getValueAt(i,20).toString()+"\n");
-            //    Guardar.write(Modelo.getValueAt(i,21).toString()+"\n");
-            //    Guardar.write(Modelo.getValueAt(i,22).toString()+"\n");
-            //    Guardar.write(Modelo.getValueAt(i,23).toString()+"\n");
-                
+                Guardar.write(Modelo.getValueAt(i, 0).toString() + "\n");
+                Guardar.write(Modelo.getValueAt(i, 1).toString() + "\n");
+                Guardar.write(Modelo.getValueAt(i, 2).toString() + "\n");
+                Guardar.write(Modelo.getValueAt(i, 3).toString() + "\n");
+                Guardar.write(Modelo.getValueAt(i, 4).toString() + "\n");
+                Guardar.write(Modelo.getValueAt(i, 5).toString() + "\n");
+                Guardar.write(Modelo.getValueAt(i, 6).toString() + "\n");
+                Guardar.write(Modelo.getValueAt(i, 7).toString() + "\n");
+                Guardar.write(Modelo.getValueAt(i, 8).toString() + "\n");
+                Guardar.write(Modelo.getValueAt(i, 9).toString() + "\n");
+                Guardar.write(Modelo.getValueAt(i, 10).toString() + "\n");
+                Guardar.write(Modelo.getValueAt(i, 11).toString() + "\n");
+                //    Guardar.write(Modelo.getValueAt(i,12).toString()+"\n");
+                //    Guardar.write(Modelo.getValueAt(i,13).toString()+"\n");
+                //    Guardar.write(Modelo.getValueAt(i,14).toString()+"\n");
+                //    Guardar.write(Modelo.getValueAt(i,15).toString()+"\n");
+                //    Guardar.write(Modelo.getValueAt(i,16).toString()+"\n");
+                //   Guardar.write(Modelo.getValueAt(i,17).toString()+"\n");
+                //    Guardar.write(Modelo.getValueAt(i,18).toString()+"\n");
+                //    Guardar.write(Modelo.getValueAt(i,19).toString()+"\n");
+                //    Guardar.write(Modelo.getValueAt(i,20).toString()+"\n");
+                //    Guardar.write(Modelo.getValueAt(i,21).toString()+"\n");
+                //    Guardar.write(Modelo.getValueAt(i,22).toString()+"\n");
+                //    Guardar.write(Modelo.getValueAt(i,23).toString()+"\n");
+
             }
             //Cerrar el Archivo de Texto
             Guardar.close();
-        
+
             //Mensaje de informaccio
-            JOptionPane.showMessageDialog(null, "Registro Guardado con éxito",this.getTitle(),
-                                        JOptionPane.INFORMATION_MESSAGE);
-        
-        }
-        catch (Exception Error)
-        {
+            JOptionPane.showMessageDialog(null, "Registro Guardado con éxito", this.getTitle(),
+                    JOptionPane.INFORMATION_MESSAGE);
+
+        } catch (Exception Error) {
             //mostrar mensaje de error
-            JOptionPane.showMessageDialog(null, "Error"+ Error.getMessage(), this.getTitle(),
+            JOptionPane.showMessageDialog(null, "Error" + Error.getMessage(), this.getTitle(),
                     JOptionPane.ERROR_MESSAGE);
-        
+
         }
     }
-    
+
     //Crear metodo leer datos
-    void Leer_Datos()
-    {
+    void Leer_Datos() {
         //Declarar variable de tipo string(cadena de texto)
-        String Codigo,Apellido,Nombres,Tipo_DocIdentidad,N_DocIdentidad,Nacionalidad,Distrito,Direccion,Codigo_Empleado,Datos_Empleado,Sede,Tipo_Habitacion;
-        
+        String Codigo, Apellido, Nombres, Tipo_DocIdentidad, N_DocIdentidad, Nacionalidad, Distrito, Direccion, Codigo_Empleado, Datos_Empleado, Sede, Tipo_Habitacion;
+
         //Obtener el Nombre del Archivo de Texto
         File Leer_Doc = new File(Directorio);
-        
+
         //Crear Controlador de Error
-        try
-        {
+        try {
             //Leer Documento(Nombre del Archivo  
             Scanner Linea = new Scanner(Leer_Doc);
-        
+
             //Crear Estructura repetitiva(Bucle):while(Leer lineas del archivo)
-            while(Linea.hasNextLine()){
-            
-            //Leer Documento(Nombre del Archivo                  
-            Codigo = Linea.nextLine();
-            Apellido = Linea.nextLine();
-            Nombres = Linea.nextLine();
-            Tipo_DocIdentidad = Linea.nextLine();
-            N_DocIdentidad = Linea.nextLine();
-            Nacionalidad = Linea.nextLine();
-            Distrito = Linea.nextLine();
-            Direccion = Linea.nextLine();
-            Codigo_Empleado = Linea.nextLine();
-            Datos_Empleado = Linea.nextLine();
-            Sede = Linea.nextLine();
-            Tipo_Habitacion = Linea.nextLine();
-            
-            //Agregar Filas al Metodoo de datos del jtable
-            Modelo.addRow(new Object[]{Codigo, Apellido, Nombres, Tipo_DocIdentidad, N_DocIdentidad, Nacionalidad, Distrito, Direccion, Codigo_Empleado,
-                            Datos_Empleado, Sede, Tipo_Habitacion});
+            while (Linea.hasNextLine()) {
+
+                //Leer Documento(Nombre del Archivo                  
+                Codigo = Linea.nextLine();
+                Apellido = Linea.nextLine();
+                Nombres = Linea.nextLine();
+                Tipo_DocIdentidad = Linea.nextLine();
+                N_DocIdentidad = Linea.nextLine();
+                Nacionalidad = Linea.nextLine();
+                Distrito = Linea.nextLine();
+                Direccion = Linea.nextLine();
+                Codigo_Empleado = Linea.nextLine();
+                Datos_Empleado = Linea.nextLine();
+                Sede = Linea.nextLine();
+                Tipo_Habitacion = Linea.nextLine();
+
+                //Agregar Filas al Metodoo de datos del jtable
+                Modelo.addRow(new Object[]{Codigo, Apellido, Nombres, Tipo_DocIdentidad, N_DocIdentidad, Nacionalidad, Distrito, Direccion, Codigo_Empleado,
+                    Datos_Empleado, Sede, Tipo_Habitacion});
             }
-            }catch(Exception Error)
-            {
-                //Montrar Error
-                JOptionPane.showMessageDialog(null, "Error"+Error.getMessage(),this.getTitle(),
-                                            JOptionPane.ERROR_MESSAGE);
-            }    
+        } catch (Exception Error) {
+            //Montrar Error
+            JOptionPane.showMessageDialog(null, "Error" + Error.getMessage(), this.getTitle(),
+                    JOptionPane.ERROR_MESSAGE);
+        }
     }
-    
-    
+
     //CREAR EL METODO SALIR
-    void  Salir()
-    {
+    void Salir() {
         //DECLARAMOS LA VARIABLE DE TIPO ENTERO
         int Rpta;
-        
+
         //MOSTRAR MENSAJE DE CONFIRMACION
-        Rpta = JOptionPane.showConfirmDialog(null, "¿Desea Salir de la Ventana?",this.getTitle(),
-                                             JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE);
-        
+        Rpta = JOptionPane.showConfirmDialog(null, "¿Desea Salir de la Ventana?", this.getTitle(),
+                JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+
         //EVALUAR SI EL USUARIO RESPONDIO DE FORMA AFIRMATIVA
-        if(Rpta==0)
-        {
+        if (Rpta == 0) {
             //CERRRAR FORMULARIO
-            System.exit(0);  
-        } 
+            System.exit(0);
+        }
     }
-    
+
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TITULO DEL FORMULARIO
         this.setTitle("ALQUILER DE HABITACIÓN");
-        
+
         //INVOCAR AL METODO LIMPIAR
         this.Limpiar();
         this.Cargar_Datos_CBO();
@@ -1494,20 +1438,18 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
         // TODO add your handling code here:
         // Declarar una vaariable de tipo entero
         int Rpta;
-        
+
         //Evaluar si el total de caracteres del control TXTDoc_Identidad_Cliente es mayor a 0
-        if(this.TXTDoc_Identidad_Cliente.getText().length()>0)
-        {
+        if (this.TXTDoc_Identidad_Cliente.getText().length() > 0) {
             //Mostrar mensaje de confirmacion
-            Rpta = JOptionPane.showConfirmDialog(null,"¿Desea Agregar los datos del cliente?",this.getTitle(),
-                                                JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-        
+            Rpta = JOptionPane.showConfirmDialog(null, "¿Desea Agregar los datos del cliente?", this.getTitle(),
+                    JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+
             //Evaluar si el usuario confirmo su respuesta se(0)
-            if(Rpta == 0)
-            {
+            if (Rpta == 0) {
                 //Crear un Vetor de Datos (String)
-                String [] informacion = new String [12];
-                
+                String[] informacion = new String[12];
+
                 //Asignar los Valores al Vector de Datos
                 informacion[0] = this.Lb_CodCliente.getText();
                 informacion[1] = this.Lb_Apellidos_Cliente.getText();
@@ -1519,34 +1461,30 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
                 informacion[7] = this.Lb_Direccion_Cliente.getText();
                 informacion[8] = this.Lb_CodigoEmpleado.getText();
                 informacion[9] = this.TXTApellidos_Nombres.getText();
-                
-            
+
                 //Agregar Datos al DefaultTableModel(Modelo Tabla)Modelo
                 Modelo.addRow(informacion);
-                
+
                 //Montrar mensaje de informacion
-                JOptionPane.showMessageDialog(null,"Datos Registrados con Éxito",this.getTitle(),
-                                               JOptionPane.ERROR_MESSAGE);
-                
+                JOptionPane.showMessageDialog(null, "Datos Registrados con Éxito", this.getTitle(),
+                        JOptionPane.ERROR_MESSAGE);
+
                 //Invocar al evento
-              //  this.BTN_NuevoActionPerformed(null);
+                //  this.BTN_NuevoActionPerformed(null);
             }
-        }
-        else
-        {
+        } else {
             //Montrar mensaje erros
             JOptionPane.showMessageDialog(null,
-                        "Imposible Registrar Datos.....\nNo Existe Imformacion sobre el Cliente",
-                        this.getTitle(),JOptionPane.ERROR_MESSAGE);
-            
-        } 
+                    "Imposible Registrar Datos.....\nNo Existe Imformacion sobre el Cliente",
+                    this.getTitle(), JOptionPane.ERROR_MESSAGE);
+
+        }
     }//GEN-LAST:event_BTN_GuardarActionPerformed
 
     private void CBO_TipoHabitacionItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_CBO_TipoHabitacionItemStateChanged
 
         // EVALUARA SI SE HA SELECCIONADO UN ELEMENTO DEL COMBOBOX
-        if(evt.getStateChange()== ItemEvent.SELECTED)
-        {
+        if (evt.getStateChange() == ItemEvent.SELECTED) {
             //INVOCAR AL METODO CARGAR DATOS
             this.Cargar_Datos(this.CBO_TipoHabitacion.getSelectedItem().toString());
         }
@@ -1558,9 +1496,8 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
     }//GEN-LAST:event_jTable_RegistroClienteMouseClicked
 
     private void BTN_NuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_NuevoActionPerformed
-         
-    }//GEN-LAST:event_BTN_NuevoActionPerformed
 
+    }//GEN-LAST:event_BTN_NuevoActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -1589,29 +1526,25 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-              //  new JFrm_Alquiler_Habitacion().setVisible(true);
-                 //CREAR CONTROLADOR DE ERROR
-                try
-                {
+                //  new JFrm_Alquiler_Habitacion().setVisible(true);
+                //CREAR CONTROLADOR DE ERROR
+                try {
                     //CREAR UN OBJETO QUE INSTANCIE EL FORMULARIO
                     JFrm_Alquiler_Habitacion formulario = new JFrm_Alquiler_Habitacion();
-                    
+
                     //EVITAR QUE EL USUARIO REDIMENSIONE EL TAMAÑO DE LA VENTANA
                     formulario.setResizable(false);
-                    
+
                     //UBICAR EL FORMULARIO EN EL CENTRO DE LA PANTALLA
                     formulario.setLocationRelativeTo(null);
-                    
+
                     //DESHABILITAR EL BOTON CERRA(X) DEL FORMULARIO
-                   // formulario.setDefaultCloseOperation(0);
-                    
+                    // formulario.setDefaultCloseOperation(0);
                     //MOSTRAR FORMULARIO
                     formulario.setVisible(true);
-                }
-                catch(Exception Error)
-                {
-                   //MOSTRAR MENSAJE DE ERROR
-                   JOptionPane.showMessageDialog(null, Error.getMessage());
+                } catch (Exception Error) {
+                    //MOSTRAR MENSAJE DE ERROR
+                    JOptionPane.showMessageDialog(null, Error.getMessage());
                 }
             }
         });
