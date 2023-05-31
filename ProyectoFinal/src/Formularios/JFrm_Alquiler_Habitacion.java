@@ -1,9 +1,11 @@
 package Formularios;
 
 import Datos.DocIdentidadDB;
+import Datos.NivelDB;
 import Datos.SedeDB;
 import Datos.Tipo_HabitacionDB;
 import Entidades.DocIdentidadEntity;
+import Entidades.NivelEntity;
 import Entidades.SedeEntity;
 import Entidades.Tipo_HabitacionEntity;
 import java.awt.Color;
@@ -34,6 +36,9 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
     Tipo_HabitacionDB Tipo_Habitaciondb = new Tipo_HabitacionDB();
     ArrayList<Tipo_HabitacionEntity> ListaTipo_Habitacion = new ArrayList<>();
     
+    //Llenar el combobox Piso segun la base de datos
+    NivelDB Niveldb = new NivelDB();
+    ArrayList<NivelEntity> ListaNivel = new ArrayList<>();
     
 
     //DECLARAR VARIABLES PARA LAS LISTAS A UTILIZAR
@@ -83,6 +88,16 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
             CBO_TipoHabitacion.addItem(item.getDescripcion_TipoHabitacion());
         }
         CBO_TipoHabitacion.setSelectedIndex(-1);
+        
+        
+        //combobox Piso
+        ListaNivel = Niveldb.getCodNivelItems();
+
+        for (NivelEntity item : ListaNivel) {
+            CBO_Piso.addItem(item.getNivel_Piso());
+        }
+        CBO_Piso.setSelectedIndex(-1);
+        
         
         
         //Establecer el color de fondo del formulario
@@ -504,7 +519,6 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
 
         CBO_TipoHabitacion.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         CBO_TipoHabitacion.setForeground(new java.awt.Color(0, 0, 0));
-        CBO_TipoHabitacion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         CBO_TipoHabitacion.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 CBO_TipoHabitacionItemStateChanged(evt);
@@ -513,7 +527,6 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
 
         CBO_Piso.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         CBO_Piso.setForeground(new java.awt.Color(0, 0, 0));
-        CBO_Piso.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jRadioButton1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jRadioButton1.setForeground(new java.awt.Color(0, 0, 0));
@@ -955,10 +968,10 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
 
         this.CBO_Piso.removeAllItems();
 
-        //CAARGAR DATOS
-        this.CBO_Piso.addItem("<Seleccione>");
-        this.CBO_Piso.addItem("Piso 2 ");
-        this.CBO_Piso.addItem("Piso 3");
+//        //CAARGAR DATOS
+//        this.CBO_Piso.addItem("<Seleccione>");
+//        this.CBO_Piso.addItem("Piso 2 ");
+//        this.CBO_Piso.addItem("Piso 3");
 
         this.CBO_N_Habitacion.removeAllItems();
 
@@ -1045,19 +1058,19 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
     }
 
     //CREAR METODO :CARGAR_BEBIDAS()
-    void Cargar_TipoHabitacion() {
-        //ELIMINAR LOS ELEMENTOS DEL COMBOBOX
-        this.CBO_TipoHabitacion.removeAllItems();
-
-        //AGREGAR ELEMENTOS AL COMBOBOX
-        this.CBO_TipoHabitacion.addItem("<Seleccione>");
-
-        //RECORRER ELEMENTOS DE LA MATRIZ DE DATOS
-        for (int Fila = 0; Fila < TipoHabitacion.length; Fila++) {
-            //AGREGAR LOS ELEMENTOS DE LA MATRIZ DE DATOS AL COMBOBOX 
-            this.CBO_TipoHabitacion.addItem(TipoHabitacion[Fila][0]);
-        }
-    }
+//    void Cargar_TipoHabitacion() {
+//        //ELIMINAR LOS ELEMENTOS DEL COMBOBOX
+//        this.CBO_TipoHabitacion.removeAllItems();
+//
+//        //AGREGAR ELEMENTOS AL COMBOBOX
+//        this.CBO_TipoHabitacion.addItem("<Seleccione>");
+//
+//        //RECORRER ELEMENTOS DE LA MATRIZ DE DATOS
+//        for (int Fila = 0; Fila < TipoHabitacion.length; Fila++) {
+//            //AGREGAR LOS ELEMENTOS DE LA MATRIZ DE DATOS AL COMBOBOX 
+//            this.CBO_TipoHabitacion.addItem(TipoHabitacion[Fila][0]);
+//        }
+//    }
 
     //CREAR METODO LOCAL : LEER_TIPOHABITACION()
     void Leer_TipoHabitacion() {
@@ -1426,7 +1439,7 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
         this.Leer_Clientes();
         this.Leer_TipoHabitacion();
         this.AutoAjustar_Columnas();
-        this.Cargar_TipoHabitacion();
+      //  this.Cargar_TipoHabitacion();
         //this.Cargar_TipoHabitacion(Directorio_Habitacion);
     }//GEN-LAST:event_formWindowOpened
 
