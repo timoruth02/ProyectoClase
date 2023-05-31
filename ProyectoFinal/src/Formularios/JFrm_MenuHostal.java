@@ -1,16 +1,16 @@
  package Formularios;
 
+import Datos.Conexion;
 import java.awt.BorderLayout;
 import java.awt.Color;
-//import java.sql.Connection;
 import javax.swing.JPanel;
 
 public class JFrm_MenuHostal extends javax.swing.JFrame {
 
     int xMouse;
     int yMouse;
-    //Connect conn;
-    //Connection reg;
+    Connect conn;
+    Conexion reg;
     
     public JFrm_MenuHostal() {
         initComponents();
@@ -22,10 +22,10 @@ public class JFrm_MenuHostal extends javax.swing.JFrame {
         p1.setSize(750, 430);
         p1.setLocation(0,0);
         
-        ///Content.removeAll();
-        //Content.add(p1, BorderLayout.CENTER);
-        //Content.revalidate();
-      //  Content.repaint();
+        Content.removeAll();
+        Content.add(p1, BorderLayout.CENTER);
+        Content.revalidate();
+        Content.repaint();
     }
 
     @SuppressWarnings("unchecked")
