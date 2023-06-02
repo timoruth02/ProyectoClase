@@ -1298,8 +1298,8 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
         this.TXTApellidos_Nombres.setText(this.jTable_RegistroCliente.getValueAt(Seleccion, 9).toString());
         this.CBO_Sede.setSelectedItem(this.jTable_RegistroCliente.getValueAt(Seleccion, 10).toString());
         this.CBO_TipoHabitacion.setSelectedItem(this.jTable_RegistroCliente.getValueAt(Seleccion, 11).toString());
-        this.Lb_CodigoEmpleado.setText(this.jTable_RegistroCliente.getValueAt(Seleccion, 12).toString());
-        this.TXTApellidos_Nombres.setText(this.jTable_RegistroCliente.getValueAt(Seleccion, 13).toString());
+        
+       
     }
 
     //Crear el metodo local: guardar fichero
