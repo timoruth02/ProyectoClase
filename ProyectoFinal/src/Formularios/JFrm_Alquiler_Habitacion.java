@@ -791,6 +791,7 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
                 .addContainerGap(16, Short.MAX_VALUE))
         );
 
+        jp_separador.setBackground(java.awt.Color.lightGray);
         jp_separador.setBorder(javax.swing.BorderFactory.createCompoundBorder());
 
         javax.swing.GroupLayout jp_separadorLayout = new javax.swing.GroupLayout(jp_separador);
@@ -861,7 +862,7 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jp_separador2.setBackground(new java.awt.Color(204, 204, 204));
+        jp_separador2.setBackground(java.awt.Color.lightGray);
 
         javax.swing.GroupLayout jp_separador2Layout = new javax.swing.GroupLayout(jp_separador2);
         jp_separador2.setLayout(jp_separador2Layout);
@@ -914,7 +915,7 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(57, 57, 57)
                         .addComponent(jp_separador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 281, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 284, Short.MAX_VALUE)))
                 .addComponent(jp_foder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jp_separador2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
