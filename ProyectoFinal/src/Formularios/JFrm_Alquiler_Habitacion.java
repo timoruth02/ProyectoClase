@@ -1203,7 +1203,7 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
     void Buscar_Cliente(String Ruc) {
         //CREAR UNA VARIABLE TIPO ENTERO
         int Fila = 0, FilaEncontrada = 0;
-
+        
         //CREAR ESTRUCTURA REPETITIVA
         while (Fila < Clientes.length) {
             //CREAR CONDICION PARA EVALUAR SI EL RUC ESPECIFICADO EXISTE DENTRO DE LA MATRIZ
@@ -1319,7 +1319,7 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
                 //    Guardar.write(Modelo.getValueAt(i,22).toString()+"\n");
                 //    Guardar.write(Modelo.getValueAt(i,23).toString()+"\n");
 
-            }
+            } 
             //Cerrar el Archivo de Texto
             Guardar.close();
 
@@ -1417,8 +1417,17 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
     }//GEN-LAST:event_TXTDoc_Identidad_ClienteKeyTyped
 
     private void BTN_BuscarCliente1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_BuscarCliente1ActionPerformed
-
-        // TODO add your handling code here:
+        
+        
+//         if (this.CBO_DocIdentidad.getSelectedIndex() == 0) {
+//            //Monstrar mensaje de informacion
+//            JOptionPane.showMessageDialog(null,"Debe Seleccionar el Nombre del Documento de Identidad"
+//                    , this.getTitle(),
+//                    JOptionPane.INFORMATION_MESSAGE);
+//
+//            //Ubicar cursor en el control cbo_Curso
+//            this.CBO_DocIdentidad.requestFocus();
+//        }
         this.Buscar_Cliente(this.TXTDoc_Identidad_Cliente.getText());
 
         pl_InformacionCliente.setVisible(true);
