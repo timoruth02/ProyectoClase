@@ -106,7 +106,7 @@ public class Login extends javax.swing.JFrame {
             headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(headerLayout.createSequentialGroup()
                 .addComponent(ExitBTN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 636, Short.MAX_VALUE))
+                .addGap(0, 624, Short.MAX_VALUE))
         );
         headerLayout.setVerticalGroup(
             headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -199,45 +199,19 @@ public class Login extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void headerMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_headerMousePressed
-        xMouse = evt.getX();
-        yMouse = evt.getY();
-    }//GEN-LAST:event_headerMousePressed
-
-    private void headerMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_headerMouseDragged
-        int x = evt.getXOnScreen();
-        int y = evt.getYOnScreen();
-        this.setLocation(x - xMouse, y - yMouse);
-    }//GEN-LAST:event_headerMouseDragged
-
-    private void ExitTXTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExitTXTMouseClicked
-        System.exit(0);
-    }//GEN-LAST:event_ExitTXTMouseClicked
-
-    private void ExitTXTMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExitTXTMouseEntered
-        ExitBTN.setBackground(Color.red);
-        ExitTXT.setForeground(Color.white);
-    }//GEN-LAST:event_ExitTXTMouseEntered
-
-    private void ExitTXTMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExitTXTMouseExited
-        ExitBTN.setBackground(Color.white);
-        ExitTXT.setForeground(Color.black);
-    }//GEN-LAST:event_ExitTXTMouseExited
-
     private void LoginBtnTXTMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoginBtnTXTMouseExited
-         
+
     }//GEN-LAST:event_LoginBtnTXTMouseExited
 
-    private void userTxtMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userTxtMousePressed
-        if (userTxt.getText().equals("Ingrese su nombre de usuario")) {
-            userTxt.setText("");
-            userTxt.setForeground(Color.black);
-        }
-        if (String.valueOf(passTxt.getPassword()).isEmpty()) {
-            passTxt.setText("********");
-            passTxt.setForeground(Color.gray);
-        }
-    }//GEN-LAST:event_userTxtMousePressed
+    private void LoginBtnTXTMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoginBtnTXTMouseEntered
+        LoginBTN.setBackground(new Color(0, 156, 223));
+    }//GEN-LAST:event_LoginBtnTXTMouseEntered
+
+    private void LoginBtnTXTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoginBtnTXTMouseClicked
+        javax.swing.JOptionPane.showMessageDialog(this, "Intento de login con los datos:\nUsuario: " +
+            userTxt.getText() + "\nContraseña: " + String.valueOf(passTxt.getPassword()),
+            "LOGIN", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_LoginBtnTXTMouseClicked
 
     private void passTxtMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_passTxtMousePressed
         if (String.valueOf(passTxt.getPassword()).equals("********")) {
@@ -250,15 +224,41 @@ public class Login extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_passTxtMousePressed
 
-    private void LoginBtnTXTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoginBtnTXTMouseClicked
-        javax.swing.JOptionPane.showMessageDialog(this, "Intento de login con los datos:\nUsuario: " +
-                userTxt.getText() + "\nContraseña: " + String.valueOf(passTxt.getPassword()), 
-                "LOGIN", javax.swing.JOptionPane.INFORMATION_MESSAGE);
-    }//GEN-LAST:event_LoginBtnTXTMouseClicked
+    private void userTxtMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userTxtMousePressed
+        if (userTxt.getText().equals("Ingrese su nombre de usuario")) {
+            userTxt.setText("");
+            userTxt.setForeground(Color.black);
+        }
+        if (String.valueOf(passTxt.getPassword()).isEmpty()) {
+            passTxt.setText("********");
+            passTxt.setForeground(Color.gray);
+        }
+    }//GEN-LAST:event_userTxtMousePressed
 
-    private void LoginBtnTXTMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoginBtnTXTMouseEntered
-        LoginBTN.setBackground(new Color(0, 156, 223));
-    }//GEN-LAST:event_LoginBtnTXTMouseEntered
+    private void headerMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_headerMousePressed
+        xMouse = evt.getX();
+        yMouse = evt.getY();
+    }//GEN-LAST:event_headerMousePressed
+
+    private void headerMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_headerMouseDragged
+        int x = evt.getXOnScreen();
+        int y = evt.getYOnScreen();
+        this.setLocation(x - xMouse, y - yMouse);
+    }//GEN-LAST:event_headerMouseDragged
+
+    private void ExitTXTMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExitTXTMouseExited
+        ExitBTN.setBackground(Color.white);
+        ExitTXT.setForeground(Color.black);
+    }//GEN-LAST:event_ExitTXTMouseExited
+
+    private void ExitTXTMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExitTXTMouseEntered
+        ExitBTN.setBackground(Color.red);
+        ExitTXT.setForeground(Color.white);
+    }//GEN-LAST:event_ExitTXTMouseEntered
+
+    private void ExitTXTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExitTXTMouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_ExitTXTMouseClicked
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
