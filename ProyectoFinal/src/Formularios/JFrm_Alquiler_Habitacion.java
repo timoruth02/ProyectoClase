@@ -2,10 +2,12 @@ package Formularios;
 
 import Datos.DocIdentidadDB;
 import Datos.NivelDB;
+import Datos.Reserva_AlquilerDB;
 import Datos.SedeDB;
 import Datos.Tipo_HabitacionDB;
 import Entidades.DocIdentidadEntity;
 import Entidades.NivelEntity;
+import Entidades.Reserva_AlquilerEntity;
 import Entidades.SedeEntity;
 import Entidades.Tipo_HabitacionEntity;
 import java.awt.Color;
@@ -40,6 +42,10 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
     //Llenar el combobox Piso segun la base de datos
     NivelDB Niveldb = new NivelDB();
     ArrayList<NivelEntity> ListaNivel = new ArrayList<>();
+
+    //Llenar el combobox N° Habitacion segun la base de datos
+    Reserva_AlquilerDB reserva_alquilerdb = new Reserva_AlquilerDB();
+    ArrayList<Reserva_AlquilerEntity> Listareserva_alquiler = new ArrayList<>();
 
     //DECLARAR VARIABLES PARA LAS LISTAS A UTILIZAR
     DefaultListModel ListaProd = new DefaultListModel();
@@ -102,6 +108,14 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
             CBO_Piso.addItem(item.getNivel_Piso());
         }
         CBO_Piso.setSelectedIndex(-1);
+
+        //combobox N° Habitación
+        Listareserva_alquiler = reserva_alquilerdb.getCodDoc_IdentidadItems();
+
+        for (Reserva_AlquilerEntity item : Listareserva_alquiler) {
+            CBO_N_Habitacion.addItem(item.getNumAlquiler());
+        }
+        CBO_N_Habitacion.setSelectedIndex(-1);
 
         //Establecer el color de fondo del formulario
         this.getContentPane().setBackground(Color.LIGHT_GRAY);
@@ -183,11 +197,11 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
         TXTTarifa_Noche = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        jD_Fec_Inicio = new com.toedter.calendar.JDateChooser();
         CBO_H_Ingreso1 = new javax.swing.JComboBox<>();
         CBO_H_Ingreso2 = new javax.swing.JComboBox<>();
         jPanel5 = new javax.swing.JPanel();
-        jDateChooser2 = new com.toedter.calendar.JDateChooser();
+        jD_Fec_Termino = new com.toedter.calendar.JDateChooser();
         CBO_H_Salida_1 = new javax.swing.JComboBox<>();
         CBO_H_Salida2 = new javax.swing.JComboBox<>();
         jPanel4 = new javax.swing.JPanel();
@@ -456,7 +470,6 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
         CBO_N_Habitacion.setBackground(new java.awt.Color(255, 255, 255));
         CBO_N_Habitacion.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         CBO_N_Habitacion.setForeground(new java.awt.Color(0, 0, 0));
-        CBO_N_Habitacion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         CBO_N_Habitacion.setBorder(null);
 
         CBO_Sede.setBackground(new java.awt.Color(255, 255, 255));
@@ -570,7 +583,7 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jD_Fec_Inicio, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(CBO_H_Ingreso1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -581,7 +594,7 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jD_Fec_Inicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(CBO_H_Ingreso1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(CBO_H_Ingreso2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -609,7 +622,7 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jD_Fec_Termino, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(CBO_H_Salida_1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -620,7 +633,7 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jD_Fec_Termino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(CBO_H_Salida_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(CBO_H_Salida2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -939,20 +952,6 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
     }
 
     void Cargar_Datos_CBO() {
-
-        this.CBO_N_Habitacion.removeAllItems();
-
-        this.CBO_N_Habitacion.addItem("<Seleccione>");
-        this.CBO_N_Habitacion.addItem("101");
-        this.CBO_N_Habitacion.addItem("102");
-        this.CBO_N_Habitacion.addItem("103");
-        this.CBO_N_Habitacion.addItem("104");
-        this.CBO_N_Habitacion.addItem("105");
-        this.CBO_N_Habitacion.addItem("201");
-        this.CBO_N_Habitacion.addItem("202");
-        this.CBO_N_Habitacion.addItem("203");
-        this.CBO_N_Habitacion.addItem("204");
-        this.CBO_N_Habitacion.addItem("205");
 
         this.CBO_H_Ingreso1.removeAllItems();
 
@@ -1574,8 +1573,8 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
     private javax.swing.JTextField TXTDoc_Identidad_Cliente;
     private javax.swing.JTextField TXTImporte;
     private javax.swing.JTextField TXTTarifa_Noche;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
-    private com.toedter.calendar.JDateChooser jDateChooser2;
+    private com.toedter.calendar.JDateChooser jD_Fec_Inicio;
+    private com.toedter.calendar.JDateChooser jD_Fec_Termino;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel17;
