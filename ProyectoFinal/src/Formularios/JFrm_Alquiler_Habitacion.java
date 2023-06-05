@@ -13,6 +13,7 @@ import Entidades.Tipo_HabitacionEntity;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Image;
+import java.awt.List;
 import java.awt.event.ItemEvent;
 import java.io.File;
 import java.io.FileWriter;
@@ -80,6 +81,9 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
         //combobox docIdentidad
         ListaDocIDentidad = docIdentidad_dt.getCodDoc_IdentidadItems();
 
+        
+        CBO_DocIdentidad.addItem("-Seleccionar-");
+        CBO_DocIdentidad.setSelectedIndex(0);
         for (DocIdentidadEntity item : ListaDocIDentidad) {
             CBO_DocIdentidad.addItem(item.getTipo_Doc_Identidad());
         }
@@ -99,7 +103,13 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
         for (Tipo_HabitacionEntity item : ListaTipo_Habitacion) {
             CBO_TipoHabitacion.addItem(item.getDescripcion_TipoHabitacion());
         }
-        CBO_TipoHabitacion.setSelectedIndex(-1);
+            CBO_TipoHabitacion.setSelectedIndex(-1);
+        
+        SedeDB sede= new SedeDB();
+        TXTTarifa_Noche.setText(sede.elementoSede("SEDE1").getNombre_Sede());
+       // sede.elementoSede("SEDE1"). ;
+
+        
 
         //combobox Piso
         ListaNivel = Niveldb.getCodNivelItems();
@@ -861,7 +871,7 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(BTN_Salir, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 462, Short.MAX_VALUE)
                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -1404,6 +1414,8 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
         this.AutoAjustar_Columnas();
         //  this.Cargar_TipoHabitacion();
         //this.Cargar_TipoHabitacion(Directorio_Habitacion);
+        
+        CBO_DocIdentidad.setSelectedIndex(0);
     }//GEN-LAST:event_formWindowOpened
 
     private void BTN_SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_SalirActionPerformed
@@ -1418,7 +1430,23 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
 
     private void BTN_BuscarCliente1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_BuscarCliente1ActionPerformed
         
+        String dato=CBO_DocIdentidad.getSelectedItem().toString();
         
+       if(CBO_DocIdentidad.getSelectedIndex()!=0){
+           
+                this.Buscar_Cliente(this.TXTDoc_Identidad_Cliente.getText());
+
+                pl_InformacionCliente.setVisible(true);
+       }else{
+           JOptionPane.showMessageDialog(null,"error","Error",0);
+       }
+       
+       
+      // if(dato.equals("")){
+       //    JOptionPane.showMessageDialog(null,"error","Error",0);
+       //}
+//                    , this.getTitle(),
+//                    JOptionPane.INFORMATION_MESSAGE);       }
 //         if (this.CBO_DocIdentidad.getSelectedIndex() == 0) {
 //            //Monstrar mensaje de informacion
 //            JOptionPane.showMessageDialog(null,"Debe Seleccionar el Nombre del Documento de Identidad"
@@ -1428,9 +1456,7 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
 //            //Ubicar cursor en el control cbo_Curso
 //            this.CBO_DocIdentidad.requestFocus();
 //        }
-        this.Buscar_Cliente(this.TXTDoc_Identidad_Cliente.getText());
-
-        pl_InformacionCliente.setVisible(true);
+ 
     }//GEN-LAST:event_BTN_BuscarCliente1ActionPerformed
 
     private void BTN_GuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_GuardarActionPerformed

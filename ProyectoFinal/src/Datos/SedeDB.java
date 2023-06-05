@@ -2,6 +2,7 @@ package Datos;
 
 import Entidades.DocIdentidadEntity;
 import Entidades.SedeEntity;
+import java.awt.List;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -42,5 +43,40 @@ public class SedeDB {
 
         return Lista;
     }
+    
+    
+        public SedeEntity elementoSede(String codigo) {
+       
+SedeEntity Item = new SedeEntity();
+        try {
+            cn = conect.conectar();
+            String sql = "select CodSede, Nombre_Sede, CodUbigeo, Direccion, Telefono, Email, Estado_Sede from Sede where codsede='"+codigo+"'";
+            CallableStatement cmd = cn.prepareCall(sql);
+            ResultSet rs = cmd.executeQuery();
+          
+            while (rs.next()) {
+                Item = null;
+                Item = new SedeEntity();
+                Item.setCodSede(rs.getString("CodSede"));
+                Item.setNombre_Sede(rs.getString("Nombre_Sede"));
+                Item.setCodUbigeo(rs.getString("CodUbigeo"));
+                Item.setDireccion(rs.getString("Direccion"));
+                Item.setTelefono(rs.getString("Telefono"));
+                Item.setEmail(rs.getString("Email"));
+                Item.setEstado_Sede(rs.getString("Estado_Sede"));
+                
+            }
+            cmd.close();
+            cn.close();
+            return Item;
+            
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        return Item;
+    }
+
 
 }
