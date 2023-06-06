@@ -76,8 +76,6 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
         //combobox docIdentidad
         ListaDocIDentidad = docIdentidad_dt.getCodDoc_IdentidadItems();
 
-        CBO_DocIdentidad.addItem("-Seleccionar-");
-        CBO_DocIdentidad.setSelectedIndex(0);
         for (DocIdentidadEntity item : ListaDocIDentidad) {
             CBO_DocIdentidad.addItem(item.getTipo_Doc_Identidad());
         }
@@ -87,7 +85,7 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
         ListaSede = Sede_db.getCodSedeItems();
 
         for (SedeEntity item : ListaSede) {
-            CBO_Sede.addItem(item.getCodSede());
+            CBO_Sede.addItem(item.getNombre_Sede());
         }
         CBO_Sede.setSelectedIndex(-1);
 
@@ -99,10 +97,6 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
         }
         CBO_TipoHabitacion.setSelectedIndex(-1);
 
-//        SedeDB sede = new SedeDB();
-//        TXTTarifa_Noche.setText(sede.elementoSede("SEDE1").getNombre_Sede());
-        // sede.elementoSede("SEDE1"). ;
-        //combobox Piso
         ListaNivel = Niveldb.getCodNivelItems();
 
         for (NivelEntity item : ListaNivel) {
@@ -1397,17 +1391,20 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
     }//GEN-LAST:event_TXTDoc_Identidad_ClienteKeyTyped
 
     private void BTN_BuscarCliente1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_BuscarCliente1ActionPerformed
-
+        
+        //Invocar a la base de datos cliente
         ListaCliente = Cliente_dt.getBuscarCliente(this.TXTDoc_Identidad_Cliente.getText());
 
         if (ListaCliente != null && ListaCliente.size() > 0) {
 
             ClienteEntity DataEncontrada = ListaCliente.get(0);
-
+            
+            Lb_CodCliente.setText(DataEncontrada.getCodCliente());
             Lb_Apellidos_Cliente.setText(DataEncontrada.getApellidos());
             Lb_Nombre_Cliente.setText(DataEncontrada.getNombres());
             Lb_Direccion_Cliente.setText(DataEncontrada.getDireccion());
 
+            //Invocar a la conexion nacionalidadDB y NacionalidadEntity
             NacionalidadDB Nac_DB = new NacionalidadDB();
 
             ArrayList<NacionalidadEntity> Listanacionalidad = Nac_DB.GetBuscarNacionalidad(DataEncontrada.getCodNac());
@@ -1416,50 +1413,24 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
                 
                 NacionalidadEntity DataEncontradaNAC = Listanacionalidad.get(0);
                 Lb_Nacionalidad_Cliente.setText(DataEncontradaNAC.getGentilicio_Nac());
-
             }
             
+            //Invocar a la conexion UbigeoDB y UbigeoEntity
             UbigeoDB Ubigeo_DB = new UbigeoDB();
             ArrayList<UbigeoEntity> Listaubigeo = Ubigeo_DB.getBuscarUbigeo(DataEncontrada.getCodUbigeo());
             
             if(Listaubigeo != null && Listaubigeo.size()>0){
                 
             UbigeoEntity DataEncontradaUbi = Listaubigeo.get(0);
-            Lb_Ubigeo.setText(DataEncontradaUbi.getDistrito());
-            Lb_Ubigeo.setText(DataEncontradaUbi.getDistrito());
-            Lb_Ubigeo.setText(DataEncontradaUbi.getDepartamento());
+            Lb_Ubigeo.setText(DataEncontradaUbi.getDistrito()+" - "+DataEncontradaUbi.getProvincia()+" - "+DataEncontradaUbi.getDepartamento());
             }
 
             pl_InformacionCliente.setVisible(true);
         } else {
+            //Evitar que aparezca el panel 
             pl_InformacionCliente.setVisible(false);
             JOptionPane.showMessageDialog(null, "Cliente no encontrado", "Aviso", 0);
         }
-//        String dato = CBO_DocIdentidad.getSelectedItem().toString();
-//
-//        if (CBO_DocIdentidad.getSelectedIndex() != 0) {
-//
-//            this.Buscar_Cliente(this.TXTDoc_Identidad_Cliente.getText());
-//
-//            pl_InformacionCliente.setVisible(true);
-//        } else {
-//            JOptionPane.showMessageDialog(null, "error", "Error", 0);
-//        }
-
-        // if(dato.equals("")){
-        //    JOptionPane.showMessageDialog(null,"error","Error",0);
-        //}
-//                    , this.getTitle(),
-//                    JOptionPane.INFORMATION_MESSAGE);       }
-//         if (this.CBO_DocIdentidad.getSelectedIndex() == 0) {
-//            //Monstrar mensaje de informacion
-//            JOptionPane.showMessageDialog(null,"Debe Seleccionar el Nombre del Documento de Identidad"
-//                    , this.getTitle(),
-//                    JOptionPane.INFORMATION_MESSAGE);
-//
-//            //Ubicar cursor en el control cbo_Curso
-//            this.CBO_DocIdentidad.requestFocus();
-//        }
 
     }//GEN-LAST:event_BTN_BuscarCliente1ActionPerformed
 

@@ -17,19 +17,20 @@ public class ClienteDB {
 
         try {
             cn = conect.conectar();
-            String sql = "Select NumDoc_Identidad,Apellidos,Nombres,Direccion,CodNac from Cliente  where NumDoc_Identidad = '"+ Documento +"'";
+            String sql = "Select CodCliente,NumDoc_Identidad,Apellidos,Nombres,Direccion,CodNac,CodUbigeo from Cliente  where NumDoc_Identidad = '"+ Documento +"'";
             CallableStatement cmd = cn.prepareCall(sql);
             ResultSet rs = cmd.executeQuery();
             ClienteEntity Item = new ClienteEntity();
             while (rs.next()) {
                 Item = null;
                 Item = new ClienteEntity();
+                Item.setCodCliente(rs.getString("CodCliente"));
                 Item.setNumDoc_Identidad(rs.getString("NumDoc_Identidad"));
                 Item.setApellidos(rs.getString("Apellidos"));
                 Item.setNombres(rs.getString("Nombres"));
                 Item.setDireccion(rs.getString("Direccion"));
                 Item.setCodNac(rs.getString("CodNac"));
-
+                Item.setCodUbigeo(rs.getString("CodUbigeo"));
                 Lista.add(Item);
             }
             cmd.close();
