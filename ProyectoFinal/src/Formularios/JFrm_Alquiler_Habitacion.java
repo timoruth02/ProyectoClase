@@ -5,7 +5,6 @@ import Entidades.*;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Image;
-import java.awt.List;
 import java.awt.event.ItemEvent;
 import java.io.File;
 import java.io.FileWriter;
@@ -24,6 +23,7 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
     DocIdentidadDB docIdentidad_dt = new DocIdentidadDB();
     ArrayList<DocIdentidadEntity> ListaDocIDentidad = new ArrayList<>();
 
+    //Invocar a sql clientes
     ClienteDB Cliente_dt = new ClienteDB();
     ArrayList<ClienteEntity> ListaCliente = new ArrayList<>();
 
@@ -99,8 +99,8 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
         }
         CBO_TipoHabitacion.setSelectedIndex(-1);
 
-        SedeDB sede = new SedeDB();
-        TXTTarifa_Noche.setText(sede.elementoSede("SEDE1").getNombre_Sede());
+//        SedeDB sede = new SedeDB();
+//        TXTTarifa_Noche.setText(sede.elementoSede("SEDE1").getNombre_Sede());
         // sede.elementoSede("SEDE1"). ;
 
         //combobox Piso
@@ -1016,20 +1016,6 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
 
     }
 
-    //CREAR METODO :CARGAR_Habitacion()
-//    void Cargar_TipoHabitacion() {
-//        //ELIMINAR LOS ELEMENTOS DEL COMBOBOX
-//        this.CBO_TipoHabitacion.removeAllItems();
-//
-//        //AGREGAR ELEMENTOS AL COMBOBOX
-//        this.CBO_TipoHabitacion.addItem("<Seleccione>");
-//
-//        //RECORRER ELEMENTOS DE LA MATRIZ DE DATOS
-//        for (int Fila = 0; Fila < TipoHabitacion.length; Fila++) {
-//            //AGREGAR LOS ELEMENTOS DE LA MATRIZ DE DATOS AL COMBOBOX 
-//            this.CBO_TipoHabitacion.addItem(TipoHabitacion[Fila][0]);
-//        }
-//    }
     //CREAR METODO LOCAL : LEER_TIPOHABITACION()
     void Leer_TipoHabitacion() {
         //OBTENER EL NOMBRE DEL ARCHIVO DE TEXTO
@@ -1421,6 +1407,8 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
 
             Lb_Apellidos_Cliente.setText(DataEncontrada.getApellidos());
             Lb_Nombre_Cliente.setText(DataEncontrada.getNombres());
+            Lb_Direccion_Cliente.setText(DataEncontrada.getDireccion());
+            Lb_Nacionalidad_Cliente.setText(DataEncontrada.getCodNac());
             pl_InformacionCliente.setVisible(true);
         } else {
             pl_InformacionCliente.setVisible(false);

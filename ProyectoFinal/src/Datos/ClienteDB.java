@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Datos;
 
 import Entidades.ClienteEntity;
@@ -12,10 +7,6 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
-/**
- *
- * @author PRV
- */
 public class ClienteDB {
 
     Connection cn;
@@ -26,7 +17,7 @@ public class ClienteDB {
 
         try {
             cn = conect.conectar();
-            String sql = "Select NumDoc_Identidad,Apellidos,Nombres from Cliente  where NumDoc_Identidad = '"+ Documento +"'";
+            String sql = "Select NumDoc_Identidad,Apellidos,Nombres,Direccion,CodNac from Cliente  where NumDoc_Identidad = '"+ Documento +"'";
             CallableStatement cmd = cn.prepareCall(sql);
             ResultSet rs = cmd.executeQuery();
             ClienteEntity Item = new ClienteEntity();
@@ -36,6 +27,9 @@ public class ClienteDB {
                 Item.setNumDoc_Identidad(rs.getString("NumDoc_Identidad"));
                 Item.setApellidos(rs.getString("Apellidos"));
                 Item.setNombres(rs.getString("Nombres"));
+                Item.setDireccion(rs.getString("Direccion"));
+                Item.setCodNac(rs.getString("CodNac"));
+
                 Lista.add(Item);
             }
             cmd.close();
