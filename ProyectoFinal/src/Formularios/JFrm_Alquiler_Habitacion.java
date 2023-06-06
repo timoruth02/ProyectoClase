@@ -123,26 +123,7 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
         jTable_RegistroCliente.setModel(Modelo);
 //        ************************************************************************************************
 
-        //Establecer Nombre de las Columnas para el control: Jtable_RegistroNotas(a travéz de la variable Modelo)
-        Modelo.addColumn("Código");
-        Modelo.addColumn("Apellidos");
-        Modelo.addColumn("Nombres");
-        Modelo.addColumn("Tipo de Doc. Identidad");
-        Modelo.addColumn("N° Doc. Identidad");
-        Modelo.addColumn("Nacionalidad");
-        Modelo.addColumn("Distrito");
-        Modelo.addColumn("Dirección");
-        Modelo.addColumn("Sede");
-        Modelo.addColumn("Tipo de Habitación");
-        Modelo.addColumn("piso");
-        Modelo.addColumn("N° de Habitación");
-        Modelo.addColumn("Tirafa por hora");
-        Modelo.addColumn("Tarifa por noche");
-        Modelo.addColumn("Fecha de Alquiler");
-        Modelo.addColumn("Hora de Ingreso");
-        Modelo.addColumn("Fec. Termino de Alquiler");
-        Modelo.addColumn("Hora de Salida");
-        Modelo.addColumn("Importe");
+
 //        Cargo La Base de Datos *********************************************************************
         HabitacionDB H_DB = new HabitacionDB();
         ArrayList<HabitacionEntity> ListaHabitaciones = H_DB.GetCargarHabitaciones();
