@@ -123,7 +123,6 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
         jTable_RegistroCliente.setModel(Modelo);
 //        ************************************************************************************************
 
-
 //        Cargo La Base de Datos *********************************************************************
         HabitacionDB H_DB = new HabitacionDB();
         ArrayList<HabitacionEntity> ListaHabitaciones = H_DB.GetCargarHabitaciones();
@@ -204,8 +203,6 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
         CBO_H_Salida2 = new javax.swing.JComboBox<>();
         jPanel4 = new javax.swing.JPanel();
         Lb_Foto = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable_RegistroCliente = new javax.swing.JTable();
         jp_foder = new javax.swing.JPanel();
         BTN_Anular = new javax.swing.JButton();
         BTN_Nuevo = new javax.swing.JButton();
@@ -216,6 +213,15 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
         jPanel7 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         jp_separador2 = new javax.swing.JPanel();
+        jPanel8 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable_RegistroCliente = new javax.swing.JTable();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        TXT_Disponible = new javax.swing.JTextField();
+        TXT_Ocupado = new javax.swing.JTextField();
+        TXT_Mantenimiento = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(100, 100));
@@ -229,7 +235,7 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
         });
 
         jp_CLiente.setBackground(new java.awt.Color(0, 102, 153));
-        jp_CLiente.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "Datos del Cliente", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 24), new java.awt.Color(204, 204, 204))); // NOI18N
+        jp_CLiente.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "Datos del Cliente", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 18), new java.awt.Color(204, 204, 204))); // NOI18N
 
         jLabel4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
@@ -247,7 +253,7 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
 
         TXTDoc_Identidad_Cliente.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         TXTDoc_Identidad_Cliente.setForeground(new java.awt.Color(0, 0, 0));
-        TXTDoc_Identidad_Cliente.setText("jTextField1");
+        TXTDoc_Identidad_Cliente.setText(" ");
         TXTDoc_Identidad_Cliente.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 TXTDoc_Identidad_ClienteKeyTyped(evt);
@@ -441,7 +447,7 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
         );
 
         jPanel3.setBackground(new java.awt.Color(0, 102, 153));
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createCompoundBorder(), "Datos de la Habitación", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 24), new java.awt.Color(204, 204, 204))); // NOI18N
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED), "Datos de la Habitación", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 18), new java.awt.Color(204, 204, 204))); // NOI18N
         jPanel3.setForeground(new java.awt.Color(153, 153, 153));
 
         jLabel17.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -500,7 +506,7 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
             }
         });
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(0, 102, 153));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED), "Tarifa", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14), new java.awt.Color(0, 0, 0))); // NOI18N
 
         GpPorTarifa.add(jRadioButton1);
@@ -555,7 +561,7 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
                 .addGap(0, 6, Short.MAX_VALUE))
         );
 
-        jPanel2.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel2.setBackground(new java.awt.Color(0, 102, 153));
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED), "Fecha Inicio Alquiler", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14), new java.awt.Color(0, 0, 0))); // NOI18N
 
         CBO_H_Ingreso1.setBackground(new java.awt.Color(255, 255, 255));
@@ -592,7 +598,7 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel5.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel5.setBackground(new java.awt.Color(0, 102, 153));
         jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED), "Fecha Termino Alquiler", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14), new java.awt.Color(0, 0, 0))); // NOI18N
 
         CBO_H_Salida_1.setBackground(new java.awt.Color(255, 255, 255));
@@ -704,7 +710,7 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
         );
 
         jPanel4.setBackground(new java.awt.Color(0, 102, 153));
-        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createCompoundBorder(), "Foto de la Habitación", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 24), new java.awt.Color(204, 204, 204))); // NOI18N
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createCompoundBorder(), "Foto de la Habitación", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 18), new java.awt.Color(204, 204, 204))); // NOI18N
 
         Lb_Foto.setMaximumSize(new java.awt.Dimension(50, 16));
         Lb_Foto.setMinimumSize(new java.awt.Dimension(50, 16));
@@ -719,28 +725,6 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(Lb_Foto, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-
-        jTable_RegistroCliente.setBackground(new java.awt.Color(0, 102, 153));
-        jTable_RegistroCliente.setForeground(new java.awt.Color(0, 0, 0));
-        jTable_RegistroCliente.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jTable_RegistroCliente.setSelectionBackground(new java.awt.Color(255, 255, 255));
-        jTable_RegistroCliente.setSelectionForeground(new java.awt.Color(0, 0, 0));
-        jTable_RegistroCliente.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jTable_RegistroClienteMouseClicked(evt);
-            }
-        });
-        jScrollPane1.setViewportView(jTable_RegistroCliente);
 
         jp_foder.setBackground(new java.awt.Color(0, 0, 0));
 
@@ -877,6 +861,94 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
             .addGap(0, 38, Short.MAX_VALUE)
         );
 
+        jPanel8.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Habitacion", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 18), new java.awt.Color(0, 0, 0))); // NOI18N
+
+        jTable_RegistroCliente.setBackground(new java.awt.Color(204, 204, 204));
+        jTable_RegistroCliente.setForeground(new java.awt.Color(0, 0, 0));
+        jTable_RegistroCliente.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jTable_RegistroCliente.setSelectionBackground(new java.awt.Color(255, 255, 255));
+        jTable_RegistroCliente.setSelectionForeground(new java.awt.Color(102, 102, 102));
+        jTable_RegistroCliente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable_RegistroClienteMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(jTable_RegistroCliente);
+
+        jLabel11.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel11.setText("Disponible");
+
+        jLabel12.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel12.setText("Ocupado");
+
+        jLabel13.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel13.setText("Mantenimiento");
+
+        TXT_Disponible.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        TXT_Disponible.setForeground(new java.awt.Color(0, 0, 0));
+        TXT_Disponible.setText("jTextField1");
+
+        TXT_Ocupado.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        TXT_Ocupado.setForeground(new java.awt.Color(0, 0, 0));
+        TXT_Ocupado.setText("jTextField1");
+
+        TXT_Mantenimiento.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        TXT_Mantenimiento.setForeground(new java.awt.Color(0, 0, 0));
+        TXT_Mantenimiento.setText("jTextField1");
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(57, 57, 57)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(TXT_Disponible, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TXT_Ocupado, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TXT_Mantenimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(85, Short.MAX_VALUE))
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(TXT_Disponible, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(TXT_Ocupado, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(TXT_Mantenimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 12, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -884,15 +956,13 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
             .addComponent(jp_foder, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jp_CLiente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 817, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jp_CLiente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jp_separador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -905,19 +975,18 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(57, 57, 57)
+                        .addComponent(jp_separador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jp_CLiente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(57, 57, 57)
-                        .addComponent(jp_separador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 284, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jp_foder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jp_separador2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1226,7 +1295,7 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
     void AutoAjustar_Columnas() {
         //Establer Anchos de Columnas
         //Definir el Tamaño de cado Columna del control (JTable):JTable_RegistroNotas
-        int[] Anchos = {50, 200, 200, 150, 150, 100, 100, 100, 200, 250, 100};
+        int[] Anchos = {80, 50, 100, 150};
 
         //Recorrer el numero de columnas del objeto JTable 
         for (int Columna = 0; Columna < this.jTable_RegistroCliente.getColumnCount(); Columna++) {
@@ -1241,120 +1310,140 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
         this.jTable_RegistroCliente.setShowHorizontalLines(true);
     }
 
-    //Crear Método Cargar_Fila
-    void Cargar_Fila() {
-        //DECLARAR UNA VARIABLE DE TIPO ENTERO, OBTENER FILA SELECCIONADA DEL CONTROL JTABLE
-        int Seleccion = this.jTable_RegistroCliente.getSelectedRow();
-
-        //Cargar Datos en Controles
-        this.Lb_CodCliente.setText(this.jTable_RegistroCliente.getValueAt(Seleccion, 0).toString());
-        this.Lb_Apellidos_Cliente.setText(this.jTable_RegistroCliente.getValueAt(Seleccion, 1).toString());
-        this.Lb_Nombre_Cliente.setText(this.jTable_RegistroCliente.getValueAt(Seleccion, 2).toString());
-        this.CBO_DocIdentidad.setSelectedItem(this.jTable_RegistroCliente.getValueAt(Seleccion, 3).toString());
-        this.TXTDoc_Identidad_Cliente.setText(this.jTable_RegistroCliente.getValueAt(Seleccion, 4).toString());
-        this.Lb_Nacionalidad_Cliente.setText(this.jTable_RegistroCliente.getValueAt(Seleccion, 5).toString());
-        this.Lb_Ubigeo.setText(this.jTable_RegistroCliente.getValueAt(Seleccion, 6).toString());
-        this.Lb_Direccion_Cliente.setText(this.jTable_RegistroCliente.getValueAt(Seleccion, 7).toString());
-        this.CBO_Sede.setSelectedItem(this.jTable_RegistroCliente.getValueAt(Seleccion, 10).toString());
-        this.CBO_TipoHabitacion.setSelectedItem(this.jTable_RegistroCliente.getValueAt(Seleccion, 11).toString());
-        this.CBO_Piso.setSelectedItem(this.jTable_RegistroCliente.getValueAt(Seleccion, 11).toString());
-        this.CBO_N_Habitacion.setSelectedItem(this.jTable_RegistroCliente.getValueAt(Seleccion, 11).toString());
-       // this.jD_Fec_Inicio.setToolTipText(this.jTable_RegistroCliente.getValueAt(Seleccion, 15).toString());
-//        this.Lb_Ubigeo.setText(this.jTable_RegistroCliente.getValueAt(Seleccion, 16).toString());
-//        this.Lb_Direccion_Cliente.setText(this.jTable_RegistroCliente.getValueAt(Seleccion, 17).toString());
-//        this.CBO_Sede.setSelectedItem(this.jTable_RegistroCliente.getValueAt(Seleccion, 18).toString());
-//        this.CBO_TipoHabitacion.setSelectedItem(this.jTable_RegistroCliente.getValueAt(Seleccion, 19).toString());
-    }
-
-    //Crear el metodo local: guardar fichero
-    void Guardar_Fichero() {
-        //crear controlador de Errores
-        try {
-            //Establecer ruta del Archivo de texto a escribir secuencia de datos
-            FileWriter Guardar = new FileWriter(Directorio);
-
-            //Recorrer filas de modelos de datos
-            for (int i = 0; i < this.jTable_RegistroCliente.getRowCount(); i++) {
-                //Escribir secuencia de datos
-                Guardar.write(Modelo.getValueAt(i, 0).toString() + "\n");
-                Guardar.write(Modelo.getValueAt(i, 1).toString() + "\n");
-                Guardar.write(Modelo.getValueAt(i, 2).toString() + "\n");
-                Guardar.write(Modelo.getValueAt(i, 3).toString() + "\n");
-                Guardar.write(Modelo.getValueAt(i, 4).toString() + "\n");
-                Guardar.write(Modelo.getValueAt(i, 5).toString() + "\n");
-                Guardar.write(Modelo.getValueAt(i, 6).toString() + "\n");
-                Guardar.write(Modelo.getValueAt(i, 7).toString() + "\n");
-                Guardar.write(Modelo.getValueAt(i, 8).toString() + "\n");
-                Guardar.write(Modelo.getValueAt(i, 9).toString() + "\n");
-                Guardar.write(Modelo.getValueAt(i, 10).toString() + "\n");
-                Guardar.write(Modelo.getValueAt(i, 11).toString() + "\n");
-                Guardar.write(Modelo.getValueAt(i, 12).toString() + "\n");
-                Guardar.write(Modelo.getValueAt(i, 13).toString() + "\n");
-                Guardar.write(Modelo.getValueAt(i, 14).toString() + "\n");
-                Guardar.write(Modelo.getValueAt(i, 15).toString() + "\n");
-                Guardar.write(Modelo.getValueAt(i, 16).toString() + "\n");
-                Guardar.write(Modelo.getValueAt(i, 17).toString() + "\n");
-                Guardar.write(Modelo.getValueAt(i, 18).toString() + "\n");
-                Guardar.write(Modelo.getValueAt(i, 19).toString() + "\n");
-                Guardar.write(Modelo.getValueAt(i, 20).toString() + "\n");
-
-            }
-            //Cerrar el Archivo de Texto
-            Guardar.close();
-
-            //Mensaje de informaccio
-            JOptionPane.showMessageDialog(null, "Registro Guardado con éxito", this.getTitle(),
-                    JOptionPane.INFORMATION_MESSAGE);
-
-        } catch (Exception Error) {
-            //mostrar mensaje de error
-            JOptionPane.showMessageDialog(null, "Error" + Error.getMessage(), this.getTitle(),
-                    JOptionPane.ERROR_MESSAGE);
-
-        }
-    }
-
-    //Crear metodo leer datos
-    void Leer_Datos() {
-        //Declarar variable de tipo string(cadena de texto)
-        String Codigo, Apellido, Nombres, Tipo_DocIdentidad, N_DocIdentidad, Nacionalidad, Distrito, Direccion, Codigo_Empleado, Datos_Empleado, Sede, Tipo_Habitacion;
-
-        //Obtener el Nombre del Archivo de Texto
-        File Leer_Doc = new File(Directorio);
-
-        //Crear Controlador de Error
-        try {
-            //Leer Documento(Nombre del Archivo  
-            Scanner Linea = new Scanner(Leer_Doc);
-
-            //Crear Estructura repetitiva(Bucle):while(Leer lineas del archivo)
-            while (Linea.hasNextLine()) {
-
-                //Leer Documento(Nombre del Archivo                  
-                Codigo = Linea.nextLine();
-                Apellido = Linea.nextLine();
-                Nombres = Linea.nextLine();
-                Tipo_DocIdentidad = Linea.nextLine();
-                N_DocIdentidad = Linea.nextLine();
-                Nacionalidad = Linea.nextLine();
-                Distrito = Linea.nextLine();
-                Direccion = Linea.nextLine();
-                Codigo_Empleado = Linea.nextLine();
-                Datos_Empleado = Linea.nextLine();
-                Sede = Linea.nextLine();
-                Tipo_Habitacion = Linea.nextLine();
-
-                //Agregar Filas al Metodoo de datos del jtable
-                Modelo.addRow(new Object[]{Codigo, Apellido, Nombres, Tipo_DocIdentidad, N_DocIdentidad, Nacionalidad, Distrito, Direccion, Codigo_Empleado,
-                    Datos_Empleado, Sede, Tipo_Habitacion});
-            }
-        } catch (Exception Error) {
-            //Montrar Error
-            JOptionPane.showMessageDialog(null, "Error" + Error.getMessage(), this.getTitle(),
-                    JOptionPane.ERROR_MESSAGE);
-        }
-    }
-
+//    //Crear Método Cargar_Fila
+//    void Cargar_Fila() {
+//        //DECLARAR UNA VARIABLE DE TIPO ENTERO, OBTENER FILA SELECCIONADA DEL CONTROL JTABLE
+//        int Seleccion = this.jTable_RegistroCliente.getSelectedRow();
+//
+//        //Cargar Datos en Controles
+//        this.Lb_CodCliente.setText(this.jTable_RegistroCliente.getValueAt(Seleccion, 0).toString());
+//        this.Lb_Apellidos_Cliente.setText(this.jTable_RegistroCliente.getValueAt(Seleccion, 1).toString());
+//        this.Lb_Nombre_Cliente.setText(this.jTable_RegistroCliente.getValueAt(Seleccion, 2).toString());
+//        this.CBO_DocIdentidad.setSelectedItem(this.jTable_RegistroCliente.getValueAt(Seleccion, 3).toString());
+//        this.TXTDoc_Identidad_Cliente.setText(this.jTable_RegistroCliente.getValueAt(Seleccion, 4).toString());
+//        this.Lb_Nacionalidad_Cliente.setText(this.jTable_RegistroCliente.getValueAt(Seleccion, 5).toString());
+//        this.Lb_Ubigeo.setText(this.jTable_RegistroCliente.getValueAt(Seleccion, 6).toString());
+//        this.Lb_Direccion_Cliente.setText(this.jTable_RegistroCliente.getValueAt(Seleccion, 7).toString());
+//        this.CBO_Sede.setSelectedItem(this.jTable_RegistroCliente.getValueAt(Seleccion, 10).toString());
+//        this.CBO_TipoHabitacion.setSelectedItem(this.jTable_RegistroCliente.getValueAt(Seleccion, 11).toString());
+//        this.CBO_Piso.setSelectedItem(this.jTable_RegistroCliente.getValueAt(Seleccion, 11).toString());
+//        this.CBO_N_Habitacion.setSelectedItem(this.jTable_RegistroCliente.getValueAt(Seleccion, 11).toString());
+//       // this.jD_Fec_Inicio.setToolTipText(this.jTable_RegistroCliente.getValueAt(Seleccion, 15).toString());
+////        this.Lb_Ubigeo.setText(this.jTable_RegistroCliente.getValueAt(Seleccion, 16).toString());
+////        this.Lb_Direccion_Cliente.setText(this.jTable_RegistroCliente.getValueAt(Seleccion, 17).toString());
+////        this.CBO_Sede.setSelectedItem(this.jTable_RegistroCliente.getValueAt(Seleccion, 18).toString());
+////        this.CBO_TipoHabitacion.setSelectedItem(this.jTable_RegistroCliente.getValueAt(Seleccion, 19).toString());
+//    }
+//    //Crear el metodo local: guardar fichero
+//    void Guardar_Fichero() {
+//        //crear controlador de Errores
+//        try {
+//            //Establecer ruta del Archivo de texto a escribir secuencia de datos
+//            FileWriter Guardar = new FileWriter(Directorio);
+//
+//            //Recorrer filas de modelos de datos
+//            for (int i = 0; i < this.jTable_RegistroCliente.getRowCount(); i++) {
+//                //Escribir secuencia de datos
+//                Guardar.write(Modelo.getValueAt(i, 0).toString() + "\n");
+//                Guardar.write(Modelo.getValueAt(i, 1).toString() + "\n");
+//                Guardar.write(Modelo.getValueAt(i, 2).toString() + "\n");
+//                Guardar.write(Modelo.getValueAt(i, 3).toString() + "\n");
+//                Guardar.write(Modelo.getValueAt(i, 4).toString() + "\n");
+//                Guardar.write(Modelo.getValueAt(i, 5).toString() + "\n");
+//                Guardar.write(Modelo.getValueAt(i, 6).toString() + "\n");
+//                Guardar.write(Modelo.getValueAt(i, 7).toString() + "\n");
+//                Guardar.write(Modelo.getValueAt(i, 8).toString() + "\n");
+//                Guardar.write(Modelo.getValueAt(i, 9).toString() + "\n");
+//                Guardar.write(Modelo.getValueAt(i, 10).toString() + "\n");
+//                Guardar.write(Modelo.getValueAt(i, 11).toString() + "\n");
+//                Guardar.write(Modelo.getValueAt(i, 12).toString() + "\n");
+//                Guardar.write(Modelo.getValueAt(i, 13).toString() + "\n");
+//                Guardar.write(Modelo.getValueAt(i, 14).toString() + "\n");
+//                Guardar.write(Modelo.getValueAt(i, 15).toString() + "\n");
+//                Guardar.write(Modelo.getValueAt(i, 16).toString() + "\n");
+//                Guardar.write(Modelo.getValueAt(i, 17).toString() + "\n");
+//                Guardar.write(Modelo.getValueAt(i, 18).toString() + "\n");
+//                Guardar.write(Modelo.getValueAt(i, 19).toString() + "\n");
+//                Guardar.write(Modelo.getValueAt(i, 20).toString() + "\n");
+//
+//            }
+//            //Cerrar el Archivo de Texto
+//            Guardar.close();
+//
+//            //Mensaje de informaccio
+//            JOptionPane.showMessageDialog(null, "Registro Guardado con éxito", this.getTitle(),
+//                    JOptionPane.INFORMATION_MESSAGE);
+//
+//        } catch (Exception Error) {
+//            //mostrar mensaje de error
+//            JOptionPane.showMessageDialog(null, "Error" + Error.getMessage(), this.getTitle(),
+//                    JOptionPane.ERROR_MESSAGE);
+//
+//        }
+//    }
+//    //Crear metodo leer datos
+//    void Leer_Datos() {
+//        //Declarar variable de tipo string(cadena de texto)
+//        String Codigo, Apellido, Nombres, Tipo_DocIdentidad, N_DocIdentidad, Nacionalidad, Distrito, Direccion, Codigo_Empleado, Datos_Empleado, Sede, Tipo_Habitacion;
+//
+//        //Obtener el Nombre del Archivo de Texto
+//        File Leer_Doc = new File(Directorio);
+//
+//        //Crear Controlador de Error
+//        try {
+//            //Leer Documento(Nombre del Archivo  
+//            Scanner Linea = new Scanner(Leer_Doc);
+//
+//            //Crear Estructura repetitiva(Bucle):while(Leer lineas del archivo)
+//            while (Linea.hasNextLine()) {
+//
+//                //Leer Documento(Nombre del Archivo                  
+//                Codigo = Linea.nextLine();
+//                Apellido = Linea.nextLine();
+//                Nombres = Linea.nextLine();
+//                Tipo_DocIdentidad = Linea.nextLine();
+//                N_DocIdentidad = Linea.nextLine();
+//                Nacionalidad = Linea.nextLine();
+//                Distrito = Linea.nextLine();
+//                Direccion = Linea.nextLine();
+//                Codigo_Empleado = Linea.nextLine();
+//                Datos_Empleado = Linea.nextLine();
+//                Sede = Linea.nextLine();
+//                Tipo_Habitacion = Linea.nextLine();
+//
+//                //Agregar Filas al Metodoo de datos del jtable
+//                Modelo.addRow(new Object[]{Codigo, Apellido, Nombres, Tipo_DocIdentidad, N_DocIdentidad, Nacionalidad, Distrito, Direccion, Codigo_Empleado,
+//                    Datos_Empleado, Sede, Tipo_Habitacion});
+//            }
+//        } catch (Exception Error) {
+//            //Montrar Error
+//            JOptionPane.showMessageDialog(null, "Error" + Error.getMessage(), this.getTitle(),
+//                    JOptionPane.ERROR_MESSAGE);
+//        }
+//    }
+//    //Crear metodo local situacion_Estudiantes
+//    void Situacion_Habitacion() {
+//        if (this.TXT_Disponible.getText().length() > 0) {
+//            //capturar el promedio
+//            int Situacion = Integer.parseInt(this.TXT_Disponible.getText());
+//
+//            //EValuar si el promedio final es mayor o igual a 13
+//            if (Situacion >= 13) {
+//                //Establecer situacion del estudiante como APROBADO
+//                this.Lb_Situacion.setText("APROBADO");
+//
+//                //Asigna color a la etique label :azul
+//                this.Lb_Situacion.setForeground(Color.BLUE);
+//            } else {
+//                //Establecer situacion del estudiante DESAPROBADO
+//                this.Lb_Situacion.setText("DESAPROBADO");
+//
+//                //Asignar color a la etiqueta label : rojo
+//                this.Lb_Situacion.setForeground(Color.red);
+//            }
+//
+//        }
+//    }
     //CREAR EL METODO SALIR
     void Salir() {
         //DECLARAMOS LA VARIABLE DE TIPO ENTERO
@@ -1385,6 +1474,8 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
         //this.Cargar_TipoHabitacion(Directorio_Habitacion);
 
         CBO_DocIdentidad.setSelectedIndex(0);
+
+
     }//GEN-LAST:event_formWindowOpened
 
     private void BTN_SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_SalirActionPerformed
@@ -1442,6 +1533,7 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
     }//GEN-LAST:event_BTN_BuscarCliente1ActionPerformed
 
     private void BTN_GuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_GuardarActionPerformed
+
         // TODO add your handling code here:
         // Declarar una vaariable de tipo entero
         int Rpta;
@@ -1484,11 +1576,43 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
                     this.getTitle(), JOptionPane.ERROR_MESSAGE);
 
         }
+        //Evaluar si el codigo del Estudiante ha sido generado
+        if (this.CBO_DocIdentidad.getSelectedIndex() == 0) {
+            //Mostrar Mensaje de informacion
+            JOptionPane.showMessageDialog(null, "Debe Seleccionar el Documento de Identidad", this.getTitle(),
+                    JOptionPane.INFORMATION_MESSAGE);
+            this.CBO_DocIdentidad.requestFocus();
+
+        } //Evaluar si el Usuario a Ingresasdo los Apellidos del Estudiante
+//        else if (this.TXTDoc_Identidad_Cliente.getText().length() == 0) {
+//            //Mostrar Mensaje de Información
+//            JOptionPane.showMessageDialog(null, "Debe Ingresar los Apellidos de Estudiante", this.getTitle(),
+//                    JOptionPane.INFORMATION_MESSAGE);
+//
+//            //Ubicar el Cursor en el Control:TXTAPELLIDOS
+//            this.TXTApellidos.requestFocus();
+//        } //Evaluar si el Usuario a Ingresado los Nombres del Estudiante
+//        else if (this.TXTNombres.getText().length() == 0) {
+//            //Montrar Mensaje de Informacion
+//            JOptionPane.showMessageDialog(null, "Deebe Ingresar los Nombres del Estudiante", this.getTitle(),
+//                    JOptionPane.INFORMATION_MESSAGE);
+//
+//            //Ubicar cursor en el control txtNombre
+//            this.TXTNombres.requestFocus();
+//        } //Evaluar si el Usuario a Seleccionado uno de los cursos
+//        else if (this.CBO_Curso.getSelectedIndex() == 0) {
+//            //Monstrar mensaje de informacion
+//            JOptionPane.showMessageDialog(null, "Debe Seleccionar el Nombre del Curso a Evaluar", this.getTitle(),
+//                    JOptionPane.INFORMATION_MESSAGE);
+//
+//            //Ubicar cursor en el control cbo_Curso
+//            this.CBO_Curso.requestFocus();
+//        }
     }//GEN-LAST:event_BTN_GuardarActionPerformed
 
     private void jTable_RegistroClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable_RegistroClienteMouseClicked
 
-        this.Cargar_Fila();
+        // this.Cargar_Fila();
     }//GEN-LAST:event_jTable_RegistroClienteMouseClicked
 
     private void BTN_NuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_NuevoActionPerformed
@@ -1590,10 +1714,16 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
     private javax.swing.JTextField TXTDoc_Identidad_Cliente;
     private javax.swing.JTextField TXTImporte;
     private javax.swing.JTextField TXTTarifa;
+    private javax.swing.JTextField TXT_Disponible;
+    private javax.swing.JTextField TXT_Mantenimiento;
+    private javax.swing.JTextField TXT_Ocupado;
     private com.toedter.calendar.JDateChooser jD_Fec_Inicio;
     private com.toedter.calendar.JDateChooser jD_Fec_Termino;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
@@ -1614,6 +1744,7 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane1;
