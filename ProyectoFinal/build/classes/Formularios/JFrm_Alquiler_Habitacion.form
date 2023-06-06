@@ -284,7 +284,7 @@
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="Lb_Distrito_Cliente" max="32767" attributes="0"/>
+                                  <Component id="Lb_Ubigeo" max="32767" attributes="0"/>
                                   <Group type="102" attributes="0">
                                       <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -340,7 +340,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="Lb_Nacionalidad_Cliente" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
-                          <Component id="Lb_Distrito_Cliente" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                          <Component id="Lb_Ubigeo" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -482,10 +482,10 @@
                   <Color blue="0" green="0" red="0" type="rgb"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="4"/>
-                <Property name="text" type="java.lang.String" value="Distrito:"/>
+                <Property name="text" type="java.lang.String" value="Ubigeo"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="Lb_Distrito_Cliente">
+            <Component class="javax.swing.JLabel" name="Lb_Ubigeo">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial" size="13" style="0"/>
@@ -494,7 +494,7 @@
                   <Color blue="0" green="0" red="0" type="rgb"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="2"/>
-                <Property name="text" type="java.lang.String" value="Lb_Distrito"/>
+                <Property name="text" type="java.lang.String" value="Lb_Ubigeo"/>
               </Properties>
             </Component>
           </SubComponents>

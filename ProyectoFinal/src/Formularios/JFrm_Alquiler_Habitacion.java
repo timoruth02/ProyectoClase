@@ -180,7 +180,7 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         Lb_Nacionalidad_Cliente = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        Lb_Distrito_Cliente = new javax.swing.JLabel();
+        Lb_Ubigeo = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
@@ -330,12 +330,12 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel7.setText("Distrito:");
+        jLabel7.setText("Ubigeo");
 
-        Lb_Distrito_Cliente.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
-        Lb_Distrito_Cliente.setForeground(new java.awt.Color(0, 0, 0));
-        Lb_Distrito_Cliente.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        Lb_Distrito_Cliente.setText("Lb_Distrito");
+        Lb_Ubigeo.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
+        Lb_Ubigeo.setForeground(new java.awt.Color(0, 0, 0));
+        Lb_Ubigeo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        Lb_Ubigeo.setText("Lb_Ubigeo");
 
         javax.swing.GroupLayout pl_InformacionClienteLayout = new javax.swing.GroupLayout(pl_InformacionCliente);
         pl_InformacionCliente.setLayout(pl_InformacionClienteLayout);
@@ -351,7 +351,7 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
                             .addComponent(Lb_Nacionalidad_Cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(pl_InformacionClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Lb_Distrito_Cliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Lb_Ubigeo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(pl_InformacionClienteLayout.createSequentialGroup()
                                 .addComponent(jLabel7)
                                 .addGap(0, 0, Short.MAX_VALUE))))
@@ -394,7 +394,7 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pl_InformacionClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Lb_Nacionalidad_Cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Lb_Distrito_Cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Lb_Ubigeo, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -936,7 +936,7 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
         this.Lb_Nombre_Cliente.setText("");
         this.TXTDoc_Identidad_Cliente.setText("");
         this.Lb_Nacionalidad_Cliente.setText("");
-        this.Lb_Distrito_Cliente.setText("");
+        this.Lb_Ubigeo.setText("");
         this.Lb_Direccion_Cliente.setText("");
 
         //LIMPIAR LAS CAJAS DE TEXTO 
@@ -1192,7 +1192,7 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
                 this.Lb_Apellidos_Cliente.setText(Clientes[Fila][1]);
                 this.Lb_Nombre_Cliente.setText(Clientes[Fila][2]);
                 this.Lb_Nacionalidad_Cliente.setText(Clientes[Fila][5]);
-                this.Lb_Distrito_Cliente.setText(Clientes[Fila][6]);
+                this.Lb_Ubigeo.setText(Clientes[Fila][6]);
                 this.Lb_Direccion_Cliente.setText(Clientes[Fila][7]);
 
                 //ASIGNAR VALOR A LA VARIABLE FILAENCONTRADA DE 1
@@ -1215,7 +1215,7 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
             this.Lb_Apellidos_Cliente.setText("");
             this.Lb_Nombre_Cliente.setText("");
             this.Lb_Nacionalidad_Cliente.setText("");
-            this.Lb_Distrito_Cliente.setText("");
+            this.Lb_Ubigeo.setText("");
             this.Lb_Direccion_Cliente.setText("");
 
             //UBICAR CURSOR EN EL CONTROL TXT RUC_CLIENTE
@@ -1255,7 +1255,7 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
         this.CBO_DocIdentidad.setSelectedItem(this.jTable_RegistroCliente.getValueAt(Seleccion, 3).toString());
         this.TXTDoc_Identidad_Cliente.setText(this.jTable_RegistroCliente.getValueAt(Seleccion, 4).toString());
         this.Lb_Nacionalidad_Cliente.setText(this.jTable_RegistroCliente.getValueAt(Seleccion, 5).toString());
-        this.Lb_Distrito_Cliente.setText(this.jTable_RegistroCliente.getValueAt(Seleccion, 6).toString());
+        this.Lb_Ubigeo.setText(this.jTable_RegistroCliente.getValueAt(Seleccion, 6).toString());
         this.Lb_Direccion_Cliente.setText(this.jTable_RegistroCliente.getValueAt(Seleccion, 7).toString());
         this.CBO_Sede.setSelectedItem(this.jTable_RegistroCliente.getValueAt(Seleccion, 10).toString());
         this.CBO_TipoHabitacion.setSelectedItem(this.jTable_RegistroCliente.getValueAt(Seleccion, 11).toString());
@@ -1418,6 +1418,17 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
                 Lb_Nacionalidad_Cliente.setText(DataEncontradaNAC.getGentilicio_Nac());
 
             }
+            
+            UbigeoDB Ubigeo_DB = new UbigeoDB();
+            ArrayList<UbigeoEntity> Listaubigeo = Ubigeo_DB.getBuscarUbigeo(DataEncontrada.getCodUbigeo());
+            
+            if(Listaubigeo != null && Listaubigeo.size()>0){
+                
+            UbigeoEntity DataEncontradaUbi = Listaubigeo.get(0);
+            Lb_Ubigeo.setText(DataEncontradaUbi.getDistrito());
+            Lb_Ubigeo.setText(DataEncontradaUbi.getDistrito());
+            Lb_Ubigeo.setText(DataEncontradaUbi.getDepartamento());
+            }
 
             pl_InformacionCliente.setVisible(true);
         } else {
@@ -1475,7 +1486,7 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
                 informacion[3] = this.CBO_DocIdentidad.getSelectedItem().toString();
                 informacion[4] = this.TXTDoc_Identidad_Cliente.getText();
                 informacion[5] = this.Lb_Nacionalidad_Cliente.getText();
-                informacion[6] = this.Lb_Distrito_Cliente.getText();
+                informacion[6] = this.Lb_Ubigeo.getText();
                 informacion[7] = this.Lb_Direccion_Cliente.getText();
 
                 //Agregar Datos al DefaultTableModel(Modelo Tabla)Modelo
@@ -1594,10 +1605,10 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
     private javax.swing.JLabel Lb_Apellidos_Cliente;
     private javax.swing.JLabel Lb_CodCliente;
     private javax.swing.JLabel Lb_Direccion_Cliente;
-    private javax.swing.JLabel Lb_Distrito_Cliente;
     private javax.swing.JLabel Lb_Foto;
     private javax.swing.JLabel Lb_Nacionalidad_Cliente;
     private javax.swing.JLabel Lb_Nombre_Cliente;
+    private javax.swing.JLabel Lb_Ubigeo;
     private javax.swing.JTextField TXTDoc_Identidad_Cliente;
     private javax.swing.JTextField TXTImporte;
     private javax.swing.JTextField TXTTarifa_Noche;
