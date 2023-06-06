@@ -102,7 +102,6 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
 //        SedeDB sede = new SedeDB();
 //        TXTTarifa_Noche.setText(sede.elementoSede("SEDE1").getNombre_Sede());
         // sede.elementoSede("SEDE1"). ;
-
         //combobox Piso
         ListaNivel = Niveldb.getCodNivelItems();
 
@@ -1408,7 +1407,18 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
             Lb_Apellidos_Cliente.setText(DataEncontrada.getApellidos());
             Lb_Nombre_Cliente.setText(DataEncontrada.getNombres());
             Lb_Direccion_Cliente.setText(DataEncontrada.getDireccion());
-            Lb_Nacionalidad_Cliente.setText(DataEncontrada.getCodNac());
+
+            NacionalidadDB Nac_DB = new NacionalidadDB();
+
+            ArrayList<NacionalidadEntity> Listanacionalidad = Nac_DB.GetBuscarNacionalidad(DataEncontrada.getCodNac());
+
+            if (Listanacionalidad != null && Listanacionalidad.size() > 0) {
+                
+                NacionalidadEntity DataEncontradaNAC = Listanacionalidad.get(0);
+                Lb_Nacionalidad_Cliente.setText(DataEncontradaNAC.getGentilicio_Nac());
+
+            }
+
             pl_InformacionCliente.setVisible(true);
         } else {
             pl_InformacionCliente.setVisible(false);
