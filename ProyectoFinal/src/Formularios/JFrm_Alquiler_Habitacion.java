@@ -1005,7 +1005,9 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
         this.Lb_Ubigeo.setText("");
         this.Lb_Direccion_Cliente.setText("");
         this.TXTTarifa.setText("");
-
+        this.TXT_Disponible.setText("");
+        this.TXT_Mantenimiento.setText("");
+        this.TXT_Ocupado.setText("");
         //LIMPIAR LAS CAJAS DE TEXTO 
         this.TXTImporte.setText("");
     }
@@ -1421,7 +1423,7 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
 //                    JOptionPane.ERROR_MESSAGE);
 //        }
 //    }
-//    //Crear metodo local situacion_Estudiantes
+//    //Crear metodo local situacion_Estudiantes ******************
 //    void Situacion_Habitacion() {
 //        if (this.TXT_Disponible.getText().length() > 0) {
 //            //capturar el promedio
