@@ -136,15 +136,14 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
         Modelo.addColumn("Sede");
         Modelo.addColumn("Tipo de Habitación");
         Modelo.addColumn("piso");
-        // Modelo.addColumn("N° de Habitación");
-        // Modelo.addColumn("Tirafa por hora");
-        // Modelo.addColumn("Tarifa por noche");
-        // Modelo.addColumn("Fecha de Alquiler");
-        // Modelo.addColumn("Hora de Ingreso");
-        // Modelo.addColumn("Fec. Termino de Alquiler");
-        // Modelo.addColumn("Hora de Salida");
-        // Modelo.addColumn("Importe");
-        // Modelo.addColumn("Estado Alquiler");
+        Modelo.addColumn("N° de Habitación");
+        Modelo.addColumn("Tirafa por hora");
+        Modelo.addColumn("Tarifa por noche");
+        Modelo.addColumn("Fecha de Alquiler");
+        Modelo.addColumn("Hora de Ingreso");
+        Modelo.addColumn("Fec. Termino de Alquiler");
+        Modelo.addColumn("Hora de Salida");
+        Modelo.addColumn("Importe");
 
         //Establecer el Modelo al control Jtable_RegistroNotas
         this.jTable_RegistroCliente.setModel(Modelo);
@@ -189,7 +188,7 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jRadioButton1 = new javax.swing.JRadioButton();
         jRadioButton2 = new javax.swing.JRadioButton();
-        TXTTarifa_Noche = new javax.swing.JTextField();
+        TXTTarifa = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jD_Fec_Inicio = new com.toedter.calendar.JDateChooser();
@@ -515,9 +514,9 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
         jRadioButton2.setForeground(new java.awt.Color(0, 0, 0));
         jRadioButton2.setText("Por Noche");
 
-        TXTTarifa_Noche.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        TXTTarifa_Noche.setForeground(new java.awt.Color(0, 0, 0));
-        TXTTarifa_Noche.setText("jTextField1");
+        TXTTarifa.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        TXTTarifa.setForeground(new java.awt.Color(0, 0, 0));
+        TXTTarifa.setText("jTextField1");
 
         jLabel9.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(0, 0, 0));
@@ -535,7 +534,7 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel9)
-                    .addComponent(TXTTarifa_Noche, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(TXTTarifa, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(16, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -547,7 +546,7 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
                     .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(TXTTarifa_Noche, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TXTTarifa, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jRadioButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 6, Short.MAX_VALUE))
         );
@@ -932,6 +931,7 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
         this.Lb_Nacionalidad_Cliente.setText("");
         this.Lb_Ubigeo.setText("");
         this.Lb_Direccion_Cliente.setText("");
+        this.TXTTarifa.setText("");
 
         //LIMPIAR LAS CAJAS DE TEXTO 
         this.TXTImporte.setText("");
@@ -1253,7 +1253,13 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
         this.Lb_Direccion_Cliente.setText(this.jTable_RegistroCliente.getValueAt(Seleccion, 7).toString());
         this.CBO_Sede.setSelectedItem(this.jTable_RegistroCliente.getValueAt(Seleccion, 10).toString());
         this.CBO_TipoHabitacion.setSelectedItem(this.jTable_RegistroCliente.getValueAt(Seleccion, 11).toString());
-
+        this.CBO_Piso.setSelectedItem(this.jTable_RegistroCliente.getValueAt(Seleccion, 11).toString());
+        this.CBO_N_Habitacion.setSelectedItem(this.jTable_RegistroCliente.getValueAt(Seleccion, 11).toString());
+       // this.jD_Fec_Inicio.setToolTipText(this.jTable_RegistroCliente.getValueAt(Seleccion, 15).toString());
+//        this.Lb_Ubigeo.setText(this.jTable_RegistroCliente.getValueAt(Seleccion, 16).toString());
+//        this.Lb_Direccion_Cliente.setText(this.jTable_RegistroCliente.getValueAt(Seleccion, 17).toString());
+//        this.CBO_Sede.setSelectedItem(this.jTable_RegistroCliente.getValueAt(Seleccion, 18).toString());
+//        this.CBO_TipoHabitacion.setSelectedItem(this.jTable_RegistroCliente.getValueAt(Seleccion, 19).toString());
     }
 
     //Crear el metodo local: guardar fichero
@@ -1278,18 +1284,15 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
                 Guardar.write(Modelo.getValueAt(i, 9).toString() + "\n");
                 Guardar.write(Modelo.getValueAt(i, 10).toString() + "\n");
                 Guardar.write(Modelo.getValueAt(i, 11).toString() + "\n");
-                //    Guardar.write(Modelo.getValueAt(i,12).toString()+"\n");
-                //    Guardar.write(Modelo.getValueAt(i,13).toString()+"\n");
-                //    Guardar.write(Modelo.getValueAt(i,14).toString()+"\n");
-                //    Guardar.write(Modelo.getValueAt(i,15).toString()+"\n");
-                //    Guardar.write(Modelo.getValueAt(i,16).toString()+"\n");
-                //   Guardar.write(Modelo.getValueAt(i,17).toString()+"\n");
-                //    Guardar.write(Modelo.getValueAt(i,18).toString()+"\n");
-                //    Guardar.write(Modelo.getValueAt(i,19).toString()+"\n");
-                //    Guardar.write(Modelo.getValueAt(i,20).toString()+"\n");
-                //    Guardar.write(Modelo.getValueAt(i,21).toString()+"\n");
-                //    Guardar.write(Modelo.getValueAt(i,22).toString()+"\n");
-                //    Guardar.write(Modelo.getValueAt(i,23).toString()+"\n");
+                Guardar.write(Modelo.getValueAt(i, 12).toString() + "\n");
+                Guardar.write(Modelo.getValueAt(i, 13).toString() + "\n");
+                Guardar.write(Modelo.getValueAt(i, 14).toString() + "\n");
+                Guardar.write(Modelo.getValueAt(i, 15).toString() + "\n");
+                Guardar.write(Modelo.getValueAt(i, 16).toString() + "\n");
+                Guardar.write(Modelo.getValueAt(i, 17).toString() + "\n");
+                Guardar.write(Modelo.getValueAt(i, 18).toString() + "\n");
+                Guardar.write(Modelo.getValueAt(i, 19).toString() + "\n");
+                Guardar.write(Modelo.getValueAt(i, 20).toString() + "\n");
 
             }
             //Cerrar el Archivo de Texto
@@ -1391,14 +1394,13 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
     }//GEN-LAST:event_TXTDoc_Identidad_ClienteKeyTyped
 
     private void BTN_BuscarCliente1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_BuscarCliente1ActionPerformed
-        
         //Invocar a la base de datos cliente
         ListaCliente = Cliente_dt.getBuscarCliente(this.TXTDoc_Identidad_Cliente.getText());
 
         if (ListaCliente != null && ListaCliente.size() > 0) {
 
             ClienteEntity DataEncontrada = ListaCliente.get(0);
-            
+
             Lb_CodCliente.setText(DataEncontrada.getCodCliente());
             Lb_Apellidos_Cliente.setText(DataEncontrada.getApellidos());
             Lb_Nombre_Cliente.setText(DataEncontrada.getNombres());
@@ -1410,19 +1412,19 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
             ArrayList<NacionalidadEntity> Listanacionalidad = Nac_DB.GetBuscarNacionalidad(DataEncontrada.getCodNac());
 
             if (Listanacionalidad != null && Listanacionalidad.size() > 0) {
-                
+
                 NacionalidadEntity DataEncontradaNAC = Listanacionalidad.get(0);
                 Lb_Nacionalidad_Cliente.setText(DataEncontradaNAC.getGentilicio_Nac());
             }
-            
+
             //Invocar a la conexion UbigeoDB y UbigeoEntity
             UbigeoDB Ubigeo_DB = new UbigeoDB();
             ArrayList<UbigeoEntity> Listaubigeo = Ubigeo_DB.getBuscarUbigeo(DataEncontrada.getCodUbigeo());
-            
-            if(Listaubigeo != null && Listaubigeo.size()>0){
-                
-            UbigeoEntity DataEncontradaUbi = Listaubigeo.get(0);
-            Lb_Ubigeo.setText(DataEncontradaUbi.getDistrito()+" - "+DataEncontradaUbi.getProvincia()+" - "+DataEncontradaUbi.getDepartamento());
+
+            if (Listaubigeo != null && Listaubigeo.size() > 0) {
+
+                UbigeoEntity DataEncontradaUbi = Listaubigeo.get(0);
+                Lb_Ubigeo.setText(DataEncontradaUbi.getDistrito() + " - " + DataEncontradaUbi.getProvincia() + " - " + DataEncontradaUbi.getDepartamento());
             }
 
             pl_InformacionCliente.setVisible(true);
@@ -1582,7 +1584,7 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
     private javax.swing.JLabel Lb_Ubigeo;
     private javax.swing.JTextField TXTDoc_Identidad_Cliente;
     private javax.swing.JTextField TXTImporte;
-    private javax.swing.JTextField TXTTarifa_Noche;
+    private javax.swing.JTextField TXTTarifa;
     private com.toedter.calendar.JDateChooser jD_Fec_Inicio;
     private com.toedter.calendar.JDateChooser jD_Fec_Termino;
     private javax.swing.JLabel jLabel1;

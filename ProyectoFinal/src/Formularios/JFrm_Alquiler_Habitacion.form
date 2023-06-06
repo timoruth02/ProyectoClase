@@ -808,7 +808,7 @@
                       <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
-                          <Component id="TXTTarifa_Noche" min="-2" pref="100" max="-2" attributes="0"/>
+                          <Component id="TXTTarifa" min="-2" pref="100" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="16" max="32767" attributes="0"/>
                   </Group>
@@ -824,7 +824,7 @@
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="TXTTarifa_Noche" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                          <Component id="TXTTarifa" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                           <Component id="jRadioButton2" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="0" pref="6" max="32767" attributes="0"/>
@@ -864,7 +864,7 @@
                 <Property name="text" type="java.lang.String" value="Por Noche"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="TXTTarifa_Noche">
+            <Component class="javax.swing.JTextField" name="TXTTarifa">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial" size="14" style="1"/>
