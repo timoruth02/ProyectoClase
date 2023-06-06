@@ -131,5 +131,25 @@ public class HabitacionEntity {
     public void setEstado_Habitacion(String Estado_Habitacion) {
         this.Estado_Habitacion = Estado_Habitacion;
     }
+//    ENTIDADES ENLAZADAS  ********************************************************************************************************
+
+    private String Piso = "";
+    private String Tipo = "";
+
+    public String getPiso() {
+        return Piso;
+    }
+
+    public void setPiso(String Piso) {
+        this.Piso = Piso;
+    }
+
+    public String getTipo() {
+        return Tipo;
+    }
+
+    public void setTipo(String Tipo) {
+        this.Tipo = Tipo;
+    }
 
 }

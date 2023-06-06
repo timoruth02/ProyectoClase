@@ -116,38 +116,40 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
         this.getContentPane().setBackground(Color.LIGHT_GRAY);
 
         //Establecer un Nuevo Modelo de la clase :DEfaultTableModel
-        Modelo = new DefaultTableModel() {
-            //Crear funcion para bloquear la Edicion de Celdas
-            public boolean isCellEditable(int row, int column) {
-                //Boquear Edicion 
-                return false;
-            }
-        };
+        //CREO LOS TITULOS DE LA TABLA  *****************************************************************
+        Modelo = new DefaultTableModel();
+        String titulos[] = {"Habitación", "Piso", "Tipo", "Estado"};
+        Modelo.setColumnIdentifiers(titulos);
+        jTable_RegistroCliente.setModel(Modelo);
+//        ************************************************************************************************
 
-        //Establecer Nombre de las Columnas para el control: Jtable_RegistroNotas(a travéz de la variable Modelo)
-        Modelo.addColumn("Código");
-        Modelo.addColumn("Apellidos");
-        Modelo.addColumn("Nombres");
-        Modelo.addColumn("Tipo de Doc. Identidad");
-        Modelo.addColumn("N° Doc. Identidad");
-        Modelo.addColumn("Nacionalidad");
-        Modelo.addColumn("Distrito");
-        Modelo.addColumn("Dirección");
-        Modelo.addColumn("Sede");
-        Modelo.addColumn("Tipo de Habitación");
-        Modelo.addColumn("piso");
-        // Modelo.addColumn("N° de Habitación");
-        // Modelo.addColumn("Tirafa por hora");
-        // Modelo.addColumn("Tarifa por noche");
-        // Modelo.addColumn("Fecha de Alquiler");
-        // Modelo.addColumn("Hora de Ingreso");
-        // Modelo.addColumn("Fec. Termino de Alquiler");
-        // Modelo.addColumn("Hora de Salida");
-        // Modelo.addColumn("Importe");
-        // Modelo.addColumn("Estado Alquiler");
+//        Cargo La Base de Datos *********************************************************************
+        HabitacionDB H_DB = new HabitacionDB();
+        ArrayList<HabitacionEntity> ListaHabitaciones = H_DB.GetCargarHabitaciones();
+//        ************************************************************************************************
 
-        //Establecer el Modelo al control Jtable_RegistroNotas
-        this.jTable_RegistroCliente.setModel(Modelo);
+//        Inserto a las Filas  ********************************************************************************    
+        Object[] Fila = new Object[Modelo.getColumnCount()];
+
+        for (HabitacionEntity item : ListaHabitaciones) {
+            Fila[0] = item.getNumHabitacion();
+            Fila[1] = item.getPiso();
+            Fila[2] = item.getTipo();
+            Fila[3] = item.getEstado_Habitacion();
+            Modelo.addRow(Fila);
+        }
+        // ************************************************************************************************     
+
+//        int cont = 0;
+//        while (cont < ListaHabitaciones.size()) {
+//
+//            Fila[0] = ListaHabitaciones.get(cont).getNumHabitacion();
+//            Fila[1] = ListaHabitaciones.get(cont).getPiso();
+//            Fila[2] = ListaHabitaciones.get(cont).getTipo();
+//            Fila[3] = ListaHabitaciones.get(cont).getEstado_Habitacion();
+//            Modelo.addRow(Fila);
+//            cont += 1;
+//        }
     }
 
     @SuppressWarnings("unchecked")
@@ -1391,14 +1393,14 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
     }//GEN-LAST:event_TXTDoc_Identidad_ClienteKeyTyped
 
     private void BTN_BuscarCliente1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_BuscarCliente1ActionPerformed
-        
+
         //Invocar a la base de datos cliente
         ListaCliente = Cliente_dt.getBuscarCliente(this.TXTDoc_Identidad_Cliente.getText());
 
         if (ListaCliente != null && ListaCliente.size() > 0) {
 
             ClienteEntity DataEncontrada = ListaCliente.get(0);
-            
+
             Lb_CodCliente.setText(DataEncontrada.getCodCliente());
             Lb_Apellidos_Cliente.setText(DataEncontrada.getApellidos());
             Lb_Nombre_Cliente.setText(DataEncontrada.getNombres());
@@ -1410,19 +1412,19 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
             ArrayList<NacionalidadEntity> Listanacionalidad = Nac_DB.GetBuscarNacionalidad(DataEncontrada.getCodNac());
 
             if (Listanacionalidad != null && Listanacionalidad.size() > 0) {
-                
+
                 NacionalidadEntity DataEncontradaNAC = Listanacionalidad.get(0);
                 Lb_Nacionalidad_Cliente.setText(DataEncontradaNAC.getGentilicio_Nac());
             }
-            
+
             //Invocar a la conexion UbigeoDB y UbigeoEntity
             UbigeoDB Ubigeo_DB = new UbigeoDB();
             ArrayList<UbigeoEntity> Listaubigeo = Ubigeo_DB.getBuscarUbigeo(DataEncontrada.getCodUbigeo());
-            
-            if(Listaubigeo != null && Listaubigeo.size()>0){
-                
-            UbigeoEntity DataEncontradaUbi = Listaubigeo.get(0);
-            Lb_Ubigeo.setText(DataEncontradaUbi.getDistrito()+" - "+DataEncontradaUbi.getProvincia()+" - "+DataEncontradaUbi.getDepartamento());
+
+            if (Listaubigeo != null && Listaubigeo.size() > 0) {
+
+                UbigeoEntity DataEncontradaUbi = Listaubigeo.get(0);
+                Lb_Ubigeo.setText(DataEncontradaUbi.getDistrito() + " - " + DataEncontradaUbi.getProvincia() + " - " + DataEncontradaUbi.getDepartamento());
             }
 
             pl_InformacionCliente.setVisible(true);
