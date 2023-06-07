@@ -218,24 +218,25 @@ public class Login extends javax.swing.JFrame {
 
         char[] passwordChars = passTxt.getPassword();
         String password = new String(passwordChars);
-        
+
+   
+
         ListaUsuario_Empleado = usuario_empleadodb.GetBuscarUsuario_Empleado(this.userTxt.getText(), password);
 
-        if(ListaUsuario_Empleado != null && ListaUsuario_Empleado.size() > 0){
-            
-        Usuario_EmpleadoEntity DataUsuario_Empleado = ListaUsuario_Empleado.get(0);
-        
-        Utilidades.setM_UsuarioSistema(DataUsuario_Empleado);
-        
-        
-        
-        JOptionPane.showMessageDialog(null, "Bienvenido al Sistema"+ Utilidades.getM_UsuarioSistema().getApellidos(),"Aviso",0);
-        
-        }else {
+        if (ListaUsuario_Empleado != null && ListaUsuario_Empleado.size() > 0) {
+
+            Usuario_EmpleadoEntity DataUsuario_Empleado = ListaUsuario_Empleado.get(0);
+
+            Utilidades.setM_UsuarioSistema(DataUsuario_Empleado);
+
+            JFrm_Alquiler_Habitacion formulario2 = new JFrm_Alquiler_Habitacion();
+            formulario2.setVisible(true);
+
+        } else {
             javax.swing.JOptionPane.showMessageDialog(this, "Intento de login con los datos:\nUsuario: "
-                + userTxt.getText() + "\nContraseña: " + String.valueOf(passTxt.getPassword()),
-                "LOGIN", javax.swing.JOptionPane.INFORMATION_MESSAGE);
-            
+                    + userTxt.getText() + "\nContraseña: " + String.valueOf(passTxt.getPassword()),
+                    "LOGIN", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+
             JOptionPane.showMessageDialog(null, "Usuario no Encontrado", "Aviso", 0);
         }
     }//GEN-LAST:event_LoginBtnTXTMouseClicked
