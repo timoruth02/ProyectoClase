@@ -4,17 +4,18 @@ import Datos.*;
 import Entidades.*;
 import java.awt.Color;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 public class Login extends javax.swing.JFrame {
 
-    int xMouse , yMouse;
-    
+    int xMouse, yMouse;
+
     //Invocar al sql Usuario_Empleado
     Usuario_EmpleadoDB usuario_empleadodb = new Usuario_EmpleadoDB();
     ArrayList<Usuario_EmpleadoEntity> ListaUsuario_Empleado = new ArrayList<>();
-    
+
     public Login() {
-       initComponents();
+        initComponents();
     }
 
     @SuppressWarnings("unchecked")
@@ -214,12 +215,27 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_LoginBtnTXTMouseEntered
 
     private void LoginBtnTXTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoginBtnTXTMouseClicked
-        javax.swing.JOptionPane.showMessageDialog(this, "Intento de login con los datos:\nUsuario: " +
-            userTxt.getText() + "\nContraseña: " + String.valueOf(passTxt.getPassword()),
-            "LOGIN", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+
+        char[] passwordChars = passTxt.getPassword();
+        String password = new String(passwordChars);
         
-       //  ListaUsuario_Empleado = usuario_empleadodb.GetBuscarUsuario_Empleado(this.userTxt.getText(),this.passTxt.getSize());
-         
+        ListaUsuario_Empleado = usuario_empleadodb.GetBuscarUsuario_Empleado(this.userTxt.getText(), password);
+
+        if(ListaUsuario_Empleado != null && ListaUsuario_Empleado.size() > 0){
+            
+        Usuario_EmpleadoEntity DataUsuario_Empleado = ListaUsuario_Empleado.get(0);
+        
+        userTxt.setText(DataUsuario_Empleado.getCodUsuario());
+        
+        JOptionPane.showMessageDialog(null, "Bienvenido al Sistema","Aviso",0);
+        
+        }else {
+            javax.swing.JOptionPane.showMessageDialog(this, "Intento de login con los datos:\nUsuario: "
+                + userTxt.getText() + "\nContraseña: " + String.valueOf(passTxt.getPassword()),
+                "LOGIN", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+            
+            JOptionPane.showMessageDialog(null, "Usuario no Encontrado", "Aviso", 0);
+        }
     }//GEN-LAST:event_LoginBtnTXTMouseClicked
 
     private void passTxtMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_passTxtMousePressed
