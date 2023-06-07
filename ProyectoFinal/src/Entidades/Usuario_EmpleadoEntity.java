@@ -116,7 +116,6 @@ public class Usuario_EmpleadoEntity {
     public void setApellidos(String Apellidos) {
         this.Apellidos = Apellidos;
     }
-
     public String getNombres() {
         return Nombres;
     }
