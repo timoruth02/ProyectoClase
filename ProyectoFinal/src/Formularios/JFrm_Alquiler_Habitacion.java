@@ -69,7 +69,6 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
 
 //        Login l = new Login();
 //        l.dispose();
-
         String m_Nombres = Utilidades.getM_UsuarioSistema().getNombres();
         String m_Apellidos = Utilidades.getM_UsuarioSistema().getApellidos();
 
@@ -139,19 +138,27 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
 
 //        Cargo La Base de Datos *********************************************************************
         HabitacionDB H_DB = new HabitacionDB();
-        ArrayList<HabitacionEntity> ListaHabitaciones = H_DB.GetCargarHabitaciones();
-//        ************************************************************************************************
 
+//        String CodSede = Utilidades.getM_UsuarioSistema().setSede();
+//
+//        ArrayList<HabitacionEntity> ListaHabitaciones = H_DB.GetCargarHabitaciones(CodSede, "NP002");
+
+        for (Reserva_AlquilerEntity item : Listareserva_alquiler) {
+            CBO_N_Habitacion.addItem(item.getNumAlquiler());
+        }
+        CBO_N_Habitacion.setSelectedIndex(-1);
+
+//        ************************************************************************************************
 //        Inserto a las Filas  ********************************************************************************    
         Object[] Fila = new Object[Modelo.getColumnCount()];
 
-        for (HabitacionEntity item : ListaHabitaciones) {
-            Fila[0] = item.getNumHabitacion();
-            Fila[1] = item.getPiso();
-            Fila[2] = item.getTipo();
-            Fila[3] = item.getEstado_Habitacion();
-            Modelo.addRow(Fila);
-        }
+//        for (HabitacionEntity item : ListaHabitaciones) {
+//            Fila[0] = item.getNumHabitacion();
+//            Fila[1] = item.getPiso();
+//            Fila[2] = item.getTipo();
+//            Fila[3] = item.getEstado_Habitacion();
+//            Modelo.addRow(Fila);
+//        }
         // ************************************************************************************************     
 
 //        int cont = 0;
@@ -841,7 +848,7 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
         );
 
         jPanel8.setBackground(new java.awt.Color(0, 102, 153));
-        jPanel8.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Habitacion", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 18), new java.awt.Color(0, 0, 0))); // NOI18N
+        jPanel8.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Habitacion", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 18), new java.awt.Color(255, 255, 255))); // NOI18N
 
         jTable_RegistroCliente.setBackground(new java.awt.Color(204, 204, 204));
         jTable_RegistroCliente.setForeground(new java.awt.Color(0, 0, 0));
@@ -865,33 +872,33 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTable_RegistroCliente);
 
-        jLabel11.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel11.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel11.setText("Disponible");
 
-        jLabel12.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel12.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel12.setText("Ocupado");
 
-        jLabel13.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel13.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel13.setText("Mantenimiento");
 
-        lb_Disponible.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
-        lb_Disponible.setForeground(new java.awt.Color(0, 0, 0));
+        lb_Disponible.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
+        lb_Disponible.setForeground(new java.awt.Color(255, 255, 255));
         lb_Disponible.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lb_Disponible.setText("Disponible");
 
-        lb_Ocupado.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
-        lb_Ocupado.setForeground(new java.awt.Color(0, 0, 0));
+        lb_Ocupado.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
+        lb_Ocupado.setForeground(new java.awt.Color(255, 255, 255));
         lb_Ocupado.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lb_Ocupado.setText("Ocupado");
 
-        lb_Mantenimiento.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
-        lb_Mantenimiento.setForeground(new java.awt.Color(0, 0, 0));
+        lb_Mantenimiento.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
+        lb_Mantenimiento.setForeground(new java.awt.Color(255, 255, 255));
         lb_Mantenimiento.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lb_Mantenimiento.setText("Mantenimiento");
 

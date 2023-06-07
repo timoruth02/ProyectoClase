@@ -46,8 +46,8 @@ public class Usuario_EmpleadoDB {
                 Item.setEstado_Empleado(rs.getString("Estado_Empleado"));
                 Item.setApellidos(rs.getString("Apellidos"));
                 Item.setNombres(rs.getString("Nombres"));
-                Item.setCodSede(rs.getString("Fec_Registro"));
-                Item.setNombre_Sede(rs.getString("Estado_Empleado"));
+                Item.setCodSede(rs.getString("CodSede"));
+                Item.setNombre_Sede(rs.getString("Nombre_Sede"));
                 Lista.add(Item);
             }
             cmd.close();
