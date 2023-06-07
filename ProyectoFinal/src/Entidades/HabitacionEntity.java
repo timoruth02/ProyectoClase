@@ -152,4 +152,22 @@ public class HabitacionEntity {
         this.Tipo = Tipo;
     }
 
+    private String Sede = "";
+    private String NumHa = "";
+
+    public String getSede() {
+        return Sede;
+    }
+
+    public void setSede(String Sede) {
+        this.Sede = Sede;
+    }
+
+    public String getNumHa() {
+        return NumHa;
+    }
+
+    public void setNumHa(String NumHa) {
+        this.NumHa = NumHa;
+    }
 }

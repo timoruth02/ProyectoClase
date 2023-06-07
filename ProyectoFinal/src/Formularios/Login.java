@@ -231,6 +231,7 @@ public class Login extends javax.swing.JFrame {
 
             JFrm_Alquiler_Habitacion formulario2 = new JFrm_Alquiler_Habitacion();
             formulario2.setVisible(true);
+            this.dispose();
 
         } else {
             javax.swing.JOptionPane.showMessageDialog(this, "Intento de login con los datos:\nUsuario: "
