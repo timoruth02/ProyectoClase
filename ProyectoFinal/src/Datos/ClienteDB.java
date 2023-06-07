@@ -28,7 +28,7 @@ public class ClienteDB {
                 Item.setNumDoc_Identidad(rs.getString("NumDoc_Identidad"));
                 Item.setApellidos(rs.getString("Apellidos"));
                 Item.setNombres(rs.getString("Nombres"));
-                Item.setDireccion(rs.getString("Direccion"));
+                Item.setDireccion(rs.getString("Direccion")); 
                 Item.setCodNac(rs.getString("CodNac"));
                 Item.setCodUbigeo(rs.getString("CodUbigeo"));
                 Lista.add(Item);
