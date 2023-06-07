@@ -103,6 +103,42 @@ public class Usuario_EmpleadoEntity {
     public void setEstado_Empleado(String Estado_Empleado) {
         this.Estado_Empleado = Estado_Empleado;
     }
-    
+//    ENTIDADES ENLAZADAS  ********************************************************************************************************
+    private String Apellidos = "";
+    private String Nombres = "";
+    private String CodSede = "";
+    private String Nombre_Sede = "";
+
+    public String getApellidos() {
+        return Apellidos;
+    }
+
+    public void setApellidos(String Apellidos) {
+        this.Apellidos = Apellidos;
+    }
+
+    public String getNombres() {
+        return Nombres;
+    }
+
+    public void setNombres(String Nombres) {
+        this.Nombres = Nombres;
+    }
+
+    public String getCodSede() {
+        return CodSede;
+    }
+
+    public void setCodSede(String CodSede) {
+        this.CodSede = CodSede;
+    }
+
+    public String getNombre_Sede() {
+        return Nombre_Sede;
+    }
+
+    public void setNombre_Sede(String Nombre_Sede) {
+        this.Nombre_Sede = Nombre_Sede;
+    }
 
 }

@@ -1,11 +1,17 @@
 package Formularios;
 
+import Datos.*;
+import Entidades.*;
 import java.awt.Color;
+import java.util.ArrayList;
 
 public class Login extends javax.swing.JFrame {
 
     int xMouse , yMouse;
     
+    //Invocar al sql Usuario_Empleado
+    Usuario_EmpleadoDB usuario_empleadodb = new Usuario_EmpleadoDB();
+    ArrayList<Usuario_EmpleadoEntity> ListaUsuario_Empleado = new ArrayList<>();
     
     public Login() {
        initComponents();
@@ -211,6 +217,9 @@ public class Login extends javax.swing.JFrame {
         javax.swing.JOptionPane.showMessageDialog(this, "Intento de login con los datos:\nUsuario: " +
             userTxt.getText() + "\nContraseña: " + String.valueOf(passTxt.getPassword()),
             "LOGIN", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        
+       //  ListaUsuario_Empleado = usuario_empleadodb.GetBuscarUsuario_Empleado(this.userTxt.getText(),this.passTxt.getSize());
+         
     }//GEN-LAST:event_LoginBtnTXTMouseClicked
 
     private void passTxtMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_passTxtMousePressed

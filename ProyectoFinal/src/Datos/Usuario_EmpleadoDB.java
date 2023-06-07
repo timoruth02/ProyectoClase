@@ -10,7 +10,7 @@ public class Usuario_EmpleadoDB {
     Connection cn;
     Conexion conect = new Conexion();
 
-    public ArrayList<Usuario_EmpleadoEntity> GetBuscarUsuario(String Codigo, String Password) {
+    public ArrayList<Usuario_EmpleadoEntity> GetBuscarUsuario_Empleado(String Codigo, String Password) {
         ArrayList<Usuario_EmpleadoEntity> Lista = new ArrayList<>();
 
         try {
