@@ -44,8 +44,8 @@ public class Usuario_EmpleadoDB {
                 Item.setPerfil(rs.getString("Perfil"));
                 Item.setFec_Registro(rs.getDate("Fec_Registro"));
                 Item.setEstado_Empleado(rs.getString("Estado_Empleado"));
-                Item.setApellidos(rs.getString("Password"));
-                Item.setNombres(rs.getString("Perfil"));
+                Item.setApellidos(rs.getString("Apellidos"));
+                Item.setNombres(rs.getString("Nombres"));
                 Item.setCodSede(rs.getString("Fec_Registro"));
                 Item.setNombre_Sede(rs.getString("Estado_Empleado"));
                 Lista.add(Item);

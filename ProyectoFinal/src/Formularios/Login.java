@@ -225,9 +225,11 @@ public class Login extends javax.swing.JFrame {
             
         Usuario_EmpleadoEntity DataUsuario_Empleado = ListaUsuario_Empleado.get(0);
         
-        userTxt.setText(DataUsuario_Empleado.getCodUsuario());
+        Utilidades.setM_UsuarioSistema(DataUsuario_Empleado);
         
-        JOptionPane.showMessageDialog(null, "Bienvenido al Sistema","Aviso",0);
+        
+        
+        JOptionPane.showMessageDialog(null, "Bienvenido al Sistema"+ Utilidades.getM_UsuarioSistema().getApellidos(),"Aviso",0);
         
         }else {
             javax.swing.JOptionPane.showMessageDialog(this, "Intento de login con los datos:\nUsuario: "
