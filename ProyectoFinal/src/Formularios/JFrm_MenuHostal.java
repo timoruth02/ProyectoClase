@@ -23,11 +23,16 @@ public class JFrm_MenuHostal extends javax.swing.JFrame {
         p1.setLocation(0,0);
         
         Content.removeAll();
-        Content.add(p1, BorderLayout.CENTER);
-        Content.revalidate();
-        Content.repaint();
+//        Content.add(p1, BorderLayout.CENTER);
+//        Content.revalidate();
+//        Content.repaint();
     }
 
+    
+    
+    
+    
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {

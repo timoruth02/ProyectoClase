@@ -166,9 +166,6 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel9">
                   <Properties>
-                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\Ruth Sayuri\Dropbox\TAREA02\ProyectoFinal\src\IconMenu\mantenimiento.png"/>
-                    </Property>
                     <Property name="horizontalTextPosition" type="int" value="0"/>
                   </Properties>
                   <Constraints>
@@ -202,9 +199,6 @@
               <SubComponents>
                 <Component class="javax.swing.JLabel" name="jLabel5">
                   <Properties>
-                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\Ruth Sayuri\Dropbox\TAREA02\ProyectoFinal\src\IconMenu\proceso.png"/>
-                    </Property>
                     <Property name="horizontalTextPosition" type="int" value="0"/>
                   </Properties>
                   <Constraints>
@@ -252,9 +246,6 @@
               <SubComponents>
                 <Component class="javax.swing.JLabel" name="jLabel7">
                   <Properties>
-                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\Ruth Sayuri\Dropbox\TAREA02\ProyectoFinal\src\IconMenu\consultas.png"/>
-                    </Property>
                     <Property name="horizontalTextPosition" type="int" value="0"/>
                   </Properties>
                   <Constraints>

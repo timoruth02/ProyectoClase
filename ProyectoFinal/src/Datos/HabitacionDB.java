@@ -47,4 +47,33 @@ public class HabitacionDB {
 
         return Lista;
     }
+
+    public ArrayList<HabitacionEntity> GetCargarHabitacionesParametro(String Sede, String Piso) {
+        ArrayList<HabitacionEntity> Lista = new ArrayList<>();
+
+        try {
+            cn = conect.conectar();
+            String sql = "Select Se.CodSede as [CodSede],NumHabitacion as [NumHa]  from Habitacion \n"
+                    + "inner join Sede as Se\n"
+                    + "on Se.CodSede= Se.CodSede where CodSede ='" + Sede
+                    + "' and CodNivel ='" + Piso + "'";
+            CallableStatement cmd = cn.prepareCall(sql);
+            ResultSet rs = cmd.executeQuery();
+            HabitacionEntity Item = new HabitacionEntity();
+            while (rs.next()) {
+                Item = null;
+                Item = new HabitacionEntity();
+                Item.setSede(rs.getString("CodSede"));
+                Item.setNumHa(rs.getString("NumHabitacion"));
+                Lista.add(Item);
+            }
+            cmd.close();
+            cn.close();
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        return Lista;
+    }
 }
