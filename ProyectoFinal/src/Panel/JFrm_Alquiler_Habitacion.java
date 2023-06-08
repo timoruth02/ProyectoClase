@@ -35,6 +35,10 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
     //Llenar el combobox docIdentidad segun la base de datos
     Tipo_HabitacionDB Tipo_Habitaciondb = new Tipo_HabitacionDB();
     ArrayList<Tipo_HabitacionEntity> ListaTipo_Habitacion = new ArrayList<>();
+    
+    //Llenar el combobox docIdentidad segun la base de datos
+    HabitacionDB Habitaciondb = new HabitacionDB();
+    ArrayList<HabitacionEntity> ListaHabitacion = new ArrayList<>();
 
     //Llenar el combobox Piso segun la base de datos
     NivelDB Niveldb = new NivelDB();
@@ -84,6 +88,7 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
             CBO_DocIdentidad.addItem(item.getTipo_Doc_Identidad());
         }
         CBO_DocIdentidad.setSelectedIndex(-1);
+        
 
 //        //combobox sede
 //        ListaSede = Sede_db.getCodSedeItems();
@@ -100,6 +105,15 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
         }
         CBO_TipoHabitacion.setSelectedIndex(-1);
 
+//**************************************Habitacion***************************************************
+//        ListaHabitacion = Habitaciondb.GetCargarHabitacionesTarifa();
+//
+//        for (HabitacionEntity item : ListaHabitacion) {
+//            CBO_TipoHabitacion.addItem(item.getDescripcion_TipoHabitacion());
+//        }
+//        CBO_TipoHabitacion.setSelectedIndex(-1);
+        
+        
         ListaNivel = Niveldb.getCodNivelItems();
 
         for (NivelEntity item : ListaNivel) {
@@ -795,7 +809,7 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
         jp_foderLayout.setHorizontalGroup(
             jp_foderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_foderLayout.createSequentialGroup()
-                .addContainerGap(714, Short.MAX_VALUE)
+                .addContainerGap(720, Short.MAX_VALUE)
                 .addComponent(BTN_Anular, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(72, 72, 72)
                 .addComponent(BTN_Nuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -829,7 +843,7 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
                         .addGroup(BodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jP_Imagen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addGap(0, 36, Short.MAX_VALUE))
                     .addComponent(jp_foder, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
