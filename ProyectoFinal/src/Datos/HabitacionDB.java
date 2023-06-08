@@ -77,31 +77,31 @@ public class HabitacionDB {
         return Lista;
     }
 
-    public ArrayList<HabitacionEntity> GetCargarHabitacionesTarifa(String NumHabitacion) {
-        ArrayList<HabitacionEntity> Lista = new ArrayList<>();
-
-        try {
-            cn = conect.conectar();
-            String sql = "select NumHabitacion,Precio_Hora,Precio_Noche from Habitacion\n"
-                    + "where NumHabitacion='' '" + NumHabitacion + "'";
-            CallableStatement cmd = cn.prepareCall(sql);
-            ResultSet rs = cmd.executeQuery();
-            HabitacionEntity Item = new HabitacionEntity();
-            while (rs.next()) {
-                Item = null;
-                Item = new HabitacionEntity();
-                Item.setNumHabitacion(rs.getString("NumHabitacion"));
-                Item.setPrecio_Hora(rs.getDouble("Precio_Hora"));
-                Item.setPrecio_Noche(rs.getDouble("Precio_Noche"));
-                Lista.add(Item);
-            }
-            cmd.close();
-            cn.close();
-
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-        return Lista;
-    }
+//    public ArrayList<HabitacionEntity> GetCargarHabitacionesTarifa(String NumHabitacion) {
+//        ArrayList<HabitacionEntity> Lista = new ArrayList<>();
+//
+//        try {
+//            cn = conect.conectar();
+//            String sql = "select NumHabitacion,Precio_Hora,Precio_Noche from Habitacion\n"
+//                    + "where NumHabitacion='' '" + NumHabitacion + "'";
+//            CallableStatement cmd = cn.prepareCall(sql);
+//            ResultSet rs = cmd.executeQuery();
+//            HabitacionEntity Item = new HabitacionEntity();
+//            while (rs.next()) {
+//                Item = null;
+//                Item = new HabitacionEntity();
+//                Item.setNumHabitacion(rs.getString("NumHabitacion"));
+//                Item.setPrecio_Hora(rs.getDouble("Precio_Hora"));
+//                Item.setPrecio_Noche(rs.getDouble("Precio_Noche"));
+//                Lista.add(Item);
+//            }
+//            cmd.close();
+//            cn.close();
+//
+//        } catch (Exception e) {
+//            System.out.println(e.getMessage());
+//        }
+//        return Lista;
+//    }
 
 }
