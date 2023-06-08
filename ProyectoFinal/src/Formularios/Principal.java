@@ -19,11 +19,11 @@ public class Principal extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        Image = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        Image = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -61,10 +61,6 @@ public class Principal extends javax.swing.JFrame {
         jLabel3.setText("Disfrute su estadía");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, -1, -1));
 
-        Image.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Image.setIcon(new javax.swing.ImageIcon("C:\\Users\\Ruth Sayuri\\Dropbox\\TAREA02\\ProyectoFinal\\src\\IconMenu\\toast_love_icon_131643 (3).png")); // NOI18N
-        jPanel1.add(Image, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 160, 210, 220));
-
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(153, 153, 153));
         jLabel5.setText("• Mantenimiento");
@@ -84,6 +80,10 @@ public class Principal extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(153, 153, 153));
         jLabel4.setText("tendrá acceso a herramientas especiales para tareas específicas, como lo son:");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, -1, -1));
+
+        Image.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Image.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconMenu/toast_love_icon_131643 (3).png"))); // NOI18N
+        jPanel1.add(Image, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 160, 210, 220));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
