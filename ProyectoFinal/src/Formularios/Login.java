@@ -204,6 +204,7 @@ public class Login extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void LoginBtnTXTMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoginBtnTXTMouseExited
@@ -229,7 +230,7 @@ public class Login extends javax.swing.JFrame {
 
             Utilidades.setM_UsuarioSistema(DataUsuario_Empleado);
 
-            JFrm_Alquiler_Habitacion formulario2 = new JFrm_Alquiler_Habitacion();
+            MenuFrame formulario2 = new MenuFrame();
             formulario2.setVisible(true);
             this.dispose();
 
