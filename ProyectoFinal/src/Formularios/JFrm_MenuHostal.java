@@ -1,4 +1,4 @@
-package Formularios;
+ package Formularios;
 
 import Datos.Conexion;
 import java.awt.BorderLayout;
