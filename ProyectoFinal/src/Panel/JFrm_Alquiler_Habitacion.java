@@ -1,6 +1,5 @@
 package Panel;
 
-
 import Datos.*;
 import Entidades.*;
 import java.awt.Color;
@@ -18,7 +17,6 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
-
 
 public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
 
@@ -66,15 +64,14 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
 
     //Establecer el Directorio del Proyecto, donde se desea guardar el Archivo de Texto
     String Directorio = new File("src/Archivo_Datos/Registro_DatosClientes.txt").getAbsolutePath();
-    
 
     /**
      * Creates new form JFrm_Alquiler_Habitacion
      */
     public JFrm_Alquiler_Habitacion() {
         initComponents();
-        
-                BodyPanel.setPreferredSize(new Dimension(1058, 652));
+
+        BodyPanel.setPreferredSize(new Dimension(1058, 652));
         jp_foder.setPreferredSize(new Dimension(400, 72));
         jp_CLiente.setPreferredSize(new Dimension(523, 309));
         pl_InformacionCliente.setPreferredSize(new Dimension(489, 182));
@@ -120,7 +117,6 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
 
         //Establecer el color de fondo del formulario
 //        this.getContentPane().setBackground(Color.LIGHT_GRAY);
-
         //Establecer un Nuevo Modelo de la clase :DEfaultTableModel
         //CREO LOS TITULOS DE LA TABLA  *****************************************************************
         Modelo = new DefaultTableModel();
@@ -141,9 +137,8 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
 //        }
 //        CBO_N_Habitacion.setSelectedIndex(-1);
 
-        
         ArrayList<HabitacionEntity> ListaHabitaciones = H_DB.GetCargarHabitaciones();
-        
+
 //        ************************************************************************************************
 //        Inserto a las Filas  ********************************************************************************    
         Object[] Fila = new Object[Modelo.getColumnCount()];
@@ -169,7 +164,6 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
 //        }
     }
 
-    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -399,6 +393,11 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
         jbtn_Noche.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jbtn_Noche.setForeground(new java.awt.Color(255, 255, 255));
         jbtn_Noche.setText("Noche");
+        jbtn_Noche.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtn_NocheActionPerformed(evt);
+            }
+        });
 
         TXT_Cantidad.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         TXT_Cantidad.setForeground(new java.awt.Color(0, 0, 0));
@@ -473,14 +472,10 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
                             .addComponent(lb_Precio, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lb_Importe, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(lbComentario, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lb_Importe, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbComentario, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -868,35 +863,19 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     //CREAR EL METODO MOSTRAR IMPORTE
-    void Mostrar_Importe()
-    {
-        //DECLARAR UNA VARIABLE PARA ESTABLECER EL FORMATO
-        DecimalFormat Num_Decimal = new DecimalFormat("0.00");
-        
-        //DECLARAR VARIABLES
-        int Cant;
-        double Precio, Importe;
-        
-        //OBTENER VARIABLE        
-        Precio = Double.parseDouble(this.lb_Precio.getText());
-        Cant = Integer.parseInt(this.TXT_Cantidad.getText());
-        
-        //REALIZAR CALCULO
-        Importe = (Precio*Cant);
-        
-        //MOSTRAR EL VALOR DEL IMPORTE
-        this.lb_Importe.setText(Num_Decimal.format(Importe));
+    void Mostrar_Importe() {
+
     }
-        void Salir() {
+
+    void Salir() {
         //DECLARAMOS LA VARIABLE DE TIPO ENTERO
         int Rpta;
 
         //MOSTRAR MENSAJE DE CONFIRMACION
 //        Rpta = JOptionPane.showConfirmDialog(null, "¿Desea Salir de la Ventana?", this.getTitle(),
 //                JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);ERRORPANEL
-
         //EVALUAR SI EL USUARIO RESPONDIO DE FORMA AFIRMATIVA
-        Rpta=0;
+        Rpta = 0;
         if (Rpta == 0) {
             //CERRRAR FORMULARIO
             System.exit(0);
@@ -904,14 +883,29 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
     }
     private void CBO_TipoHabitacionItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_CBO_TipoHabitacionItemStateChanged
 
-        String Habitacion=(String)CBO_TipoHabitacion.getSelectedItem();
-        if(Habitacion.equals("Simple")){
-            lb_Precio.setText("25.00");
-        
-        }
-        
+        //DECLARAR UNA VARIABLE PARA ESTABLECER EL FORMATO
+//        DecimalFormat Num_Decimal = new DecimalFormat("0.00");
 //        
- //        if(evt.getStateChange()== ItemEvent.SELECTED){
+//        //DECLARAR VARIABLES
+//        int Cant;
+//        double Precio, Importe;
+//        
+//        //OBTENER VARIABLE        
+//        Precio = Double.parseDouble(this.lb_Precio.getText());
+//        Cant = Integer.parseInt(this.TXT_Cantidad.getText());
+//        
+//        //REALIZAR CALCULO
+//        Importe = (Precio*Cant);
+//        
+//        //MOSTRAR EL VALOR DEL IMPORTE
+//        this.lb_Importe.setText(Num_Decimal.format(Importe));
+//        String Habitacion=(String)CBO_TipoHabitacion.getSelectedItem();
+//        if(Habitacion.equals("Simple")){
+//            lb_Precio.setText("25.00");
+//        
+//        }
+//        
+        //        if(evt.getStateChange()== ItemEvent.SELECTED){
 ////            //LIMPIAR LOS TEXTOS DE LAS ETIQUETAS DE PRECIO E INPORTE
 //            this.lb_Precio.setText("0.00");
 //            this.lb_Importe.setText("0.00");
@@ -923,7 +917,6 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
 //            this.TXT_Cantidad.setText("");
 //            this.TXT_Cantidad.requestFocus();  
 //        }
-       
         // EVALUARA SI SE HA SELECCIONADO UN ELEMENTO DEL COMBOBOX
         if (evt.getStateChange() == ItemEvent.SELECTED) {
             //INVOCAR AL METODO CARGAR DATOS
@@ -934,21 +927,17 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
     }//GEN-LAST:event_CBO_TipoHabitacionItemStateChanged
 
     private void jbtn_HoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_HoraActionPerformed
-        // EVALUARA SI SE HA SELECCIONADO UN ELEMENTO DEL JRadioButton
-//           
-//            //LIMPIAR LOS TEXTOS DE LAS ETIQUETAS DE PRECIO E INPORTE
-//            this.lb_Precio.setText("0.00");
-//            this.lb_Importe.setText("0.00");
-//            
-//            //INVOCAR AL METODO CARGAR DATOS
-//            this.Mostrar_Importe();
-//        
-//            //UBICAR CURSOR EN EL CONTROL TXT CANTIDAD
-//            this.TXT_Cantidad.setText("");
-//            this.TXT_Cantidad.requestFocus();  
-//        
-//       
-        
+//         EVALUARA SI SE HA SELECCIONADO UN ELEMENTO DEL JRadioButton
+
+        //LIMPIAR LOS TEXTOS DE LAS ETIQUETAS DE PRECIO E INPORTE
+        double PrecioHora = 20;
+
+        if (jbtn_Hora.isSelected() == true) {
+
+            lb_Precio.setText("" + PrecioHora);
+        }
+
+
     }//GEN-LAST:event_jbtn_HoraActionPerformed
 
     private void TXTDoc_Identidad_ClienteKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TXTDoc_Identidad_ClienteKeyTyped
@@ -956,7 +945,7 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
         this.Solo_Numeros(evt);
     }//GEN-LAST:event_TXTDoc_Identidad_ClienteKeyTyped
 
-        void Solo_Numeros(java.awt.event.KeyEvent evt) {
+    void Solo_Numeros(java.awt.event.KeyEvent evt) {
         //CREAR CONTROLADOR DE ERROR
         try {
             //DECLARAR VARAIBLE TIPO CHAR(CARACTER)
@@ -974,7 +963,7 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
 
         }
     }
-    
+
     private void BTN_BuscarCliente1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_BuscarCliente1ActionPerformed
 
         //Invocar a la base de datos cliente
@@ -1035,8 +1024,7 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
 //                JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);ERRORPANEL
 
             //Evaluar si el usuario confirmo su respuesta se(0)
-            
-             Rpta=0;
+            Rpta = 0;
             if (Rpta == 0) {
                 //Crear un Vetor de Datos (String)
                 String[] informacion = new String[12];
@@ -1057,7 +1045,6 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
                 //Montrar mensaje de informacion
 //                JOptionPane.showMessageDialog(null, "Datos Registrados con Éxito", this.getTitle(),
 //                    JOptionPane.ERROR_MESSAGE);ERRORPANEL
-
                 //Invocar al evento
                 //  this.BTN_NuevoActionPerformed(null);
             }
@@ -1077,35 +1064,45 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
 
         } //Evaluar si el Usuario a Ingresasdo los Apellidos del Estudiante
         //        else if (this.TXTDoc_Identidad_Cliente.getText().length() == 0) {
-            //            //Mostrar Mensaje de Información
-            //            JOptionPane.showMessageDialog(null, "Debe Ingresar los Apellidos de Estudiante", this.getTitle(),
-                //                    JOptionPane.INFORMATION_MESSAGE);
-            //
-            //            //Ubicar el Cursor en el Control:TXTAPELLIDOS
-            //            this.TXTApellidos.requestFocus();
-            //        } //Evaluar si el Usuario a Ingresado los Nombres del Estudiante
+        //            //Mostrar Mensaje de Información
+        //            JOptionPane.showMessageDialog(null, "Debe Ingresar los Apellidos de Estudiante", this.getTitle(),
+        //                    JOptionPane.INFORMATION_MESSAGE);
+        //
+        //            //Ubicar el Cursor en el Control:TXTAPELLIDOS
+        //            this.TXTApellidos.requestFocus();
+        //        } //Evaluar si el Usuario a Ingresado los Nombres del Estudiante
         //        else if (this.TXTNombres.getText().length() == 0) {
-            //            //Montrar Mensaje de Informacion
-            //            JOptionPane.showMessageDialog(null, "Deebe Ingresar los Nombres del Estudiante", this.getTitle(),
-                //                    JOptionPane.INFORMATION_MESSAGE);
-            //
-            //            //Ubicar cursor en el control txtNombre
-            //            this.TXTNombres.requestFocus();
-            //        } //Evaluar si el Usuario a Seleccionado uno de los cursos
+        //            //Montrar Mensaje de Informacion
+        //            JOptionPane.showMessageDialog(null, "Deebe Ingresar los Nombres del Estudiante", this.getTitle(),
+        //                    JOptionPane.INFORMATION_MESSAGE);
+        //
+        //            //Ubicar cursor en el control txtNombre
+        //            this.TXTNombres.requestFocus();
+        //        } //Evaluar si el Usuario a Seleccionado uno de los cursos
         //        else if (this.CBO_Curso.getSelectedIndex() == 0) {
-            //            //Monstrar mensaje de informacion
-            //            JOptionPane.showMessageDialog(null, "Debe Seleccionar el Nombre del Curso a Evaluar", this.getTitle(),
-                //                    JOptionPane.INFORMATION_MESSAGE);
-            //
-            //            //Ubicar cursor en el control cbo_Curso
-            //            this.CBO_Curso.requestFocus();
-            //        }
+        //            //Monstrar mensaje de informacion
+        //            JOptionPane.showMessageDialog(null, "Debe Seleccionar el Nombre del Curso a Evaluar", this.getTitle(),
+        //                    JOptionPane.INFORMATION_MESSAGE);
+        //
+        //            //Ubicar cursor en el control cbo_Curso
+        //            this.CBO_Curso.requestFocus();
+        //        }
     }//GEN-LAST:event_BTN_GuardarActionPerformed
 
     private void jTable_RegistroClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable_RegistroClienteMouseClicked
 
         // this.Cargar_Fila();
     }//GEN-LAST:event_jTable_RegistroClienteMouseClicked
+
+    private void jbtn_NocheActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_NocheActionPerformed
+
+        double PrecioNoche = 60;
+        if (jbtn_Noche.isSelected() == true) {
+            lb_Precio.setText("" + PrecioNoche);
+        }
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbtn_NocheActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
