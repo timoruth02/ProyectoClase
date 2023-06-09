@@ -6,6 +6,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Image;
 import java.awt.event.ItemEvent;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.FileWriter;
 import java.text.DecimalFormat;
@@ -20,31 +21,31 @@ import javax.swing.table.DefaultTableModel;
 
 public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
 
-    //Llenar el combobox docIdentidad segun la base de datos
+    //Llenar el combobox **docIdentidad** segun la base de datos
     DocIdentidadDB docIdentidad_dt = new DocIdentidadDB();
     ArrayList<DocIdentidadEntity> ListaDocIDentidad = new ArrayList<>();
 
-    //Invocar a sql clientes
+    //Invocar a sql ***clientes***
     ClienteDB Cliente_dt = new ClienteDB();
     ArrayList<ClienteEntity> ListaCliente = new ArrayList<>();
 
-    //Llenar el combobox sede segun la base de datos
+    //Llenar el combobox **sede** segun la base de datos
     SedeDB Sede_db = new SedeDB();
     ArrayList<SedeEntity> ListaSede = new ArrayList<>();
 
-    //Llenar el combobox docIdentidad segun la base de datos
+    //Llenar el combobox **Habitacion** segun la base de datos
     Tipo_HabitacionDB Tipo_Habitaciondb = new Tipo_HabitacionDB();
     ArrayList<Tipo_HabitacionEntity> ListaTipo_Habitacion = new ArrayList<>();
-    
-    //Llenar el combobox docIdentidad segun la base de datos
+
+    //Llenar el combobox **Habitacion** segun la base de datos
     HabitacionDB Habitaciondb = new HabitacionDB();
     ArrayList<HabitacionEntity> ListaHabitacion = new ArrayList<>();
 
-    //Llenar el combobox Piso segun la base de datos
+    //Llenar el combobox **Piso** segun la base de datos
     NivelDB Niveldb = new NivelDB();
     ArrayList<NivelEntity> ListaNivel = new ArrayList<>();
 
-    //Llenar el combobox N° Habitacion segun la base de datos
+    //Llenar el combobox **N° Habitacion**segun la base de datos
     Reserva_AlquilerDB reserva_alquilerdb = new Reserva_AlquilerDB();
     ArrayList<Reserva_AlquilerEntity> Listareserva_alquiler = new ArrayList<>();
 
@@ -88,15 +89,7 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
             CBO_DocIdentidad.addItem(item.getTipo_Doc_Identidad());
         }
         CBO_DocIdentidad.setSelectedIndex(-1);
-        
 
-//        //combobox sede
-//        ListaSede = Sede_db.getCodSedeItems();
-//
-//        for (SedeEntity item : ListaSede) {
-//            CBO_Sede.addItem(item.getNombre_Sede());
-//        }
-//        CBO_Sede.setSelectedIndex(-1);
         //combobox Tipo Habitacion
         ListaTipo_Habitacion = Tipo_Habitaciondb.getCodTipo_HabitacionItems();
 
@@ -105,15 +98,14 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
         }
         CBO_TipoHabitacion.setSelectedIndex(-1);
 
-//**************************************Habitacion***************************************************
-//        ListaHabitacion = Habitaciondb.GetCargarHabitacionesTarifa();
+//        ListaHabitacion = Tipo_Habitaciondb.GetCargarHabitacionesTarifa();
 //
 //        for (HabitacionEntity item : ListaHabitacion) {
-//            CBO_TipoHabitacion.addItem(item.getDescripcion_TipoHabitacion());
+//            CBO_TipoHabitacion.addItem(item.getNumHabitacion());
 //        }
 //        CBO_TipoHabitacion.setSelectedIndex(-1);
-        
-        
+//        
+//        
         ListaNivel = Niveldb.getCodNivelItems();
 
         for (NivelEntity item : ListaNivel) {
@@ -122,13 +114,12 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
         CBO_Piso.setSelectedIndex(-1);
 
         //combobox N° Habitación
-        Listareserva_alquiler = reserva_alquilerdb.getCodDoc_IdentidadItems();
-
-        for (Reserva_AlquilerEntity item : Listareserva_alquiler) {
-            CBO_N_Habitacion.addItem(item.getNumAlquiler());
-        }
-        CBO_N_Habitacion.setSelectedIndex(-1);
-
+//        Listareserva_alquiler = reserva_alquilerdb.getCodDoc_IdentidadItems();
+//
+//        for (Reserva_AlquilerEntity item : Listareserva_alquiler) {
+//            CBO_N_Habitacion.addItem(item.getNumAlquiler());
+//        }
+//        CBO_N_Habitacion.setSelectedIndex(-1);
         //Establecer el color de fondo del formulario
 //        this.getContentPane().setBackground(Color.LIGHT_GRAY);
         //Establecer un Nuevo Modelo de la clase :DEfaultTableModel
@@ -286,18 +277,18 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
         jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel13.setText("Mantenimiento");
 
-        lb_Disponible.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
-        lb_Disponible.setForeground(new java.awt.Color(255, 255, 255));
+        lb_Disponible.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        lb_Disponible.setForeground(new java.awt.Color(0, 153, 51));
         lb_Disponible.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lb_Disponible.setText("Disponible");
 
-        lb_Ocupado.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
-        lb_Ocupado.setForeground(new java.awt.Color(255, 255, 255));
+        lb_Ocupado.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        lb_Ocupado.setForeground(new java.awt.Color(255, 51, 51));
         lb_Ocupado.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lb_Ocupado.setText("Ocupado");
 
-        lb_Mantenimiento.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
-        lb_Mantenimiento.setForeground(new java.awt.Color(255, 255, 255));
+        lb_Mantenimiento.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        lb_Mantenimiento.setForeground(new java.awt.Color(255, 153, 0));
         lb_Mantenimiento.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lb_Mantenimiento.setText("Mantenimiento");
 
@@ -376,6 +367,16 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
         CBO_N_Habitacion.setBackground(new java.awt.Color(255, 255, 255));
         CBO_N_Habitacion.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         CBO_N_Habitacion.setForeground(new java.awt.Color(0, 0, 0));
+        CBO_N_Habitacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CBO_N_HabitacionActionPerformed(evt);
+            }
+        });
+        CBO_N_Habitacion.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                CBO_N_HabitacionKeyReleased(evt);
+            }
+        });
 
         CBO_TipoHabitacion.setBackground(new java.awt.Color(255, 255, 255));
         CBO_TipoHabitacion.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -394,6 +395,11 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
         CBO_Piso.setBackground(new java.awt.Color(255, 255, 255));
         CBO_Piso.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         CBO_Piso.setForeground(new java.awt.Color(0, 0, 0));
+        CBO_Piso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CBO_PisoActionPerformed(evt);
+            }
+        });
 
         jPanel1.setBackground(new java.awt.Color(0, 102, 153));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED), "Tarifa", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14), new java.awt.Color(255, 255, 255))); // NOI18N
@@ -421,6 +427,19 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
         TXT_Cantidad.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         TXT_Cantidad.setForeground(new java.awt.Color(0, 0, 0));
         TXT_Cantidad.setText("jTextField1");
+        TXT_Cantidad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TXT_CantidadActionPerformed(evt);
+            }
+        });
+        TXT_Cantidad.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                TXT_CantidadKeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                TXT_CantidadKeyReleased(evt);
+            }
+        });
 
         lb_FechaIngreso.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         lb_FechaIngreso.setForeground(new java.awt.Color(255, 255, 255));
@@ -883,7 +902,21 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
 
     //CREAR EL METODO MOSTRAR IMPORTE
     void Mostrar_Importe() {
+        //DECLARAR UNA VARIABLE PARA ESTABLECER EL FORMATO
+        DecimalFormat Num_Decimal = new DecimalFormat("0.00");
+        //DECLARAR VARIABLES
+        int Cant;
+        double Precio, Importe;
 
+        //OBTENER VARIABLE        
+        Precio = Double.parseDouble(this.lb_Precio.getText());
+        Cant = Integer.parseInt(this.TXT_Cantidad.getText());
+
+        //REALIZAR CALCULO
+        Importe = (Precio * Cant);
+
+        //MOSTRAR EL VALOR DEL IMPORTE
+        this.lb_Importe.setText(Num_Decimal.format(Importe));
     }
 
     void Salir() {
@@ -945,12 +978,11 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
 
     }//GEN-LAST:event_CBO_TipoHabitacionItemStateChanged
 
+    double PrecioHora = 0;
     private void rbt_HoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbt_HoraActionPerformed
 //         EVALUARA SI SE HA SELECCIONADO UN ELEMENTO DEL JRadioButton
 
         //LIMPIAR LOS TEXTOS DE LAS ETIQUETAS DE PRECIO E INPORTE
-        double PrecioHora = 20;
-
         if (rbt_Hora.isSelected() == true) {
 
             lb_Precio.setText("" + PrecioHora);
@@ -1113,9 +1145,9 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
         // this.Cargar_Fila();
     }//GEN-LAST:event_jTable_RegistroClienteMouseClicked
 
+    double PrecioNoche = 0;
     private void rbt_NocheActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbt_NocheActionPerformed
 
-        double PrecioNoche = 60;
         if (rbt_Noche.isSelected() == true) {
             lb_Precio.setText("" + PrecioNoche);
         }
@@ -1124,8 +1156,113 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
     }//GEN-LAST:event_rbt_NocheActionPerformed
 
     private void CBO_TipoHabitacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CBO_TipoHabitacionActionPerformed
-       
+        String CodSede_Item = Utilidades.getM_UsuarioSistema().getCodSede();
+
+        int index_Piso = CBO_Piso.getSelectedIndex();
+        int index_Tipo = CBO_TipoHabitacion.getSelectedIndex();
+
+        String CodNivel_Item, Tipo_Item;
+
+        if (index_Piso >= 0 && index_Tipo >= 0) {
+
+            CodNivel_Item = ListaNivel.get(index_Piso).getCodNivel();
+
+            Tipo_Item = ListaTipo_Habitacion.get(index_Tipo).getCodTipo_Habitacion();
+
+            ArrayList<HabitacionEntity> lst_Habitaciones = Habitaciondb.GetCargarHabitacionesNum(CodSede_Item, CodNivel_Item, Tipo_Item);
+
+            CBO_N_Habitacion.removeAllItems();
+            for (HabitacionEntity item : lst_Habitaciones) {
+                CBO_N_Habitacion.addItem(item.getNumHabitacion());
+            }
+        }
+
+
     }//GEN-LAST:event_CBO_TipoHabitacionActionPerformed
+
+    private void TXT_CantidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TXT_CantidadActionPerformed
+
+
+    }//GEN-LAST:event_TXT_CantidadActionPerformed
+
+    private void TXT_CantidadKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TXT_CantidadKeyReleased
+        //EVALUAR SI TXT CANTIDAD TIENE UN VALOR
+        if (this.TXT_Cantidad.getText().length() > 0) {
+            // INVOCAR IMPORTE
+            this.Mostrar_Importe();
+        } else {
+            //  ESTABLECER IMPORTE
+            this.lb_Importe.setText("0.00");
+        }
+    }//GEN-LAST:event_TXT_CantidadKeyReleased
+
+    private void TXT_CantidadKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TXT_CantidadKeyPressed
+        //EVALUAR SI SE HA PRECIONADO LA TECLA ENTER O TAB
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER
+                || evt.getKeyCode() == KeyEvent.VK_TAB) {
+            //INVOCAR AL METODO MOSTRAR IMPORTE
+            this.Mostrar_Importe();
+
+            //HABILITAR BOTONES}
+            // this.Botones(true);
+        }
+    }//GEN-LAST:event_TXT_CantidadKeyPressed
+
+    private void CBO_N_HabitacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CBO_N_HabitacionActionPerformed
+
+        String m_NumHabitacion = (String) CBO_N_Habitacion.getSelectedItem();
+        ArrayList<HabitacionEntity> lst_HabitacionCostos = Habitaciondb.GetCargarHabitacionesTarifa(m_NumHabitacion);
+
+        if (lst_HabitacionCostos != null && lst_HabitacionCostos.size() > 0) {
+
+            PrecioHora = lst_HabitacionCostos.get(0).getPrecio_Hora();
+            PrecioNoche = lst_HabitacionCostos.get(0).getPrecio_Noche();
+
+            if (rbt_Hora.isSelected() == true) {
+
+                lb_Precio.setText("" + PrecioHora);
+
+            }
+
+            if (rbt_Noche.isSelected() == true) {
+
+                lb_Precio.setText("" + PrecioNoche);
+            }
+
+        }
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CBO_N_HabitacionActionPerformed
+
+    private void CBO_N_HabitacionKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CBO_N_HabitacionKeyReleased
+        // TODO add your handling code here:}
+
+    }//GEN-LAST:event_CBO_N_HabitacionKeyReleased
+
+    private void CBO_PisoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CBO_PisoActionPerformed
+
+        String CodSede_Item = Utilidades.getM_UsuarioSistema().getCodSede();
+
+        int index_Piso = CBO_Piso.getSelectedIndex();
+        int index_Tipo = CBO_TipoHabitacion.getSelectedIndex();
+
+        String CodNivel_Item, Tipo_Item;
+
+        if (index_Piso >= 0 && index_Tipo >= 0) {
+
+            CodNivel_Item = ListaNivel.get(index_Piso).getCodNivel();
+
+            Tipo_Item = ListaTipo_Habitacion.get(index_Tipo).getCodTipo_Habitacion();
+
+            ArrayList<HabitacionEntity> lst_Habitaciones = Habitaciondb.GetCargarHabitacionesNum(CodSede_Item, CodNivel_Item, Tipo_Item);
+
+            CBO_N_Habitacion.removeAllItems();
+            for (HabitacionEntity item : lst_Habitaciones) {
+                CBO_N_Habitacion.addItem(item.getNumHabitacion());
+            }
+        }
+
+    }//GEN-LAST:event_CBO_PisoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

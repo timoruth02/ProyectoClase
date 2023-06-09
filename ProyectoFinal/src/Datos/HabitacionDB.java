@@ -77,13 +77,40 @@ public class HabitacionDB {
         return Lista;
     }
 
+    public ArrayList<HabitacionEntity> GetCargarHabitacionesNum(String Sede, String Piso, String Tipo_Habitacion) {
+        ArrayList<HabitacionEntity> Lista = new ArrayList<>();
+
+        try {
+            cn = conect.conectar();
+            String sql = "Select NumHabitacion from Habitacion\n"
+                    + "where CodSede ='" + Sede + "' AND CodNivel ='"
+                    + Piso + "' and CodTipo_Habitacion = '" + Tipo_Habitacion + "'";
+            CallableStatement cmd = cn.prepareCall(sql);
+            ResultSet rs = cmd.executeQuery();
+            HabitacionEntity Item = new HabitacionEntity();
+            while (rs.next()) {
+                Item = null;
+                Item = new HabitacionEntity();
+                Item.setNumHabitacion(rs.getString("NumHabitacion"));
+                Lista.add(Item);
+            }
+            cmd.close();
+            cn.close();
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        return Lista;
+    }
+
     public ArrayList<HabitacionEntity> GetCargarHabitacionesTarifa(String NumHabitacion) {
         ArrayList<HabitacionEntity> Lista = new ArrayList<>();
 
         try {
             cn = conect.conectar();
             String sql = "select NumHabitacion,Precio_Hora,Precio_Noche from Habitacion\n"
-                    + "where NumHabitacion='' '" + NumHabitacion + "'";
+                    + "where NumHabitacion= '" + NumHabitacion + "'";
             CallableStatement cmd = cn.prepareCall(sql);
             ResultSet rs = cmd.executeQuery();
             HabitacionEntity Item = new HabitacionEntity();
