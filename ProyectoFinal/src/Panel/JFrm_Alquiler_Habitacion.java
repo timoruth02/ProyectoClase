@@ -203,8 +203,8 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
         CBO_TipoHabitacion = new javax.swing.JComboBox<>();
         CBO_Piso = new javax.swing.JComboBox<>();
         jPanel1 = new javax.swing.JPanel();
-        jbtn_Hora = new javax.swing.JRadioButton();
-        jbtn_Noche = new javax.swing.JRadioButton();
+        rbt_Hora = new javax.swing.JRadioButton();
+        rbt_Noche = new javax.swing.JRadioButton();
         TXT_Cantidad = new javax.swing.JTextField();
         lb_FechaIngreso = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
@@ -385,6 +385,11 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
                 CBO_TipoHabitacionItemStateChanged(evt);
             }
         });
+        CBO_TipoHabitacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CBO_TipoHabitacionActionPerformed(evt);
+            }
+        });
 
         CBO_Piso.setBackground(new java.awt.Color(255, 255, 255));
         CBO_Piso.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -393,23 +398,23 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
         jPanel1.setBackground(new java.awt.Color(0, 102, 153));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED), "Tarifa", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14), new java.awt.Color(255, 255, 255))); // NOI18N
 
-        BtnGp_Combo.add(jbtn_Hora);
-        jbtn_Hora.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jbtn_Hora.setForeground(new java.awt.Color(255, 255, 255));
-        jbtn_Hora.setText("Hora");
-        jbtn_Hora.addActionListener(new java.awt.event.ActionListener() {
+        BtnGp_Combo.add(rbt_Hora);
+        rbt_Hora.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        rbt_Hora.setForeground(new java.awt.Color(255, 255, 255));
+        rbt_Hora.setText("Hora");
+        rbt_Hora.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbtn_HoraActionPerformed(evt);
+                rbt_HoraActionPerformed(evt);
             }
         });
 
-        BtnGp_Combo.add(jbtn_Noche);
-        jbtn_Noche.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jbtn_Noche.setForeground(new java.awt.Color(255, 255, 255));
-        jbtn_Noche.setText("Noche");
-        jbtn_Noche.addActionListener(new java.awt.event.ActionListener() {
+        BtnGp_Combo.add(rbt_Noche);
+        rbt_Noche.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        rbt_Noche.setForeground(new java.awt.Color(255, 255, 255));
+        rbt_Noche.setText("Noche");
+        rbt_Noche.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbtn_NocheActionPerformed(evt);
+                rbt_NocheActionPerformed(evt);
             }
         });
 
@@ -467,7 +472,7 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jbtn_Hora, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rbt_Hora, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(TXT_Cantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lb_FechaIngreso)
@@ -482,7 +487,7 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel15)
-                            .addComponent(jbtn_Noche, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(rbt_Noche, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lb_Precio, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -509,8 +514,8 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
                         .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jbtn_Hora, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jbtn_Noche, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(rbt_Hora, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(rbt_Noche, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -940,19 +945,19 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
 
     }//GEN-LAST:event_CBO_TipoHabitacionItemStateChanged
 
-    private void jbtn_HoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_HoraActionPerformed
+    private void rbt_HoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbt_HoraActionPerformed
 //         EVALUARA SI SE HA SELECCIONADO UN ELEMENTO DEL JRadioButton
 
         //LIMPIAR LOS TEXTOS DE LAS ETIQUETAS DE PRECIO E INPORTE
         double PrecioHora = 20;
 
-        if (jbtn_Hora.isSelected() == true) {
+        if (rbt_Hora.isSelected() == true) {
 
             lb_Precio.setText("" + PrecioHora);
         }
 
 
-    }//GEN-LAST:event_jbtn_HoraActionPerformed
+    }//GEN-LAST:event_rbt_HoraActionPerformed
 
     private void TXTDoc_Identidad_ClienteKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TXTDoc_Identidad_ClienteKeyTyped
         // TODO add your handling code here:
@@ -1108,15 +1113,19 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
         // this.Cargar_Fila();
     }//GEN-LAST:event_jTable_RegistroClienteMouseClicked
 
-    private void jbtn_NocheActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_NocheActionPerformed
+    private void rbt_NocheActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbt_NocheActionPerformed
 
         double PrecioNoche = 60;
-        if (jbtn_Noche.isSelected() == true) {
+        if (rbt_Noche.isSelected() == true) {
             lb_Precio.setText("" + PrecioNoche);
         }
 
         // TODO add your handling code here:
-    }//GEN-LAST:event_jbtn_NocheActionPerformed
+    }//GEN-LAST:event_rbt_NocheActionPerformed
+
+    private void CBO_TipoHabitacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CBO_TipoHabitacionActionPerformed
+       
+    }//GEN-LAST:event_CBO_TipoHabitacionActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -1166,8 +1175,6 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable_RegistroCliente;
-    private javax.swing.JRadioButton jbtn_Hora;
-    private javax.swing.JRadioButton jbtn_Noche;
     private javax.swing.JPanel jp_CLiente;
     private javax.swing.JPanel jp_foder;
     private javax.swing.JLabel lbComentario;
@@ -1178,5 +1185,7 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
     private javax.swing.JLabel lb_Ocupado;
     private javax.swing.JLabel lb_Precio;
     private javax.swing.JPanel pl_InformacionCliente;
+    private javax.swing.JRadioButton rbt_Hora;
+    private javax.swing.JRadioButton rbt_Noche;
     // End of variables declaration//GEN-END:variables
 }

@@ -450,6 +450,7 @@
               </Properties>
               <Events>
                 <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="CBO_TipoHabitacionItemStateChanged"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CBO_TipoHabitacionActionPerformed"/>
               </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -498,7 +499,7 @@
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jbtn_Hora" alignment="0" min="-2" pref="80" max="-2" attributes="0"/>
+                              <Component id="rbt_Hora" alignment="0" min="-2" pref="80" max="-2" attributes="0"/>
                               <Component id="jLabel14" alignment="0" min="-2" pref="80" max="-2" attributes="0"/>
                               <Component id="TXT_Cantidad" alignment="0" min="-2" pref="80" max="-2" attributes="0"/>
                               <Component id="lb_FechaIngreso" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -516,7 +517,7 @@
                               <Group type="102" alignment="1" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jLabel15" max="-2" attributes="0"/>
-                                      <Component id="jbtn_Noche" min="-2" pref="80" max="-2" attributes="0"/>
+                                      <Component id="rbt_Noche" min="-2" pref="80" max="-2" attributes="0"/>
                                       <Component id="lb_Precio" alignment="0" min="-2" pref="80" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -551,8 +552,8 @@
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jbtn_Hora" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                                      <Component id="jbtn_Noche" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                                      <Component id="rbt_Hora" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                                      <Component id="rbt_Noche" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
@@ -574,7 +575,7 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JRadioButton" name="jbtn_Hora">
+                <Component class="javax.swing.JRadioButton" name="rbt_Hora">
                   <Properties>
                     <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                       <ComponentRef name="BtnGp_Combo"/>
@@ -588,10 +589,10 @@
                     <Property name="text" type="java.lang.String" value="Hora"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbtn_HoraActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbt_HoraActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="jbtn_Noche">
+                <Component class="javax.swing.JRadioButton" name="rbt_Noche">
                   <Properties>
                     <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                       <ComponentRef name="BtnGp_Combo"/>
@@ -605,7 +606,7 @@
                     <Property name="text" type="java.lang.String" value="Noche"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbtn_NocheActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbt_NocheActionPerformed"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="TXT_Cantidad">
