@@ -16,6 +16,7 @@ import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
 import org.netbeans.lib.awtextra.AbsoluteConstraints;
@@ -92,12 +93,12 @@ public class MenuFrame extends javax.swing.JFrame {
         btn_users = new javax.swing.JButton();
         btn_books = new javax.swing.JButton();
         btn_reports = new javax.swing.JButton();
+        lb_NombreSede = new javax.swing.JLabel();
         content = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         BTN_Salir = new javax.swing.JButton();
         jPanel7 = new javax.swing.JPanel();
         lb_EmpleadoNombreCompletos = new javax.swing.JLabel();
-        lb_NombreSede = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1050, 660));
@@ -110,8 +111,8 @@ public class MenuFrame extends javax.swing.JFrame {
         menu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         appName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        appName.setText("iLib");
-        menu.add(appName, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 52, 250, 34));
+        appName.setText("HOSTAL");
+        menu.add(appName, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 250, 34));
 
         jSeparator1.setPreferredSize(new java.awt.Dimension(50, 5));
         menu.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 190, 20));
@@ -218,6 +219,11 @@ public class MenuFrame extends javax.swing.JFrame {
         });
         menu.add(btn_reports, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 380, 280, 52));
 
+        lb_NombreSede.setFont(new java.awt.Font("Dialog", 1, 15)); // NOI18N
+        lb_NombreSede.setForeground(new java.awt.Color(255, 255, 255));
+        lb_NombreSede.setText("jLabel10");
+        menu.add(lb_NombreSede, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 251, 25));
+
         background.add(menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 280, 729));
 
         content.setBackground(new java.awt.Color(255, 255, 255));
@@ -262,10 +268,6 @@ public class MenuFrame extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        lb_NombreSede.setFont(new java.awt.Font("Dialog", 1, 15)); // NOI18N
-        lb_NombreSede.setForeground(new java.awt.Color(255, 255, 255));
-        lb_NombreSede.setText("jLabel10");
-
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
@@ -273,9 +275,7 @@ public class MenuFrame extends javax.swing.JFrame {
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(BTN_Salir, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(lb_NombreSede, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(275, 275, 275)
                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(27, Short.MAX_VALUE))
         );
@@ -285,7 +285,6 @@ public class MenuFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(BTN_Salir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lb_NombreSede, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -308,10 +307,23 @@ public class MenuFrame extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+void Salir() {
+        //DECLARAMOS LA VARIABLE DE TIPO ENTERO
+        int Rpta;
 
+        //MOSTRAR MENSAJE DE CONFIRMACION
+        Rpta = JOptionPane.showConfirmDialog(null, "¿Desea Salir de la Ventana?", this.getTitle(),
+                JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        //EVALUAR SI EL USUARIO RESPONDIO DE FORMA AFIRMATIVA
+        Rpta = 0;
+        if (Rpta == 0) {
+            //CERRRAR FORMULARIO
+            System.exit(0);
+        }
+    }
     private void BTN_SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_SalirActionPerformed
-        // INVOCAR AL METODO SALIR
-//        this.Salir();
+
+        this.Salir();
     }//GEN-LAST:event_BTN_SalirActionPerformed
 
     private void btn_reportsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_reportsActionPerformed
