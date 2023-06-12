@@ -10,7 +10,9 @@ import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.FileWriter;
 import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Scanner;
 import javax.swing.DefaultListModel;
 import javax.swing.Icon;
@@ -135,7 +137,7 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
 
         String CodSede = Utilidades.getM_UsuarioSistema().getCodSede();
 //
-//        ArrayList<HabitacionEntity> HAbitacionItems = H_DB.GetCargarHabitacionesParametro(CodSede, "NP002");
+        ArrayList<HabitacionEntity> HabitacionItems = H_DB.GetCargarHabitacionesParametro(CodSede, "NP002");
 //
 //        for (Reserva_AlquilerEntity item : Listareserva_alquiler) {
 //            CBO_N_Habitacion.addItem(item.getNumAlquiler());
@@ -167,6 +169,7 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
 //            Modelo.addRow(Fila);
 //            cont += 1;
 //        }
+        this.lb_FechaIngreso.setText(this.Fecha_Actual());
     }
 
     @SuppressWarnings("unchecked")
@@ -426,7 +429,6 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
 
         TXT_Cantidad.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         TXT_Cantidad.setForeground(new java.awt.Color(0, 0, 0));
-        TXT_Cantidad.setText("jTextField1");
         TXT_Cantidad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TXT_CantidadActionPerformed(evt);
@@ -438,6 +440,9 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
             }
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 TXT_CantidadKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                TXT_CantidadKeyTyped(evt);
             }
         });
 
@@ -479,7 +484,7 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
         lb_Precio.setForeground(new java.awt.Color(0, 0, 0));
         lb_Precio.setText("Precio:");
 
-        lb_Importe.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        lb_Importe.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         lb_Importe.setForeground(new java.awt.Color(0, 0, 0));
         lb_Importe.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lb_Importe.setText("0.00");
@@ -490,12 +495,12 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(23, 23, 23)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(rbt_Hora, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(TXT_Cantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lb_FechaIngreso)
-                    .addComponent(jLabel22))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(rbt_Hora, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
+                    .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
+                    .addComponent(TXT_Cantidad, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
+                    .addComponent(jLabel22)
+                    .addComponent(lb_FechaIngreso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
@@ -520,17 +525,18 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(5, 5, 5))
-                    .addComponent(lbComentario, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lbComentario, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(58, 58, 58)
                         .addComponent(lb_Precio, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lb_Importe, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(rbt_Hora, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -545,8 +551,7 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
                         .addComponent(lb_FechaIngreso, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addComponent(lb_Importe, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(37, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -584,9 +589,9 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
                     .addComponent(CBO_TipoHabitacion, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(CBO_Piso, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(CBO_N_Habitacion, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(12, 12, 12))
         );
 
         jp_CLiente.setBackground(new java.awt.Color(0, 102, 153));
@@ -900,6 +905,19 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    //CREAR FUNCION FECHA ACTUAL
+    public String Fecha_Actual() {
+        //DECLAR VARIABALE DE TIPO DATE
+        Date Fecha = new Date();
+
+        //DECLARAR UNA VARIABLE DE TIPO SIMPLEDATEFORMAT
+        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+
+        //RETORNAR VALOR
+        return formato.format(Fecha);
+
+    }
+
     //CREAR EL METODO MOSTRAR IMPORTE
     void Mostrar_Importe() {
         //DECLARAR UNA VARIABLE PARA ESTABLECER EL FORMATO
@@ -1064,8 +1082,6 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
 
     private void BTN_GuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_GuardarActionPerformed
 
-        // TODO add your handling code here:
-        // Declarar una vaariable de tipo entero
         int Rpta;
 
         //Evaluar si el total de caracteres del control TXTDoc_Identidad_Cliente es mayor a 0
@@ -1182,13 +1198,13 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
 
     private void TXT_CantidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TXT_CantidadActionPerformed
 
-
     }//GEN-LAST:event_TXT_CantidadActionPerformed
 
     private void TXT_CantidadKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TXT_CantidadKeyReleased
         //EVALUAR SI TXT CANTIDAD TIENE UN VALOR
         if (this.TXT_Cantidad.getText().length() > 0) {
             // INVOCAR IMPORTE
+
             this.Mostrar_Importe();
         } else {
             //  ESTABLECER IMPORTE
@@ -1263,6 +1279,26 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
         }
 
     }//GEN-LAST:event_CBO_PisoActionPerformed
+
+    private void TXT_CantidadKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TXT_CantidadKeyTyped
+
+        //CREAR CONTROLADOR DE ERROR
+        try {
+            //DECLARAR VARAIBLE TIPO CHAR(CARACTER)
+            char Caracter;
+
+            //OBTENER EL CARACTER TIPEADO
+            Caracter = evt.getKeyChar();
+
+            //EVALUAR SI EL CARACTER ESTA FUERA DE RANGO DEL 0  AL 9
+            if (Caracter < '0' || Caracter > '9') {
+                //DESHABILITAR TECLAS
+                evt.consume();
+            }
+        } catch (Exception Error) {
+
+        }
+    }//GEN-LAST:event_TXT_CantidadKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
