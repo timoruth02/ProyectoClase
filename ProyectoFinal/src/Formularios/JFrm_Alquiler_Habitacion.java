@@ -1439,6 +1439,8 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
     }//GEN-LAST:event_CBO_TipoHabitacionItemStateChanged
 
     private void CBO_TipoHabitacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CBO_TipoHabitacionActionPerformed
+
+        
         // TODO add your handling code here:
     }//GEN-LAST:event_CBO_TipoHabitacionActionPerformed
 

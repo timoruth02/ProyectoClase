@@ -174,10 +174,7 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
 //        }
         this.lb_FechaSalida.setText(this.Fecha_Actual());
 
-        
-            
         this.lb_FechaSalida.setText(this.Fecha_Actual());
-        
 
     }
 
@@ -343,6 +340,7 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
         jP_Imagen.setBackground(new java.awt.Color(0, 102, 153));
         jP_Imagen.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED), "Foto de la Habitación", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 18), new java.awt.Color(204, 204, 204))); // NOI18N
 
+        Lb_Foto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Lb_Foto.setMaximumSize(new java.awt.Dimension(50, 16));
         Lb_Foto.setMinimumSize(new java.awt.Dimension(50, 16));
 
@@ -572,14 +570,15 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel18)
                             .addComponent(CBO_TipoHabitacion, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(27, 27, 27)
+                        .addGap(33, 33, 33)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel19)
                             .addComponent(CBO_Piso, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -597,13 +596,14 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
                     .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(CBO_TipoHabitacion, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(CBO_Piso, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(CBO_N_Habitacion, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(CBO_Piso, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(CBO_N_Habitacion, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jp_CLiente.setBackground(new java.awt.Color(0, 102, 153));
@@ -896,9 +896,9 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
             BodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BodyPanelLayout.createSequentialGroup()
                 .addContainerGap(18, Short.MAX_VALUE)
-                .addGroup(BodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jp_CLiente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addGroup(BodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jp_CLiente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(BodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -933,7 +933,7 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
         return formato.format(Fecha);
 
     }
-    
+
     //CREAR FUNCION FECHA ACTUAL
     public String Correlativo() {
         //DECLAR VARIABALE DE TIPO DATE
@@ -946,14 +946,14 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
         return formato.format(Fecha);
 
     }
-      double Precio, Importe;
+    double Precio, Importe;
+
     //CREAR EL METODO MOSTRAR IMPORTE
     void Mostrar_Importe() {
         //DECLARAR UNA VARIABLE PARA ESTABLECER EL FORMATO
         DecimalFormat Num_Decimal = new DecimalFormat("0.00");
         //DECLARAR VARIABLES
         int Cant;
-  
 
         //OBTENER VARIABLE        
         Precio = Double.parseDouble(this.lb_Precio.getText());
@@ -1112,11 +1112,11 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
     private void BTN_GuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_GuardarActionPerformed
         AlquilerDB DB_AlQ = new AlquilerDB();
 
-        AlquilerEntity Item_Data =  new AlquilerEntity();
-        
+        AlquilerEntity Item_Data = new AlquilerEntity();
+
         Date d = new Date();
-        String m_Correlativo=this.Correlativo();
-        
+        String m_Correlativo = this.Correlativo();
+
         Item_Data.setNumAlquiler(m_Correlativo);
         Item_Data.setCodSede(Utilidades.getM_UsuarioSistema().getCodSede());
         Item_Data.setCodCliente(Lb_CodCliente.getText());
@@ -1125,11 +1125,11 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
         Item_Data.setFec_Alquiler(d);
         Item_Data.setFec_TerminoAlquiler(d);
         Item_Data.setImporte(Importe);
-        
+
         DB_AlQ.Save(Item_Data);
-        
-        JOptionPane.showMessageDialog(this, "Se genero el alquiler con codigo: "+ m_Correlativo, "Mensaje de Alerta", JOptionPane.WARNING_MESSAGE);
-        
+
+        JOptionPane.showMessageDialog(this, "Se genero el alquiler con codigo: " + m_Correlativo, "Mensaje de Alerta", JOptionPane.WARNING_MESSAGE);
+
         int Rpta;
 
         //Evaluar si el total de caracteres del control TXTDoc_Identidad_Cliente es mayor a 0
@@ -1219,13 +1219,54 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_rbt_NocheActionPerformed
 
+    void Cargar_Imagen(String CodTipoHabitacion) {
+       String Imagen = "";
+
+     
+        switch (CodTipoHabitacion) {
+            case "Hab001":
+                Imagen = "Simple.jpeg";
+                break;
+            case "Hab002":
+                Imagen = "Comun.jpeg";
+                break;
+
+            case "Hab003":
+                Imagen = "Premium.jpeg";
+              break;
+
+        }
+        ImageIcon Foto = new ImageIcon("src/TipoHabitacion/" +Imagen);
+
+        
+        
+        Lb_Foto.setIcon(Foto);
+        //ESTABLECER ICONO
+//        if (Foto != null) {
+//
+//            Icon Icono = new ImageIcon(Foto.getImage().getScaledInstance(
+//                    this.Lb_Foto.getWidth(), this.Lb_Foto.getHeight(),
+//                    Image.SCALE_DEFAULT));
+//
+//            //ASIGNAR IMAGEN AL CONTROL: JLABEL
+//            this.Lb_Foto.setIcon(Icono);
+//
+//            //REPRESENTAR IMAGEN
+//            this.repaint();
+//        }
+    }
     private void CBO_TipoHabitacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CBO_TipoHabitacionActionPerformed
+
         String CodSede_Item = Utilidades.getM_UsuarioSistema().getCodSede();
 
         int index_Piso = CBO_Piso.getSelectedIndex();
         int index_Tipo = CBO_TipoHabitacion.getSelectedIndex();
 
         String CodNivel_Item, Tipo_Item;
+
+        if (index_Tipo >= 0) {
+           Cargar_Imagen(ListaTipo_Habitacion.get(index_Tipo).getCodTipo_Habitacion());
+        }
 
         if (index_Piso >= 0 && index_Tipo >= 0) {
 
@@ -1271,10 +1312,10 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
             // this.Botones(true);
         }
     }//GEN-LAST:event_TXT_CantidadKeyPressed
-String m_NumHabitacion ="";
+    String m_NumHabitacion = "";
     private void CBO_N_HabitacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CBO_N_HabitacionActionPerformed
 
-        m_NumHabitacion= (String) CBO_N_Habitacion.getSelectedItem();
+        m_NumHabitacion = (String) CBO_N_Habitacion.getSelectedItem();
         ArrayList<HabitacionEntity> lst_HabitacionCostos = Habitaciondb.GetCargarHabitacionesTarifa(m_NumHabitacion);
 
         if (lst_HabitacionCostos != null && lst_HabitacionCostos.size() > 0) {
