@@ -51,8 +51,8 @@ public class MenuFrame extends javax.swing.JFrame {
 
     private void InitStyles() {
 
-        appName.putClientProperty("FlatLaf.style", "font: bold $h1.regular.font");
-        appName.setForeground(Color.white);
+//        appName.putClientProperty("FlatLaf.style", "font: bold $h1.regular.font");
+//        appName.setForeground(Color.white);
     }
 
     private void SetDate() {
@@ -85,7 +85,6 @@ public class MenuFrame extends javax.swing.JFrame {
 
         background = new javax.swing.JPanel();
         menu = new javax.swing.JPanel();
-        appName = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         btn_prin = new javax.swing.JButton();
         btn_lends = new javax.swing.JButton();
@@ -109,10 +108,6 @@ public class MenuFrame extends javax.swing.JFrame {
         menu.setBackground(new java.awt.Color(13, 71, 161));
         menu.setPreferredSize(new java.awt.Dimension(270, 640));
         menu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        appName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        appName.setText("HOSTAL");
-        menu.add(appName, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 250, 34));
 
         jSeparator1.setPreferredSize(new java.awt.Dimension(50, 5));
         menu.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 190, 20));
@@ -154,7 +149,7 @@ public class MenuFrame extends javax.swing.JFrame {
         btn_returns.setBackground(new java.awt.Color(21, 101, 192));
         btn_returns.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btn_returns.setForeground(new java.awt.Color(255, 255, 255));
-        btn_returns.setText("Devoluciones");
+        btn_returns.setText("Datos del Cliente");
         btn_returns.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 13, 1, 1, new java.awt.Color(0, 0, 0)));
         btn_returns.setBorderPainted(false);
         btn_returns.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -221,6 +216,7 @@ public class MenuFrame extends javax.swing.JFrame {
 
         lb_NombreSede.setFont(new java.awt.Font("Dialog", 1, 15)); // NOI18N
         lb_NombreSede.setForeground(new java.awt.Color(255, 255, 255));
+        lb_NombreSede.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lb_NombreSede.setText("jLabel10");
         menu.add(lb_NombreSede, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 251, 25));
 
@@ -367,7 +363,6 @@ void Salir() {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BTN_Salir;
-    private javax.swing.JLabel appName;
     private javax.swing.JPanel background;
     private javax.swing.JButton btn_books;
     private javax.swing.JButton btn_lends;

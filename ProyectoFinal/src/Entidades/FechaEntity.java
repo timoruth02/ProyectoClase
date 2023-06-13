@@ -1,14 +1,19 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Entidades;
 
-/**
- *
- * @author Ruth Sayuri
- */
+import java.util.Date;
+
+
 public class FechaEntity {
+    private Date fecha = null;
+    
+    public Date getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
+    }
+    
+    
     
 }
