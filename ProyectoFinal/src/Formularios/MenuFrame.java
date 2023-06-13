@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Formularios;
 
 import Entidades.Utilidades;
@@ -21,15 +16,10 @@ import javax.swing.JPanel;
 import javax.swing.UIManager;
 import org.netbeans.lib.awtextra.AbsoluteConstraints;
 
-/**
- *
- * @author Antonio
- */
+
 public class MenuFrame extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Dashboard
-     */
+
     public MenuFrame() {
         initComponents();
         
