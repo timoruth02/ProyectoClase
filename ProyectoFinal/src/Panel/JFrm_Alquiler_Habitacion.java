@@ -2,6 +2,8 @@ package Panel;
 
 import Datos.*;
 import Entidades.*;
+import com.sun.accessibility.internal.resources.accessibility;
+import com.sun.org.apache.bcel.internal.generic.AALOAD;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Image;
@@ -952,14 +954,14 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
         return formato.format(Fecha);
 
     }
-
+      double Precio, Importe;
     //CREAR EL METODO MOSTRAR IMPORTE
     void Mostrar_Importe() {
         //DECLARAR UNA VARIABLE PARA ESTABLECER EL FORMATO
         DecimalFormat Num_Decimal = new DecimalFormat("0.00");
         //DECLARAR VARIABLES
         int Cant;
-        double Precio, Importe;
+  
 
         //OBTENER VARIABLE        
         Precio = Double.parseDouble(this.lb_Precio.getText());
@@ -1116,7 +1118,25 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
     }//GEN-LAST:event_BTN_NuevoActionPerformed
 
     private void BTN_GuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_GuardarActionPerformed
+        AlquilerDB DB_AlQ = new AlquilerDB();
 
+        AlquilerEntity Item_Data =  new AlquilerEntity();
+        
+        Date d = new Date();
+        
+        Item_Data.setNumAlquiler("AL01");
+        Item_Data.setCodSede(Utilidades.getM_UsuarioSistema().getCodSede());
+        Item_Data.setCodCliente(Lb_CodCliente.getText());
+        Item_Data.setCodEmpleado(Utilidades.getM_UsuarioSistema().getCodEmpleado());
+        Item_Data.setNumHabitacion(m_NumHabitacion);
+        Item_Data.setFec_Alquiler(d);
+        Item_Data.setFec_TerminoAlquiler(d);
+        Item_Data.setImporte(Importe);
+        
+        DB_AlQ.Save(Item_Data);
+        
+        
+        
         int Rpta;
 
         //Evaluar si el total de caracteres del control TXTDoc_Identidad_Cliente es mayor a 0
@@ -1258,10 +1278,10 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
             // this.Botones(true);
         }
     }//GEN-LAST:event_TXT_CantidadKeyPressed
-
+String m_NumHabitacion ="";
     private void CBO_N_HabitacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CBO_N_HabitacionActionPerformed
 
-        String m_NumHabitacion = (String) CBO_N_Habitacion.getSelectedItem();
+        m_NumHabitacion= (String) CBO_N_Habitacion.getSelectedItem();
         ArrayList<HabitacionEntity> lst_HabitacionCostos = Habitaciondb.GetCargarHabitacionesTarifa(m_NumHabitacion);
 
         if (lst_HabitacionCostos != null && lst_HabitacionCostos.size() > 0) {
