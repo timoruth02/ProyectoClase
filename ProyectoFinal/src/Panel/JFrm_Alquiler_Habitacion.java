@@ -187,12 +187,6 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
         jPanel8 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable_RegistroCliente = new javax.swing.JTable();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        lb_Disponible = new javax.swing.JLabel();
-        lb_Ocupado = new javax.swing.JLabel();
-        lb_Mantenimiento = new javax.swing.JLabel();
         jP_Imagen = new javax.swing.JPanel();
         Lb_Foto = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
@@ -271,69 +265,18 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(jTable_RegistroCliente);
 
-        jLabel11.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel11.setText("Disponible");
-
-        jLabel12.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel12.setText("Ocupado");
-
-        jLabel13.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel13.setText("Mantenimiento");
-
-        lb_Disponible.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        lb_Disponible.setForeground(new java.awt.Color(0, 153, 51));
-        lb_Disponible.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lb_Disponible.setText("Disponible");
-
-        lb_Ocupado.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        lb_Ocupado.setForeground(new java.awt.Color(255, 51, 51));
-        lb_Ocupado.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lb_Ocupado.setText("Ocupado");
-
-        lb_Mantenimiento.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
-        lb_Mantenimiento.setForeground(new java.awt.Color(255, 153, 0));
-        lb_Mantenimiento.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lb_Mantenimiento.setText("Mantenimiento");
-
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lb_Disponible, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lb_Ocupado, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lb_Mantenimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 485, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lb_Disponible, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
-                        .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lb_Ocupado, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lb_Mantenimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -530,9 +473,9 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(rbt_Noche, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -549,7 +492,6 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
                                 .addComponent(lb_Precio, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(11, 11, 11))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
                         .addComponent(lbComentario, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -895,7 +837,7 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
         BodyPanelLayout.setVerticalGroup(
             BodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BodyPanelLayout.createSequentialGroup()
-                .addContainerGap(18, Short.MAX_VALUE)
+                .addContainerGap(15, Short.MAX_VALUE)
                 .addGroup(BodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jp_CLiente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -966,20 +908,7 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
         this.lb_Importe.setText(Num_Decimal.format(Importe));
     }
 
-    void Salir() {
-        //DECLARAMOS LA VARIABLE DE TIPO ENTERO
-        int Rpta;
-
-        //MOSTRAR MENSAJE DE CONFIRMACION
-//        Rpta = JOptionPane.showConfirmDialog(null, "¿Desea Salir de la Ventana?", this.getTitle(),
-//                JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);ERRORPANEL
-        //EVALUAR SI EL USUARIO RESPONDIO DE FORMA AFIRMATIVA
-        Rpta = 0;
-        if (Rpta == 0) {
-            //CERRRAR FORMULARIO
-            System.exit(0);
-        }
-    }
+   
     private void CBO_TipoHabitacionItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_CBO_TipoHabitacionItemStateChanged
 
         //DECLARAR UNA VARIABLE PARA ESTABLECER EL FORMATO
@@ -1430,9 +1359,6 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
     private javax.swing.JTextField TXTDoc_Identidad_Cliente;
     private javax.swing.JTextField TXT_Cantidad;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel18;
@@ -1457,12 +1383,9 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
     private javax.swing.JPanel jp_CLiente;
     private javax.swing.JPanel jp_foder;
     private javax.swing.JLabel lbComentario;
-    private javax.swing.JLabel lb_Disponible;
     private javax.swing.JLabel lb_FechaIngreso1;
     private javax.swing.JLabel lb_FechaSalida;
     private javax.swing.JLabel lb_Importe;
-    private javax.swing.JLabel lb_Mantenimiento;
-    private javax.swing.JLabel lb_Ocupado;
     private javax.swing.JLabel lb_Precio;
     private javax.swing.JPanel pl_InformacionCliente;
     private javax.swing.JRadioButton rbt_Hora;

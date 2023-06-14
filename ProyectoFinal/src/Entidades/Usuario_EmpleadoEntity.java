@@ -1,16 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Entidades;
 
 import java.util.Date;
 
-/**
- *
- * @author PRV
- */
+
 public class Usuario_EmpleadoEntity {
 
     private String CodEmpleado = "";
@@ -20,10 +12,8 @@ public class Usuario_EmpleadoEntity {
     private Date Fec_Registro = new Date();
     private String Estado_Empleado = "";
 
-    /**
-     * @return the CodEmpleado
-     */
-    public String getCodEmpleado() {
+    
+    public String s() {
         return CodEmpleado;
     }
 
