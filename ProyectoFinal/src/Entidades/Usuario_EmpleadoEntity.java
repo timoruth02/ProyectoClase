@@ -17,6 +17,9 @@ public class Usuario_EmpleadoEntity {
         return CodEmpleado;
     }
 
+    public String getCodEmpleado() {
+        return CodEmpleado;
+    }
     /**
      * @param CodEmpleado the CodEmpleado to set
      */

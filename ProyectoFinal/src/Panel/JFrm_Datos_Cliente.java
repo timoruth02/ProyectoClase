@@ -1,7 +1,10 @@
 package Panel;
 
+import Datos.*;
+import Entidades.*;
 import java.io.File;
 import java.io.FileWriter;
+import java.util.ArrayList;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
@@ -9,6 +12,28 @@ import javax.swing.table.DefaultTableModel;
 
 public class JFrm_Datos_Cliente extends javax.swing.JPanel {
 
+//    //Llenar el combobox **nacionalidad** segun la base de datos
+//    NacionalidadDB nacionalidad_dt = new NacionalidadDB();
+//    ArrayList<NacionalidadEntity> Listanacionalidad = new ArrayList<>();
+//    
+//    //Llenar el combobox **ubigeo provincia** segun la base de datos
+//    UbigeoDB ubigeo_dt = new UbigeoDB();
+//    ArrayList<UbigeoEntity> ListUbigeopro = new ArrayList<>();
+//    
+//    //Llenar el combobox **ubigeo distrito** segun la base de datos
+//    UbigeoDB ubigeodis_dt = new UbigeoDB();
+//    ArrayList<UbigeoEntity> ListUbigeodis = new ArrayList<>();
+//    
+//    //Llenar el combobox **ubigeo departamento** segun la base de datos
+//    UbigeoDB ubigeodep_dt = new UbigeoDB();
+//    ArrayList<UbigeoEntity> ListUbigeodep = new ArrayList<>();
+    
+    //Llenar el combobox **docIdentidad** segun la base de datos
+    DocIdentidadDB docIdentidad_dt = new DocIdentidadDB();
+    ArrayList<DocIdentidadEntity> ListaDocIDentidad = new ArrayList<>();
+    
+    
+    
   //Declara variable tipo: DefaultTableMode(Modelo de tabla)
 
     DefaultTableModel Modelo;
@@ -16,9 +41,53 @@ public class JFrm_Datos_Cliente extends javax.swing.JPanel {
     //Declarar Variable de tipo:Entero
     int Codigo = 1, Filas;
     
-    String Directorio = new File("src/Datos_Cliente.txt").getAbsolutePath();
+    String Directorio = new File("src/Archivo_Datos/Datos_Cliente.txt").getAbsolutePath();
     public JFrm_Datos_Cliente() {
         initComponents();
+        
+//        //combobox docIdentidad
+//        Listanacionalidad = nacionalidad_dt.GetBuscarNacionalidad();
+//
+//        for (NacionalidadEntity item : Listanacionalidad) {
+//            CBO_Nacionalidad.addItem(item.getPais_Nac());
+//        }
+//        CBO_Nacionalidad.setSelectedIndex(-1);
+//        
+//        //combobox ubigeo
+//        ListUbigeopro = ubigeo_dt.getBuscarUbigeo();
+//
+//        for (UbigeoEntity item : ListUbigeopro) {
+//            CBO_Pronvincia.addItem(item.getProvincia());
+//        }
+//        CBO_Pronvincia.setSelectedIndex(-1);
+//        
+//        //combobox distrito
+//        ListUbigeodis = ubigeodis_dt.getBuscarUbigeo();
+//
+//        for (UbigeoEntity item : ListUbigeodis) {
+//            CBO_Distrito.addItem(item.getDistrito());
+//        }
+//        CBO_Distrito.setSelectedIndex(-1);
+//        
+//        //combobox departamento
+//        ListUbigeodep = ubigeodep_dt.getBuscarUbigeo();
+//
+//        for (UbigeoEntity item : ListUbigeodep) {
+//            CBO_Departamento.addItem(item.getDepartamento());
+//        }
+//        CBO_Departamento.setSelectedIndex(-1);
+        
+        //combobox docIdentidad
+        ListaDocIDentidad = docIdentidad_dt.getCodDoc_IdentidadItems();
+
+        for (DocIdentidadEntity item : ListaDocIDentidad) {
+            CBO_TipoDoc.addItem(item.getTipo_Doc_Identidad());
+        }
+        CBO_TipoDoc.setSelectedIndex(-1);
+        
+            ArrayList<NacionalidadEntity> Listanacionalidad = new ArrayList<>();
+
+        
         Modelo= new DefaultTableModel();
          //Establecer nombre de las columnas para el control: jTable_RegistroNotas(a travez de la vaiable:Modelo)
         Modelo.addColumn("Cod. Cliente");
@@ -53,13 +122,7 @@ public class JFrm_Datos_Cliente extends javax.swing.JPanel {
         this.TXT_DocIdentidad.setText("");
     }
  
- void cargar_Datos(){
-     
-        this.CBO_TipoDoc.removeAllItems();
-        this.CBO_TipoDoc.addItem("Carné de Extranjería");
-        this.CBO_TipoDoc.addItem("DNI (Documento Nacional de Identidad)");
- 
- }
+
 
     void Solo_Letras(java.awt.event.KeyEvent evt) {
         // Evaluar que solo  se haya ingresado Letras y no números
@@ -446,9 +509,9 @@ public class JFrm_Datos_Cliente extends javax.swing.JPanel {
             JPanel_SexoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JPanel_SexoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(JPanel_SexoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(BTN_Masculino)
-                    .addComponent(BTN_Femenino, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(JPanel_SexoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(BTN_Femenino, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(BTN_Masculino, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(0, 11, Short.MAX_VALUE))
         );
         JPanel_SexoLayout.setVerticalGroup(
@@ -884,36 +947,57 @@ public class JFrm_Datos_Cliente extends javax.swing.JPanel {
     }//GEN-LAST:event_CBO_DistritoActionPerformed
 
     private void BTN_NuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_NuevoActionPerformed
-        // TODO add your handling code here:
+         // INVOCAR AL METODO: LIMPIAR()
+        this.Limpiar();
+
+        //SELECCIONAR EL PRIMER ELMENTO DEL COMBOBOX
+        this.CBO_TipoDoc.setSelectedIndex(0);
+
+        //EVALUAR SI EL CONTROL: JTABLE TIENE REGISTROS
+        if (this.jTable_DatosCliente.getRowCount() == 0) {
+            //ASIGANAR VALOR A LA VARIABLE:CODIGO
+            Codigo = 1;
+        } else {
+            //GENERAR EL CODIGO DEL ESTUDIANTE
+            Codigo = this.jTable_DatosCliente.getRowCount() + 1;
+        }
+
+        //MOSTRAR CODIGO DEL ESTUDIANTE
+        this.Lb_CodCliente.setText(String.valueOf(Codigo));
     }//GEN-LAST:event_BTN_NuevoActionPerformed
 
     private void BTN_GuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_GuardarActionPerformed
-        if(TXT_DocIdentidad.getText().length()<8){
-            JOptionPane.showMessageDialog(null, "Falta Numeros en Documento de Identidad");
-        }
-        if(TXT_Telefono.getText().length()<9){
-            JOptionPane.showMessageDialog(null, "Faltan Números en el Campo Telefono");
-        }
+//        if(TXT_DocIdentidad.getText().length()<8){
+//            JOptionPane.showMessageDialog(null, "Falta Numeros en Documento de Identidad");
+//        }
+//        if(TXT_Telefono.getText().length()<9){
+//            JOptionPane.showMessageDialog(null, "Faltan Números en el Campo Telefono");
+//        }
+//
+//        if(TXT_Apellidos.getText().length()==0){
+//            JOptionPane.showMessageDialog(null,"Falta Ingresar Datos en el campo Nombres");
+//        }
+//        if(TXT_Nombres.getText().length()==0){
+//            JOptionPane.showMessageDialog(null,"Falta Ingresar Datos en el campo Nombres");
+//        }
+//
+//        if(TXT_Direccion.getText().length()==0){
+//            JOptionPane.showMessageDialog(null,"Falta Ingresar Datos en el campo Dirección");
+//        }
+//        if(TXT_Email.getText().length()==0){
+//            JOptionPane.showMessageDialog(null,"Falta Ingresar Datos en el campo Email");
+//        }
+//        if(BTN_Masculino.getText().length() <1){
+//            JOptionPane.showMessageDialog(null,"Falta Ingresar el Sexo");
+//        }
+//         else if(BTN_Masculino.getText().length() ==0){
+//              JOptionPane.showMessageDialog(null,"Falta Ingresar el Sexo");
+//        }
+        //DECLARAR UNA VARIABLE DE TIPO:ENTERO
+      
 
-        if(TXT_Apellidos.getText().length()==0){
-            JOptionPane.showMessageDialog(null,"Falta Ingresar Datos en el campo Nombres");
-        }
-        if(TXT_Nombres.getText().length()==0){
-            JOptionPane.showMessageDialog(null,"Falta Ingresar Datos en el campo Nombres");
-        }
 
-        if(TXT_Direccion.getText().length()==0){
-            JOptionPane.showMessageDialog(null,"Falta Ingresar Datos en el campo Dirección");
-        }
-        if(TXT_Email.getText().length()==0){
-            JOptionPane.showMessageDialog(null,"Falta Ingresar Datos en el campo Email");
-        }
-        if(BTN_Masculino.getText().length() <1){
-            JOptionPane.showMessageDialog(null,"Falta Ingresar el Sexo");
-        }
-        // else if(BTN_Masculino.getText().length() ==0){
-            //  JOptionPane.showMessageDialog(null,"Falta Ingresar el Sexo");
-            //}
+        
     }//GEN-LAST:event_BTN_GuardarActionPerformed
 
     private void BTN_SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_SalirActionPerformed

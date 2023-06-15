@@ -1333,6 +1333,7 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JFrame {
 
     private void BTN_GuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_GuardarActionPerformed
 
+        
         // TODO add your handling code here:
         // Declarar una vaariable de tipo entero
         int Rpta;

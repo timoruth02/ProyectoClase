@@ -269,10 +269,6 @@ public class JFrm_mantenimiento_usuario extends javax.swing.JPanel {
         jLabel11 = new javax.swing.JLabel();
         TXTNombres = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        BTN_Editar = new javax.swing.JButton();
-        BTN_Salir = new javax.swing.JButton();
-        BTN_Eliminar = new javax.swing.JButton();
-        BTN_Agregar = new javax.swing.JButton();
         BTN_Nuevo = new javax.swing.JButton();
         BTN_Actualizar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -285,6 +281,11 @@ public class JFrm_mantenimiento_usuario extends javax.swing.JPanel {
         jPanel4 = new javax.swing.JPanel();
         RBT_Habilitado = new javax.swing.JRadioButton();
         RBT_Bloqueado = new javax.swing.JRadioButton();
+        jPanel3 = new javax.swing.JPanel();
+        BTN_Agregar = new javax.swing.JButton();
+        BTN_Editar = new javax.swing.JButton();
+        BTN_Eliminar = new javax.swing.JButton();
+        BTN_Salir = new javax.swing.JButton();
 
         jPanel1.setBackground(new java.awt.Color(0, 102, 153));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "DATOS  DEL USUARIO", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Trebuchet MS", 1, 14), new java.awt.Color(255, 255, 255))); // NOI18N
@@ -454,46 +455,6 @@ public class JFrm_mantenimiento_usuario extends javax.swing.JPanel {
                 .addContainerGap(9, Short.MAX_VALUE))
         );
 
-        BTN_Editar.setBackground(new java.awt.Color(102, 102, 102));
-        BTN_Editar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/Nota.png"))); // NOI18N
-        BTN_Editar.setText("Editar");
-        BTN_Editar.setIconTextGap(10);
-        BTN_Editar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BTN_EditarActionPerformed(evt);
-            }
-        });
-
-        BTN_Salir.setBackground(new java.awt.Color(153, 0, 0));
-        BTN_Salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/salir.png"))); // NOI18N
-        BTN_Salir.setText("Salir");
-        BTN_Salir.setIconTextGap(10);
-        BTN_Salir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BTN_SalirActionPerformed(evt);
-            }
-        });
-
-        BTN_Eliminar.setBackground(new java.awt.Color(102, 102, 102));
-        BTN_Eliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/tacho.png"))); // NOI18N
-        BTN_Eliminar.setText("Eliminar");
-        BTN_Eliminar.setIconTextGap(10);
-        BTN_Eliminar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BTN_EliminarActionPerformed(evt);
-            }
-        });
-
-        BTN_Agregar.setBackground(new java.awt.Color(102, 102, 102));
-        BTN_Agregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/BtnAgregarClienteIcon.png"))); // NOI18N
-        BTN_Agregar.setText("agregar");
-        BTN_Agregar.setIconTextGap(10);
-        BTN_Agregar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BTN_AgregarActionPerformed(evt);
-            }
-        });
-
         BTN_Nuevo.setBackground(new java.awt.Color(102, 102, 102));
         BTN_Nuevo.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         BTN_Nuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/Nuevo.png"))); // NOI18N
@@ -642,32 +603,93 @@ public class JFrm_mantenimiento_usuario extends javax.swing.JPanel {
                 .addContainerGap(27, Short.MAX_VALUE))
         );
 
+        jPanel3.setBackground(new java.awt.Color(0, 0, 0));
+
+        BTN_Agregar.setBackground(new java.awt.Color(102, 102, 102));
+        BTN_Agregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/BtnAgregarClienteIcon.png"))); // NOI18N
+        BTN_Agregar.setText("agregar");
+        BTN_Agregar.setIconTextGap(10);
+        BTN_Agregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BTN_AgregarActionPerformed(evt);
+            }
+        });
+
+        BTN_Editar.setBackground(new java.awt.Color(102, 102, 102));
+        BTN_Editar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/Nota.png"))); // NOI18N
+        BTN_Editar.setText("Editar");
+        BTN_Editar.setIconTextGap(10);
+        BTN_Editar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BTN_EditarActionPerformed(evt);
+            }
+        });
+
+        BTN_Eliminar.setBackground(new java.awt.Color(102, 102, 102));
+        BTN_Eliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/tacho.png"))); // NOI18N
+        BTN_Eliminar.setText("Eliminar");
+        BTN_Eliminar.setIconTextGap(10);
+        BTN_Eliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BTN_EliminarActionPerformed(evt);
+            }
+        });
+
+        BTN_Salir.setBackground(new java.awt.Color(153, 0, 0));
+        BTN_Salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/cerrar-sesion.png"))); // NOI18N
+        BTN_Salir.setText("Salir");
+        BTN_Salir.setIconTextGap(10);
+        BTN_Salir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BTN_SalirActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(BTN_Agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(44, 44, 44)
+                .addComponent(BTN_Editar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(49, 49, 49)
+                .addComponent(BTN_Eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(BTN_Salir, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(87, 87, 87))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(17, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BTN_Agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BTN_Editar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BTN_Eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BTN_Salir, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(14, 14, 14))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 749, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(BTN_Agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(51, 51, 51)
-                        .addComponent(BTN_Editar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(52, 52, 52)
-                        .addComponent(BTN_Eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(BTN_Salir, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 749, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(BTN_Nuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BTN_Actualizar))
-                .addGap(0, 0, 0))
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -684,12 +706,8 @@ public class JFrm_mantenimiento_usuario extends javax.swing.JPanel {
                         .addComponent(BTN_Actualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BTN_Agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BTN_Editar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BTN_Eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BTN_Salir, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(11, Short.MAX_VALUE))
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -965,6 +983,7 @@ public class JFrm_mantenimiento_usuario extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel jp_DatosUser;
