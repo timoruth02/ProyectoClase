@@ -1,0 +1,237 @@
+Mañazo, Puno, Puno
+Paucarcolla, Puno, Puno
+Pichacani, Puno, Puno
+Plateria, Puno, Puno
+San Antonio, Puno, Puno
+Tiquillaca, Puno, Puno
+Vilque, Puno, Puno
+Azangaro, Azángaro, Puno
+Achaya, Azángaro, Puno
+Arapa, Azángaro, Puno
+Asillo, Azángaro, Puno
+Caminaca, Azángaro, Puno
+Chupa, Azángaro, Puno
+Jose Domingo Choquehuanca, Azángaro, Puno
+Muñani, Azángaro, Puno
+Potoni, Azángaro, Puno
+Saman, Azángaro, Puno
+San Antón, Azángaro, Puno
+San José, Azángaro, Puno
+San Juan de Salinas, Azángaro, Puno
+Santiago de Pupuja, Azángaro, Puno
+Tirapata, Azángaro, Puno
+Macusani, Carabaya, Puno
+Ajoyani, Carabaya, Puno
+Ayapata, Carabaya, Puno
+Coasa, Carabaya, Puno
+Corani, Carabaya, Puno
+Crucero, Carabaya, Puno
+Ituata, Carabaya, Puno
+Ollachea, Carabaya, Puno
+San Gaban, Carabaya, Puno
+Usicayos, Carabaya, Puno
+Juli, Chucuito, Puno
+Desaguadero, Chucuito, Puno
+Huacullani, Chucuito, Puno
+Kelluyo, Chucuito, Puno
+Pisacoma, Chucuito, Puno
+Pomata, Chucuito, Puno
+Zepita, Chucuito, Puno
+Ilave, El Collao, Puno
+Capaso, El Collao, Puno
+Pilcuyo, El Collao, Puno
+Santa Rosa, El Collao, Puno
+Conduriri, El Collao, Puno
+Huancane, Huancané, Puno
+Cojata, Huancané, Puno
+Huatasani, Huancané, Puno
+Inchupalla, Huancané, Puno
+Pusi, Huancané, Puno
+Rosaspata, Huancané, Puno
+Taraco, Huancané, Puno
+Vilque Chico, Huancané, Puno
+Lampa, Lampa, Puno
+Cabanilla, Lampa, Puno
+Calapuja, Lampa, Puno
+Nicasio, Lampa, Puno
+Ocuviri, Lampa, Puno
+Palca, Lampa, Puno
+Paratia, Lampa, Puno
+Pucara, Lampa, Puno
+Santa Lucía, Lampa, Puno
+Vilavila, Lampa, Puno
+Ayaviri, Melgar, Puno
+Antauta, Melgar, Puno
+Cupi, Melgar, Puno
+Llalli, Melgar, Puno
+Macari, Melgar, Puno
+Nuñoa, Melgar, Puno
+Orurillo, Melgar, Puno
+Santa Rosa, Melgar, Puno
+Umachiri, Melgar, Puno
+Moho, Moho, Puno
+Conima, Moho, Puno
+Huayrapata, Moho, Puno
+Tilali, Moho, Puno
+Putina, San Antonio de Putina, Puno
+Ananea, San Antonio de Putina, Puno
+Pedro Vilca Apaza, San Antonio de Putina, Puno
+Quilcapuncu, San Antonio de Putina, Puno
+Sina, San Antonio de Putina, Puno
+Juliaca, San Román, Puno
+Cabana, San Román, Puno
+Cabanillas, San Román, Puno
+Caracoto, San Román, Puno
+San Miguel, San Román, Puno
+Sandia, Sandia, Puno
+Cuyocuyo, Sandia, Puno
+Limbani, Sandia, Puno
+Patambuco, Sandia, Puno
+Phara, Sandia, Puno
+Quiaca, Sandia, Puno
+San Juan del Oro, Sandia, Puno
+Yanahuaya, Sandia, Puno
+Alto Inambari, Sandia, Puno
+San Pedro de Putina Punco, Sandia, Puno
+Yunguyo, Yunguyo, Puno
+Anapia, Yunguyo, Puno
+Copani, Yunguyo, Puno
+Cuturapi, Yunguyo, Puno
+Ollaraya, Yunguyo, Puno
+Tinicachi, Yunguyo, Puno
+Unicachi, Yunguyo, Puno
+Moyobamba, Moyobamba, San Martín
+Calzada, Moyobamba, San Martín
+Habana, Moyobamba, San Martín
+Jepelacio, Moyobamba, San Martín
+Soritor, Moyobamba, San Martín
+Yantalo, Moyobamba, San Martín
+Bellavista, Bellavista, San Martín
+Alto Biavo, Bellavista, San Martín
+Bajo Biavo, Bellavista, San Martín
+Huallaga, Bellavista, San Martín
+San Pablo, Bellavista, San Martín
+San Rafael, Bellavista, San Martín
+San José de Sisa, El Dorado, San Martín
+Agua Blanca, El Dorado, San Martín
+San Martín, El Dorado, San Martín
+Santa Rosa, El Dorado, San Martín
+Shatoja, El Dorado, San Martín
+Saposoa, Huallaga, San Martín
+Alto Saposoa, Huallaga, San Martín
+El Eslabon, Huallaga, San Martín
+Piscoyacu, Huallaga, San Martín
+Sacanche, Huallaga, San Martín
+Tingo de Saposoa, Huallaga, San Martín
+Lamas, Lamas, San Martín
+Alonso de Alvarado, Lamas, San Martín
+Barranquita, Lamas, San Martín
+Caynarachi, Lamas, San Martín
+Cuñumbuqui, Lamas, San Martín
+Pinto Recodo, Lamas, San Martín
+Rumisapa, Lamas, San Martín
+San Roque De Cumbaza, Lamas, San Martín
+Shanao, Lamas, San Martín
+Tabalosos, Lamas, San Martín
+Zapatero, Lamas, San Martín
+Juanjui, Mariscal Cáceres, San Martín
+Campanilla, Mariscal Cáceres, San Martín
+Huicungo, Mariscal Cáceres, San Martín
+Pachiza, Mariscal Cáceres, San Martín
+Pajarillo, Mariscal Cáceres, San Martín
+Picota, Picota, San Martín
+Buenos Aires, Picota, San Martín
+Caspizapa, Picota, San Martín
+Pilluana, Picota, San Martín
+Pucacaca, Picota, San Martín
+San Cristobal, Picota, San Martín
+San Hilarion, Picota, San Martín
+Shamboyacu, Picota, San Martín
+Tingo de Ponasa, Picota, San Martín
+Tres Unidos, Picota, San Martín
+Rioja, Rioja, San Martín
+Awajun, Rioja, San Martín
+Elias Soplin Vargas, Rioja, San Martín
+Nueva Cajamarca, Rioja, San Martín
+Pardo Miguel, Rioja, San Martín
+Posic, Rioja, San Martín
+San Fernando, Rioja, San Martín
+Yorongos, Rioja, San Martín
+Yuracyacu, Rioja, San Martín
+Tarapoto, San Martín, San Martín
+Alberto Leveau, San Martín, San Martín
+Cacatachi, San Martín, San Martín
+Chazuta, San Martín, San Martín
+Chipurana, San Martín, San Martín
+El Porvenir, San Martín, San Martín
+Huimbayoc, San Martín, San Martín
+Juan Guerra, San Martín, San Martín
+La Banda de Shilcayo, San Martín, San Martín
+Morales, San Martín, San Martín
+Papaplaya, San Martín, San Martín
+San Antonio, San Martín, San Martín
+Sauce, San Martín, San Martín
+Shapaja, San Martín, San Martín
+Tocache, Tocache, San Martín
+Nuevo Progreso, Tocache, San Martín
+Polvora, Tocache, San Martín
+Shunte, Tocache, San Martín
+Uchiza, Tocache, San Martín
+Tacna, Tacna, Tacna
+Alto de la Alianza, Tacna, Tacna
+Calana, Tacna, Tacna
+Ciudad Nueva, Tacna, Tacna
+Inclan, Tacna, Tacna
+Pachia, Tacna, Tacna
+Palca, Tacna, Tacna
+Pocollay, Tacna, Tacna
+Sama, Tacna, Tacna
+Coronel Gregorio Albarracin L., Tacna, Tacna
+La Yarada los Palos, Tacna, Tacna
+Candarave, Candarave, Tacna
+Cairani, Candarave, Tacna
+Camilaca, Candarave, Tacna
+Curibaya, Candarave, Tacna
+Huanuara, Candarave, Tacna
+Quilahuani, Candarave, Tacna
+Locumba, Jorge Basadre, Tacna
+Ilabaya, Jorge Basadre, Tacna
+Ite, Jorge Basadre, Tacna
+Tarata, Tarata, Tacna
+Heroes Albarracin, Tarata, Tacna
+Estique, Tarata, Tacna
+Estique Pampa, Tarata, Tacna
+Sitajara, Tarata, Tacna
+Susapaya, Tarata, Tacna
+Tarucachi, Tarata, Tacna
+Ticaco, Tarata, Tacna
+Tumbes, Tumbes, Tumbes
+Corrales, Tumbes, Tumbes
+La Cruz, Tumbes, Tumbes
+Pampas De Hospital, Tumbes, Tumbes
+San Jacinto, Tumbes, Tumbes
+San Juan de la Virgen, Tumbes, Tumbes
+Zorritos, Contralmirante Villar, Tumbes
+Casitas, Contralmirante Villar, Tumbes
+Canoas de Punta Sal, Contralmirante Villar, Tumbes
+Zarumilla, Zarumilla, Tumbes
+Aguas Verdes, Zarumilla, Tumbes
+Matapalo, Zarumilla, Tumbes
+Papayal, Zarumilla, Tumbes
+Calleria, Coronel Portillo, Ucayali
+Campoverde, Coronel Portillo, Ucayali
+Iparia, Coronel Portillo, Ucayali
+Masisea, Coronel Portillo, Ucayali
+Yarinacocha, Coronel Portillo, Ucayali
+Nueva Requena, Coronel Portillo, Ucayali
+Manantay, Coronel Portillo, Ucayali
+Raimondi, Atalaya, Ucayali
+Sepahua, Atalaya, Ucayali
+Tahuania, Atalaya, Ucayali
+Yurua, Atalaya, Ucayali
+Padre Abad, Padre Abad, Ucayali
+Irazola, Padre Abad, Ucayali
+Curimana, Padre Abad, Ucayali
+Neshuya, Padre Abad, Ucayali
+Alexander Von Humboldt, Padre Abad, Ucayali
+Purús, Purús, Ucayali

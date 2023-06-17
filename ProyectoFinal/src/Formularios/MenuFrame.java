@@ -309,7 +309,7 @@ void Salir() {
     }//GEN-LAST:event_BTN_SalirActionPerformed
 
     private void btn_reportsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_reportsActionPerformed
-  
+
     }//GEN-LAST:event_btn_reportsActionPerformed
 
     private void btn_DatosClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_DatosClienteActionPerformed

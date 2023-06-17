@@ -1,6 +1,6 @@
 package Panel;
 
-import DAL.Cliente;
+import DAL.*;
 import Datos.*;
 import Entidades.*;
 import com.toedter.calendar.JDateChooser;
@@ -45,8 +45,8 @@ public class JFrm_Datos_Cliente extends javax.swing.JPanel {
     String DirectorioNacionalidad = new File("src/Archivo_Datos/Registro_Nacionalidad.txt").getAbsolutePath();
     String DirectorioDocIdentidad = new File("src/Archivo_Datos/Registro_Documentos_Identidad.txt").getAbsolutePath();
     String DirectorioDepartamento = new File("src/Archivo_Datos/Registro_Departamentos.txt").getAbsolutePath();
-    String DirectorioProvincia = new File("src/Archivo_Datos/Registro_Provincias.txt").getAbsolutePath();
-    String DirectorioDistrito = new File("src/Archivo_Datos/Registro_Distritos.txt").getAbsolutePath();
+    String DirectorioProvincia = new File("src/Archivo_Datos/Registro_Provincia.txt").getAbsolutePath();
+    String DirectorioDistrito = new File("src/Archivo_Datos/Registro_Distrito.txt").getAbsolutePath();
     String DirectorioCliente = new File("src/Archivo_Datos/Registro_Clientes.txt").getAbsolutePath();
     //Instanciar la Clase: Persona, a través de un Objeto 
     Cliente ObjCliente = new Cliente("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "");
@@ -87,20 +87,19 @@ public class JFrm_Datos_Cliente extends javax.swing.JPanel {
 
         //Establecer el Modelo al Control: jTable_RegistroClientes         
         this.jTable_DatosCliente.setModel(Modelo);
-        
-        //Invocar a Métodos: 
-        this.Limpiar();        
-      //  this.Cargar_OpcionesBusqueda();   
-        this.Cargar_Nacionalidad(); 
-        this.Cargar_Doc_Identidad("<Seleccione>");      
-        this.Cargar_Departamento();        
-        this.Botones(true); 
-        this.Habilitar_Controles(false);       
-        this.AutoAjustar_Columnas();        
-        this.Leer_Datos();        
-        this.Total_Filas(); 
 
-        
+        //Invocar a Métodos: 
+        //  this.Cargar_OpcionesBusqueda();   
+        this.Cargar_Nacionalidad();
+        this.Cargar_Doc_Identidad("<Seleccione>");
+        this.Cargar_Departamento();
+        this.Botones(true);
+        this.Habilitar_Controles(false);
+        this.AutoAjustar_Columnas();
+        this.Leer_Datos();
+        this.Total_Filas();
+
+//        this.Limpiar();
     }
     //Declarar una Variable de Tipo: FileInputStream (Flujo de Entrada de Archivo)     
     FileInputStream Cargar_Archivo;
@@ -108,20 +107,21 @@ public class JFrm_Datos_Cliente extends javax.swing.JPanel {
     //Crear el Método Local: Limpiar()     
     void Limpiar() {
         //Limpiar el Texto de los Controles: JTextField         
-        this.TXTApellidos.setText("");
+            this.TXTApellidos.setText("");
         this.TXTNombres.setText("");
 
         this.TXTNumDoc_Identidad.setText("");
         this.TXTDireccion.setText("");
         this.TXTNumTelefono.setText("");
         this.TXTEmail.setText("");
-//        this.TXTBuscar.setText(""); 
+//        this.TXTBuscar.setText("");
+
         //Establecer la Selección del Primer índice (Elemento) del ComboBox         
-        this.CBO_Nacionalidad.setSelectedIndex(0);
-        this.CBO_Tipo_Doc_Identidad.setSelectedIndex(0);
-        this.CBO_Departamento.setSelectedIndex(0);
-        this.CBO_Provincia.setSelectedIndex(0);
-        this.CBO_Distrito.setSelectedIndex(0);
+//        this.CBO_Nacionalidad.setSelectedIndex(0);
+//        this.CBO_Tipo_Doc_Identidad.setSelectedIndex(0);
+//        this.CBO_Departamento.setSelectedIndex(0);
+//        this.CBO_Provincia.setSelectedIndex(0);
+//        this.CBO_Distrito.setSelectedIndex(0);
         //this.CBO_CampoBuscar.setSelectedIndex(0); 
 
         //Limpiar el Texto de los Controles: Labels         
@@ -136,7 +136,7 @@ public class JFrm_Datos_Cliente extends javax.swing.JPanel {
     //Crear Método Local: Cargar_Nacionalidad    
     void Cargar_Nacionalidad() {
         //Limpiar todos los Elementos del ComboBox: CBO_Nacionalidad        
-        this.CBO_Nacionalidad.removeAllItems();
+//        this.CBO_Nacionalidad.removeAllItems();
 
         //Agregar un Primer Elemento al ComboBox: CBO_Nacionalidad       
         this.CBO_Nacionalidad.addItem("<Seleccione>");
@@ -154,7 +154,7 @@ public class JFrm_Datos_Cliente extends javax.swing.JPanel {
     //Crear Método Local: Cargar_Doc_Identidad     
     void Cargar_Doc_Identidad(String Nacionalidad) {
         //Limpiar todos los Elementos del ComboBox: CBO_Tipo_Doc_Identidad   
-        this.CBO_Tipo_Doc_Identidad.removeAllItems();
+//        this.CBO_Tipo_Doc_Identidad.removeAllItems();
 
         //Agregar un Primer Elemento al ComboBox: CBO_Tipo_Doc_Identidad         
         this.CBO_Tipo_Doc_Identidad.addItem("<Seleccione>");
@@ -186,7 +186,7 @@ public class JFrm_Datos_Cliente extends javax.swing.JPanel {
     //Crear Método Local: Cargar_Departamento     
     void Cargar_Departamento() {
         //Limpiar todos los Elementos del ComboBox: CBO_Departamento         
-        this.CBO_Departamento.removeAllItems();
+//        this.CBO_Departamento.removeAllItems();
 
         //Agregar un Primer Elemento al ComboBox: CBO_Departamento         
         this.CBO_Departamento.addItem("<Seleccione>");
@@ -204,7 +204,7 @@ public class JFrm_Datos_Cliente extends javax.swing.JPanel {
     //Crear Método Local: Cargar_Provincia()     
     void Cargar_Provincia(String NombreDepartamento) {
         //Limpiar todos los Elementos del ComboBox: CBO_Provincia       
-        this.CBO_Provincia.removeAllItems();
+//        this.CBO_Provincia.removeAllItems();
 
         //Agregar un Primer Elemento al ComboBox: CBO_Provincia        
         this.CBO_Provincia.addItem("<Seleccione>");
@@ -224,7 +224,7 @@ public class JFrm_Datos_Cliente extends javax.swing.JPanel {
     //Crear Método Local: Cargar_Distrito()     
     void Cargar_Distrito(String NombreProvincia) {
         //Limpiar todos los Elementos del ComboBox: CBO_Distrito         
-        this.CBO_Distrito.removeAllItems();
+//        this.CBO_Distrito.removeAllItems();
 
         //Agregar un Primer Elemento al ComboBox: CBO_Distrito         
         this.CBO_Distrito.addItem("<Seleccione>");
@@ -404,8 +404,8 @@ public class JFrm_Datos_Cliente extends javax.swing.JPanel {
         //Evaluar si la Longitud de Caracteres del Control: TXTEmail, es mayor a cero        
         if (this.TXTEmail.getText().length() > 0) {
             //Ptrón para Validar el Email 
-            Pattern PatronCaracteres = Pattern.compile("([a-z0-9]+(\\.?[a-z0-9])*)+@(([a-z]+)\\.([az]+))+");
-
+//            Pattern PatronCaracteres = Pattern.compile("([a-z0-9]+(\\.?[a-z0-9])*)+@(([a-z]+)\\.([az]+))+");
+            Pattern PatronCaracteres = Pattern.compile("^[a-zA-Z0-9]+@[a-zA-Z0-9]+\\.[a-zA-Z0-9]+$");
             //Email a validar 
             Matcher Mather = PatronCaracteres.matcher(this.TXTEmail.getText());
 
@@ -519,7 +519,7 @@ public class JFrm_Datos_Cliente extends javax.swing.JPanel {
     void AutoAjustar_Columnas() {
         //Establecer ancho de columnas
         //definir el tamaño de cada columna del control (jTable):jTable_RegistroNotas
-        int[] Anchos = {60, 120, 120, 180, 60, 60, 60, 60, 60, 80, 160, 200};
+        int[] Anchos = {60, 120, 120, 180, 60, 60, 60, 60, 60, 80, 160, 200,50,50,50,10};
 
         //Recorrer  el número de columnas del objeto(jTable):jTable_RegistroNotas
         for (int Columna = 0; Columna < this.jTable_DatosCliente.getColumnCount(); Columna++) {
@@ -779,7 +779,7 @@ public class JFrm_Datos_Cliente extends javax.swing.JPanel {
         }
     }
 
-     //Crear el Método: Validar_DocIdentidad()  
+    //Crear el Método: Validar_DocIdentidad()  
     void Validar_DocIdentidad() {
         int Contador = 0;
         String NumDocIdentidad = "";
@@ -797,7 +797,7 @@ public class JFrm_Datos_Cliente extends javax.swing.JPanel {
                     //Evaluar si el N° de Documento de Identidad Existe                    
                     if (this.TXTNumDoc_Identidad.getText().equals(NumDocIdentidad)) {
                         //Mostrar Mensaje de Error 
-                        JOptionPane.showMessageDialog(null, "El N° de Documento de Indentidad ya se encuentra Registrado","Error", JOptionPane.ERROR_MESSAGE);
+                        JOptionPane.showMessageDialog(null, "El N° de Documento de Indentidad ya se encuentra Registrado", "Error", JOptionPane.ERROR_MESSAGE);
 
                         //Ubicar Cursor en el Control: TXTNumDoc_Identidad            
                         this.TXTNumDoc_Identidad.requestFocus();
@@ -811,12 +811,11 @@ public class JFrm_Datos_Cliente extends javax.swing.JPanel {
             }
         }
     }
-        
+
     //Crear el Método Local: Salir()   
-    void Salir()
-    {
+    void Salir() {
         //Declarar variable de tipo: Entero     
-        int Rpta; 
+        int Rpta;
 
         //Mostrar Mensaje de Confirmación 
         Rpta = JOptionPane.showConfirmDialog(null, "¿Desea Salir de la ventana?",
@@ -825,19 +824,18 @@ public class JFrm_Datos_Cliente extends javax.swing.JPanel {
                 JOptionPane.QUESTION_MESSAGE);
 
         //Evaluar Si se ha pulsado el Botón: Sí       
-        if (Rpta == 0) 
-        {
+        if (Rpta == 0) {
             //Establecer Conjunto de Filas a Filtar en el Control: JTable         
-            this.jTable_DatosCliente.setRowSorter(null); 
+            this.jTable_DatosCliente.setRowSorter(null);
 
             //Invocar al Método: Guardar_Fichero           
             this.Guardar_Fichero();
 
             //Cerrar Formulario Actual        
-           // this.dispose();
+            // this.dispose();
         }
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -1115,24 +1113,25 @@ public class JFrm_Datos_Cliente extends javax.swing.JPanel {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(15, 15, 15)
+                .addGap(26, 26, 26)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(CBO_Departamento, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9)
-                    .addComponent(CBO_Provincia, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 16, Short.MAX_VALUE))
+                    .addComponent(CBO_Departamento, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CBO_Provincia, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel9))
+                .addContainerGap(59, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jLabel9)
-                .addGap(13, 13, 13)
-                .addComponent(CBO_Provincia, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                .addContainerGap()
                 .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(CBO_Departamento, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                .addComponent(jLabel9)
+                .addGap(12, 12, 12)
+                .addComponent(CBO_Provincia, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -1439,454 +1438,396 @@ public class JFrm_Datos_Cliente extends javax.swing.JPanel {
 
     private void BTN_SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_SalirActionPerformed
         //Invocar al Método: Salir        
-        this.Salir(); 
+        this.Salir();
     }//GEN-LAST:event_BTN_SalirActionPerformed
 
     private void BTN_GuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_GuardarActionPerformed
 
-         //Evaluar si el Código del Cliente ha sido generado        
-        if (this.Lb_Codigo.getText().length() == 0) 
-        { 
+        //Evaluar si el Código del Cliente ha sido generado        
+        if (this.Lb_Codigo.getText().length() == 0) {
             //Invocar al Método: Mensaje_Validacion           
-            this.Mensaje_Validacion("Debe Generar el Código del Cliente"); 
-        } 
-        //Evaluar si el Usuario a Ingresado los Apellidos del Cliente        
-                else if (this.TXTApellidos.getText().length() == 0) 
-        { 
+            this.Mensaje_Validacion("Debe Generar el Código del Cliente");
+        } //Evaluar si el Usuario a Ingresado los Apellidos del Cliente        
+        else if (this.TXTApellidos.getText().length() == 0) {
             //Invocar al Método: Mensaje_Validacion           
-            this.Mensaje_Validacion("Debe Ingresar los Apellidos del Cliente"); 
-             
+            this.Mensaje_Validacion("Debe Ingresar los Apellidos del Cliente");
+
             //Ubicar el Cursor en el Control: TXTApellidos         
-            this.TXTApellidos.requestFocus(); 
-        } 
-        //Evaluar si el Usuario a Ingresado los Nombres del Cliente        
-                else if (this.TXTNombres.getText().length() == 0) 
-        { 
-        //Invocar al Método: Mensaje_Validacion           
-            this.Mensaje_Validacion("Debe Ingresar los Nombres del Cliente"); 
-             
+            this.TXTApellidos.requestFocus();
+        } //Evaluar si el Usuario a Ingresado los Nombres del Cliente        
+        else if (this.TXTNombres.getText().length() == 0) {
+            //Invocar al Método: Mensaje_Validacion           
+            this.Mensaje_Validacion("Debe Ingresar los Nombres del Cliente");
+
             //Ubicar el Cursor en el Control: TXTNombres      
-            this.TXTNombres.requestFocus(); 
-        } 
-        //Evaluar si se ha Ingresado la Fecha de Nacimiento      
-                else if (this.JDateFec_Nac.getDate() == null) 
-        { 
+            this.TXTNombres.requestFocus();
+        } //Evaluar si se ha Ingresado la Fecha de Nacimiento      
+        else if (this.JDateFec_Nac.getDate() == null) {
             //Mostrar Mensaje 
-            JOptionPane.showMessageDialog(null, "Seleccione Fecha de Nacimiento del Paciente", "Faltan 	Datos!",JOptionPane.INFORMATION_MESSAGE); 
-             
+            JOptionPane.showMessageDialog(null, "Seleccione Fecha de Nacimiento del Paciente", "Faltan 	Datos!", JOptionPane.INFORMATION_MESSAGE);
+
             //Ubicar Cursor en el Control: JDateFec_Nac           
-            this.JDateFec_Nac.getDateEditor().getUiComponent().requestFocusInWindow(); 
-        } 
-        //Evaluar si se ha Seleccionado el Sexo del Cliente 
-        else if (this.RBTN_Masculino.isSelected() == false && this.RBTN_Femenino.isSelected() == false) 
-        { 
+            this.JDateFec_Nac.getDateEditor().getUiComponent().requestFocusInWindow();
+        } //Evaluar si se ha Seleccionado el Sexo del Cliente 
+        else if (this.RBTN_Masculino.isSelected() == false && this.RBTN_Femenino.isSelected() == false) {
             //Invocar al Método: Mensaje_Validacion          
-            this.Mensaje_Validacion("Debe Seleccionar el Sexo del Cliente"); 
-             
+            this.Mensaje_Validacion("Debe Seleccionar el Sexo del Cliente");
+
             //Establecer el Sexo del Cliente: MASCULINO            
-            this.RBTN_Masculino.setSelected(true); 
-        } 
-        //Evaluar si el Usuario a Seleccionado un Elemento del ComboBox     
-        else if (this.CBO_Nacionalidad.getSelectedIndex()==0) 
-        { 
+            this.RBTN_Masculino.setSelected(true);
+        } //Evaluar si el Usuario a Seleccionado un Elemento del ComboBox     
+        else if (this.CBO_Nacionalidad.getSelectedIndex() == 0) {
             //Invocar al Método: Mensaje_Validacion            
-            this.Mensaje_Validacion("Debe Seleccionar la Nacionalidad del Cliente"); 
-             
+            this.Mensaje_Validacion("Debe Seleccionar la Nacionalidad del Cliente");
+
             //Ubicar Cursor en el Control: CBO_Nacionalidad            
-            this.CBO_Nacionalidad.requestFocus(); 
-        } 
-        //Evaluar si el Usuario a Seleccionado un Elemento del ComboBox        
-        else if (this.CBO_Tipo_Doc_Identidad.getSelectedIndex()==0) 
-        { 
+            this.CBO_Nacionalidad.requestFocus();
+        } //Evaluar si el Usuario a Seleccionado un Elemento del ComboBox        
+        else if (this.CBO_Tipo_Doc_Identidad.getSelectedIndex() == 0) {
             //Invocar al Método: Mensaje_Validacion           
-            this.Mensaje_Validacion("Debe Seleccionar el Tipo de Documento de Identidad del Cliente"); 
-             
+            this.Mensaje_Validacion("Debe Seleccionar el Tipo de Documento de Identidad del Cliente");
+
             //Ubicar Cursor en el Control: CBO_Tipo_Doc_Identidad        
-            this.CBO_Tipo_Doc_Identidad.requestFocus(); 
-        } 
-        //Evaluar si el Usuario a Ingresado el Número de Documento de Identidad del Cliente 
-        else if (this.TXTNumDoc_Identidad.getText().length() == 0) 
-{ 
+            this.CBO_Tipo_Doc_Identidad.requestFocus();
+        } //Evaluar si el Usuario a Ingresado el Número de Documento de Identidad del Cliente 
+        else if (this.TXTNumDoc_Identidad.getText().length() == 0) {
             //Invocar al Método: Mensaje_Validacion            
-             this.Mensaje_Validacion("Debe Ingresar el Número de Documento de Identidad del Cliente"); 
-             
+            this.Mensaje_Validacion("Debe Ingresar el Número de Documento de Identidad del Cliente");
+
             //Ubicar el Cursor en el Control: TXTNumDoc_Identidad      
-            this.TXTNumDoc_Identidad.requestFocus(); 
-        } 
-        //Evaluar si el Usuario a Seleccionado un Elemento del ComboBox     
-        else if (this.CBO_Departamento.getSelectedIndex()==0) 
-        { 
+            this.TXTNumDoc_Identidad.requestFocus();
+        } //Evaluar si el Usuario a Seleccionado un Elemento del ComboBox     
+        else if (this.CBO_Departamento.getSelectedIndex() == 0) {
             //Invocar al Método: Mensaje_Validacion 
-            this.Mensaje_Validacion("Debe Seleccionar el Departamento donde vive el Cliente"); 
-             
+            this.Mensaje_Validacion("Debe Seleccionar el Departamento donde vive el Cliente");
+
             //Ubicar Cursor en el Control: CBO_Departamento         
-            this.CBO_Departamento.requestFocus(); 
-        } 
-        //Evaluar si el Usuario a Seleccionado un Elemento del ComboBox       
-        else if (this.CBO_Provincia.getSelectedIndex()==0) 
-        { 
+            this.CBO_Departamento.requestFocus();
+        } //Evaluar si el Usuario a Seleccionado un Elemento del ComboBox       
+        else if (this.CBO_Provincia.getSelectedIndex() == 0) {
             //Invocar al Método: Mensaje_Validacion 
-            this.Mensaje_Validacion("Debe Seleccionar la Provincia donde vive el Cliente"); 
-             
+            this.Mensaje_Validacion("Debe Seleccionar la Provincia donde vive el Cliente");
+
             //Ubicar Cursor en el Control: CBO_Provincia         
-            this.CBO_Provincia.requestFocus(); 
-        } 
-        //Evaluar si el Usuario a Seleccionado un Elemento del ComboBox        
-        else if (this.CBO_Distrito.getSelectedIndex()==0) 
-        { 
+            this.CBO_Provincia.requestFocus();
+        } //Evaluar si el Usuario a Seleccionado un Elemento del ComboBox        
+        else if (this.CBO_Distrito.getSelectedIndex() == 0) {
             //Invocar al Método: Mensaje_Validacion            
-            this.Mensaje_Validacion("Debe Seleccionar el Distrito donde vive el Cliente"); 
-             
+            this.Mensaje_Validacion("Debe Seleccionar el Distrito donde vive el Cliente");
+
             //Ubicar Cursor en el Control: CBO_Distrito         
-            this.CBO_Distrito.requestFocus(); 
-        } 
+            this.CBO_Distrito.requestFocus();
+        }
         //Evaluar si el Usuario a Ingresado la Dirección del Cliente else 
-        if (this.TXTDireccion.getText().length() == 0) 
-        { 
+        if (this.TXTDireccion.getText().length() == 0) {
             //Invocar al Método: Mensaje_Validacion      
-            this.Mensaje_Validacion("Debe Ingresar la Dirección del Cliente"); 
-             
+            this.Mensaje_Validacion("Debe Ingresar la Dirección del Cliente");
+
             //Ubicar el Cursor en el Control: TXTDireccion             
-            this.TXTDireccion.requestFocus(); 
-        } 
-        //Evaluar si el Usuario a Ingresado el Número de Telefono del Cliente         
-        else if (this.TXTNumTelefono.getText().length() == 0) 
-        { 
+            this.TXTDireccion.requestFocus();
+        } //Evaluar si el Usuario a Ingresado el Número de Telefono del Cliente         
+        else if (this.TXTNumTelefono.getText().length() == 0) {
             //Invocar al Método: Mensaje_Validacion            
-            this.Mensaje_Validacion("Debe Ingresar el N° de Teléfono del Cliente"); 
-             
+            this.Mensaje_Validacion("Debe Ingresar el N° de Teléfono del Cliente");
+
             //Ubicar el Cursor en el Control: TXTNumTelefono       
-            this.TXTNumTelefono.requestFocus(); 
-        } 
-        //Evaluar si el Usuario a Ingresado el Email del Cliente        
-        else if (this.TXTEmail.getText().contains("@")==false) 
-        { 
+            this.TXTNumTelefono.requestFocus();
+        } //Evaluar si el Usuario a Ingresado el Email del Cliente        
+        else if (this.TXTEmail.getText().contains("@") == false) {
             //Invocar al Método: Mensaje_Validacion           
-            this.Mensaje_Validacion("Debe Ingresar el Email del Cliente"); 
-             
+            this.Mensaje_Validacion("Debe Ingresar el Email del Cliente");
+
             //Ubicar el Cursor en el Control: TXTEmail            
-            this.TXTEmail.requestFocus(); 
-        } 
-        //Evaluar si se ha Seleccionado el Estado del Cliente 
-        else if (this.RBTN_Registrado.isSelected() == false && this.RBTN_Anulado.isSelected() == false) 
-        { 
+            this.TXTEmail.requestFocus();
+        } //Evaluar si se ha Seleccionado el Estado del Cliente 
+        else if (this.RBTN_Registrado.isSelected() == false && this.RBTN_Anulado.isSelected() == false) {
             //Invocar al Método: Mensaje_Validacion          
-            this.Mensaje_Validacion("Debe Seleccionar el Estado del Cliente"); 
-             
+            this.Mensaje_Validacion("Debe Seleccionar el Estado del Cliente");
+
             //Establecer el Estado de Registrado            
-            this.RBTN_Registrado.setSelected(true); 
-        } 
-        else 
-        { 
+            this.RBTN_Registrado.setSelected(true);
+        } else {
             //Declarar una variable de tipo: Entero          
-         int Rpta; 
+            int Rpta;
             //Mostrar Mensaje de Confirmación 
-            Rpta =JOptionPane.showConfirmDialog(null, "¿Desea " + this.BTN_Guardar.getText() + " los Datos del Cliente?",
-                    "Confirmación...", 	JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE); 
-             
+            Rpta = JOptionPane.showConfirmDialog(null, "¿Desea " + this.BTN_Guardar.getText() + " los Datos del Cliente?",
+                    "Confirmación...", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+
             //Evaluar si el Usuario Confirmó respuesta: Sí (0)           
-            if (Rpta == 0) 
-            { 
+            if (Rpta == 0) {
                 //Invocar Método: Validar_DocIdentidad()      
-                this.Validar_DocIdentidad(); 
-            }             else 
-            { 
+                this.Validar_DocIdentidad();
+            } else {
                 //Invocar al Método: Limpiar()              
-                this.Limpiar(); 
-            } 
-             
+                this.Limpiar();
+            }
+
             //Invocar al Evento: Botones        
-            this.Botones(true); 
-        } 
-                  
+            this.Botones(true);
+        }
+
 
     }//GEN-LAST:event_BTN_GuardarActionPerformed
 
     private void jTable_DatosClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable_DatosClienteMouseClicked
         //Invocar al Método: Cargar_Fila()        
-        this.Cargar_Fila(); 
+        this.Cargar_Fila();
     }//GEN-LAST:event_jTable_DatosClienteMouseClicked
 
     private void BTN_EditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_EditarActionPerformed
-        
+
         //Obtener el N° de Fila Seleccionada 
-        int Fila = this.jTable_DatosCliente.getSelectedRow(); 
- 
-    //Evaluar si Fila es Menor a Cero 
-    if (Fila < 0)  
-        { 
+        int Fila = this.jTable_DatosCliente.getSelectedRow();
+
+        //Evaluar si Fila es Menor a Cero 
+        if (Fila < 0) {
             //Mostrar Mensaje de Advertencia 
-            JOptionPane.showMessageDialog(null, "Debe Seleccionar el Registro (Fila) que desea editar los Datos","Mensaje", JOptionPane.WARNING_MESSAGE); 
-        }        
-    else  
-        { 
+            JOptionPane.showMessageDialog(null, "Debe Seleccionar el Registro (Fila) que desea editar los Datos", "Mensaje", JOptionPane.WARNING_MESSAGE);
+        } else {
             //Mostrar Mensaje de Confirmación          
-            int Rpta = JOptionPane.showConfirmDialog(null,"¿Está seguro que desea editar los datos del Cliente?",  
-                                      "Confirmación...",JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE); 
-          
+            int Rpta = JOptionPane.showConfirmDialog(null, "¿Está seguro que desea editar los datos del Cliente?",
+                    "Confirmación...", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+
             //Evaluar Si respuesta fue Afirmativa            
-            if (Rpta == JOptionPane.YES_OPTION) 
-            { 
+            if (Rpta == JOptionPane.YES_OPTION) {
                 //Habilitar Controles              
-                this.Habilitar_Controles(true); 
-                 
+                this.Habilitar_Controles(true);
+
                 //Establecer Texto: Actualizar, al Control: BTN_Guardar      
-                this.BTN_Guardar.setText("Actualizar"); 
-         
+                this.BTN_Guardar.setText("Actualizar");
+
                 //Deshabilitar Botones               
                 this.Botones(false);
-                }
-                }
+            }
+        }
     }//GEN-LAST:event_BTN_EditarActionPerformed
 
     private void BTN_NuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_NuevoActionPerformed
         //Invocar al Método: Limpiar()
-        this.Limpiar(); 
-         
+        this.Limpiar();
+
         //Declarar una variable de tipo: String 
-        String CodigoCliente=""; 
- 
+        String CodigoCliente = "";
+
         //Declarar una variable de tipo: Entero    
-        int Codigo = Integer.parseInt(CodCliente.substring(1, 4)) + 1; 
-         
-        if (Codigo>0 && Codigo<10) 
-        { 
+        int Codigo = Integer.parseInt(CodCliente.substring(1, 4)) + 1;
+
+        if (Codigo > 0 && Codigo < 10) {
             //Generar Código del Cliente 
-            CodigoCliente = "C00" + String.valueOf(Codigo); 
-        } 
-        else if (Codigo>=10 && Codigo<=99) 
-        { 
+            CodigoCliente = "C00" + String.valueOf(Codigo);
+        } else if (Codigo >= 10 && Codigo <= 99) {
             //Generar Código del Cliente 
-            CodigoCliente = "C0" + String.valueOf(Codigo); 
-        } 
-        else if (Codigo>=100 && Codigo<=999) 
-        { 
+            CodigoCliente = "C0" + String.valueOf(Codigo);
+        } else if (Codigo >= 100 && Codigo <= 999) {
             //Generar Código del Cliente 
-            CodigoCliente = "C" + String.valueOf(Codigo); 
-        } 
-         
+            CodigoCliente = "C" + String.valueOf(Codigo);
+        }
+
         //Mostrar Código del Cliente        
-        this.Lb_Codigo.setText(CodigoCliente); 
-         
+        this.Lb_Codigo.setText(CodigoCliente);
+
         //Invocar a Métodos:        
-        this.Botones(false);      
-        this.Habilitar_Controles(true);                                               
+        this.Botones(false);
+        this.Habilitar_Controles(true);
     }//GEN-LAST:event_BTN_NuevoActionPerformed
 
     private void BTN_EliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_EliminarActionPerformed
         //Capturar la Fila Seleccionada 
-        int FilaSeleccionada = this.jTable_DatosCliente.getSelectedRow(); 
-         
+        int FilaSeleccionada = this.jTable_DatosCliente.getSelectedRow();
+
         //Evaluar si el valor de la variable FilaSeleccionada es diferente o distinto de -1    
-        if (FilaSeleccionada != -1) 
-        { 
+        if (FilaSeleccionada != -1) {
             //Declarar una variable de tipo: Entero 
-            int Rpta = JOptionPane.showConfirmDialog(null, "¿Desea Eliminar el Registro de Código: " + 
-                                                        
-        this.jTable_DatosCliente.getValueAt(FilaSeleccionada,0) + "?", "", JOptionPane.YES_NO_OPTION,  
-                                                        JOptionPane.QUESTION_MESSAGE); 
-         
+            int Rpta = JOptionPane.showConfirmDialog(null, "¿Desea Eliminar el Registro de Código: "
+                    + this.jTable_DatosCliente.getValueAt(FilaSeleccionada, 0) + "?", "", JOptionPane.YES_NO_OPTION,
+                    JOptionPane.QUESTION_MESSAGE);
+
             //Evaluar si Respuesta fue afirmativa (0)      
-            if (Rpta == 0) 
-            { 
+            if (Rpta == 0) {
                 //Capturar el Indice del Modelo de la Tabla 
-	                int 	IndiceModelo = this.jTable_DatosCliente.convertColumnIndexToModel(FilaSeleccionada); 
-                 
+                int IndiceModelo = this.jTable_DatosCliente.convertColumnIndexToModel(FilaSeleccionada);
+
                 //Eliminar Fila del Modelo 
-                Modelo.removeRow(IndiceModelo); 
-                 
+                Modelo.removeRow(IndiceModelo);
+
                 //Invocar Método: Total_Filas()   
-                this.Total_Filas(); 
-                 
+                this.Total_Filas();
+
                 //Invocar al Método: Guardar_Fichero()            
-                this.Guardar_Fichero(); 
-            }     
-        } else 
-        { 
+                this.Guardar_Fichero();
+            }
+        } else {
             //Mostrar Mensaje de Error 
-        JOptionPane.showMessageDialog(null, "Debe Seleccionar la Fila a Eliminar", "Mensaje", 
-                                                                    JOptionPane.ERROR_MESSAGE); 
-        } 
+            JOptionPane.showMessageDialog(null, "Debe Seleccionar la Fila a Eliminar", "Mensaje",
+                    JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_BTN_EliminarActionPerformed
 
     private void CBO_NacionalidadKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CBO_NacionalidadKeyPressed
         //Evaluar si se ha presionado la Tecla: Enter o la Tecla: Tab (Tabulación) 
-        if (evt.getKeyCode() == KeyEvent.VK_ENTER || evt.getKeyCode() 	== KeyEvent.VK_TAB) 
-        { 
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER || evt.getKeyCode() == KeyEvent.VK_TAB) {
             //Ubicar Cursor en el Control: JComboBox     
-          this.CBO_Tipo_Doc_Identidad.requestFocus(); 
-        } 
+            this.CBO_Tipo_Doc_Identidad.requestFocus();
+        }
     }//GEN-LAST:event_CBO_NacionalidadKeyPressed
 
     private void CBO_NacionalidadItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_CBO_NacionalidadItemStateChanged
-       //Evaluar si se ha Seleccionado un Elemento de la Lista      
-       if (evt.getStateChange() == ItemEvent.SELECTED) 
-        { 
+        //Evaluar si se ha Seleccionado un Elemento de la Lista      
+        if (evt.getStateChange() == ItemEvent.SELECTED) {
             //Invocar al Método: Cargar_Doc_Identidad           
-            this.Cargar_Doc_Identidad(this.CBO_Nacionalidad.getSelectedItem().toString()); 
-        } 
+            this.Cargar_Doc_Identidad(this.CBO_Nacionalidad.getSelectedItem().toString());
+        }
     }//GEN-LAST:event_CBO_NacionalidadItemStateChanged
 
     private void TXTEmailKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TXTEmailKeyPressed
         //Evaluar si se ha presionado la Tecla: Enter o la Tecla: Tab (Tabulación) 
-        if (evt.getKeyCode() == KeyEvent.VK_ENTER || evt.getKeyCode() == KeyEvent.VK_TAB) 
-        { 
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER || evt.getKeyCode() == KeyEvent.VK_TAB) {
             //Ubicar Cursor en el Control: RBTN_Registrado        
-            this.RBTN_Registrado.requestFocus(); 
-        } 
+            this.RBTN_Registrado.requestFocus();
+        }
 
     }//GEN-LAST:event_TXTEmailKeyPressed
 
     private void TXTEmailFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_TXTEmailFocusLost
 
-    //Invocar Métodos:        
-    this.Convertir_TextoMinusculas(TXTEmail);     
-    this.Validar_Email(); 
+        //Invocar Métodos:        
+        this.Convertir_TextoMinusculas(TXTEmail);
+        this.Validar_Email();
     }//GEN-LAST:event_TXTEmailFocusLost
 
     private void TXTNumTelefonoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TXTNumTelefonoKeyTyped
         //Invocar al Método: Solo_Numeros       
-        this.Solo_Numeros(evt, TXTNumTelefono); 
+        this.Solo_Numeros(evt, TXTNumTelefono);
     }//GEN-LAST:event_TXTNumTelefonoKeyTyped
 
     private void TXTNumTelefonoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TXTNumTelefonoKeyPressed
         //Inocar a la Funcion: MaxLength         
-        this.TXTNumTelefono.setText(MaxLength("TELÉFONO", this.TXTNumTelefono.getText())); 
- 
+        this.TXTNumTelefono.setText(MaxLength("TELÉFONO", this.TXTNumTelefono.getText()));
+
         //Invocar al Método: Cambiar_Cursor      
-        this.Cambiar_Cursor(evt, this.TXTEmail); 
+        this.Cambiar_Cursor(evt, this.TXTEmail);
     }//GEN-LAST:event_TXTNumTelefonoKeyPressed
 
     private void TXTNumTelefonoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_TXTNumTelefonoFocusLost
-          //Invocar al Método: Validar_Longitud_Datos    
-          this.Validar_Longitud_Datos(this.TXTNumTelefono,"TELÉFONO", this.TXTNumTelefono.getText()); 
+        //Invocar al Método: Validar_Longitud_Datos    
+        this.Validar_Longitud_Datos(this.TXTNumTelefono, "TELÉFONO", this.TXTNumTelefono.getText());
     }//GEN-LAST:event_TXTNumTelefonoFocusLost
 
     private void TXTDireccionFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_TXTDireccionFocusLost
-                //Invocar al Método: Convertir_TextoMayusculas        
-                this.Convertir_TextoMayusculas(this.TXTDireccion); 
+        //Invocar al Método: Convertir_TextoMayusculas        
+        this.Convertir_TextoMayusculas(this.TXTDireccion);
     }//GEN-LAST:event_TXTDireccionFocusLost
 
     private void CBO_DistritoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CBO_DistritoKeyPressed
         //Invocar al Método: Cambiar_Cursor()   
-        this.Cambiar_Cursor(evt, this.TXTDireccion); 
+        this.Cambiar_Cursor(evt, this.TXTDireccion);
     }//GEN-LAST:event_CBO_DistritoKeyPressed
 
     private void CBO_ProvinciaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CBO_ProvinciaKeyPressed
         //Evaluar si se ha presionado la Tecla: Enter o la Tecla: Tab (Tabulación) 
-        if (evt.getKeyCode() == KeyEvent.VK_ENTER || evt.getKeyCode() == KeyEvent.VK_TAB) 
-        { 
-        //Ubicar Cursor en el Control: JComboBox           
-        this.CBO_Distrito.requestFocus(); 
-        } 
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER || evt.getKeyCode() == KeyEvent.VK_TAB) {
+            //Ubicar Cursor en el Control: JComboBox           
+            this.CBO_Distrito.requestFocus();
+        }
 
     }//GEN-LAST:event_CBO_ProvinciaKeyPressed
 
     private void CBO_ProvinciaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_CBO_ProvinciaItemStateChanged
         //Evaluar si se ha Seleccionado un Elemento de la Lista 
-        if (evt.getStateChange() == ItemEvent.SELECTED) 
-{ 
+        if (evt.getStateChange() == ItemEvent.SELECTED) {
             //Invocar al Método: Cargar_Provincia          
-    this.Cargar_Distrito(this.CBO_Provincia.getSelectedItem().toString()); 
-        } 
+            this.Cargar_Distrito(this.CBO_Provincia.getSelectedItem().toString());
+        }
 
     }//GEN-LAST:event_CBO_ProvinciaItemStateChanged
 
     private void CBO_DepartamentoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CBO_DepartamentoKeyPressed
-       //Evaluar si se ha presionado la Tecla: Enter o la Tecla: Tab (Tabulación) 
-        if (evt.getKeyCode() == KeyEvent.VK_ENTER || evt.getKeyCode() == KeyEvent.VK_TAB) 
-        { 
+        //Evaluar si se ha presionado la Tecla: Enter o la Tecla: Tab (Tabulación) 
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER || evt.getKeyCode() == KeyEvent.VK_TAB) {
             //Ubicar Cursor en el Control: JComboBox     
-            this.CBO_Provincia.requestFocus(); 
-        } 
+            this.CBO_Provincia.requestFocus();
+        }
 
     }//GEN-LAST:event_CBO_DepartamentoKeyPressed
 
     private void CBO_DepartamentoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_CBO_DepartamentoItemStateChanged
-       //Evaluar si se ha Seleccionado un Elemento de la Lista     
-       if (evt.getStateChange() == ItemEvent.SELECTED) 
-        { 
+        //Evaluar si se ha Seleccionado un Elemento de la Lista     
+        if (evt.getStateChange() == ItemEvent.SELECTED) {
             //Invocar al Método: Cargar_Provincia    
-            this.Cargar_Provincia(this.CBO_Departamento.getSelectedItem().toString()); 
-        } 
+            this.Cargar_Provincia(this.CBO_Departamento.getSelectedItem().toString());
+        }
     }//GEN-LAST:event_CBO_DepartamentoItemStateChanged
 
     private void TXTNumDoc_IdentidadKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TXTNumDoc_IdentidadKeyTyped
-       //Invocar al Método: Solo_Numeros 
-        this.Solo_Numeros(evt, this.TXTNumDoc_Identidad); 
+        //Invocar al Método: Solo_Numeros 
+        this.Solo_Numeros(evt, this.TXTNumDoc_Identidad);
 
     }//GEN-LAST:event_TXTNumDoc_IdentidadKeyTyped
 
     private void TXTNumDoc_IdentidadKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TXTNumDoc_IdentidadKeyPressed
         //Invocar a la Función: MaxLength 
-        
-    this.TXTNumDoc_Identidad.setText(MaxLength(this.CBO_Tipo_Doc_Identidad.getSelectedItem().toString(),
-    this.TXTNumDoc_Identidad.getText())); 
+
+        this.TXTNumDoc_Identidad.setText(MaxLength(this.CBO_Tipo_Doc_Identidad.getSelectedItem().toString(),
+                this.TXTNumDoc_Identidad.getText()));
 
         //Evaluar si se ha presionado la Tecla: Enter o la Tecla: Tab (Tabulación) 
-        if (evt.getKeyCode() == KeyEvent.VK_ENTER || evt.getKeyCode() == KeyEvent.VK_TAB) 
-                { 
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER || evt.getKeyCode() == KeyEvent.VK_TAB) {
             //Ubicar Cursor en el Control: JComboBox         
-            this.CBO_Departamento.requestFocus(); 
-        } 
+            this.CBO_Departamento.requestFocus();
+        }
 
     }//GEN-LAST:event_TXTNumDoc_IdentidadKeyPressed
 
     private void TXTNumDoc_IdentidadFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_TXTNumDoc_IdentidadFocusLost
         //Invocar al Método: Validar_Longitud_Datos      
         this.Validar_Longitud_Datos(this.TXTNumDoc_Identidad,
-        this.CBO_Tipo_Doc_Identidad.getSelectedItem().toString(),
-        this.TXTNumDoc_Identidad.getText()); 
+                this.CBO_Tipo_Doc_Identidad.getSelectedItem().toString(),
+                this.TXTNumDoc_Identidad.getText());
     }//GEN-LAST:event_TXTNumDoc_IdentidadFocusLost
 
     private void CBO_Tipo_Doc_IdentidadKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CBO_Tipo_Doc_IdentidadKeyPressed
         //Invocar al Método: Cambiar_Cursor         
-        this.Cambiar_Cursor(evt, this.TXTNumDoc_Identidad); 
+        this.Cambiar_Cursor(evt, this.TXTNumDoc_Identidad);
     }//GEN-LAST:event_CBO_Tipo_Doc_IdentidadKeyPressed
 
     private void CBO_Tipo_Doc_IdentidadItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_CBO_Tipo_Doc_IdentidadItemStateChanged
         //Limpiar Texto del Control: TXTNumDoc_Identidad      
-        this.TXTNumDoc_Identidad.setText(""); 
+        this.TXTNumDoc_Identidad.setText("");
     }//GEN-LAST:event_CBO_Tipo_Doc_IdentidadItemStateChanged
 
     private void TXTNombresKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TXTNombresKeyTyped
         //Invocar al Método: Solo_Letras     
-        this.Solo_Letras(evt); 
+        this.Solo_Letras(evt);
     }//GEN-LAST:event_TXTNombresKeyTyped
 
     private void TXTNombresKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TXTNombresKeyPressed
-       //Evaluar si se ha presionado la Tecla: Enter o la Tecla: Tab (Tabulación) 
-        if (evt.getKeyCode() == KeyEvent.VK_ENTER || evt.getKeyCode() == KeyEvent.VK_TAB) 
-        { 
+        //Evaluar si se ha presionado la Tecla: Enter o la Tecla: Tab (Tabulación) 
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER || evt.getKeyCode() == KeyEvent.VK_TAB) {
             //Ubicar Cursor en el Control: JDC_Fec_Nac 
-            this.JDateFec_Nac.transferFocus(); 
-        } 
+            this.JDateFec_Nac.transferFocus();
+        }
     }//GEN-LAST:event_TXTNombresKeyPressed
 
     private void TXTNombresFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_TXTNombresFocusLost
         //Invocar al Método: Convertir_TextoMayusculas     
-        this.Convertir_TextoMayusculas(this.TXTNombres); 
+        this.Convertir_TextoMayusculas(this.TXTNombres);
     }//GEN-LAST:event_TXTNombresFocusLost
 
     private void TXTApellidosKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TXTApellidosKeyTyped
-               //Invocar al Método: Solo_Letras       
-               this.Solo_Letras(evt); 
+        //Invocar al Método: Solo_Letras       
+        this.Solo_Letras(evt);
     }//GEN-LAST:event_TXTApellidosKeyTyped
 
     private void TXTApellidosKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TXTApellidosKeyPressed
         //Invocar al Método: Cambiar_Cursor()    
-        this.Cambiar_Cursor(evt, this.TXTNombres); 
+        this.Cambiar_Cursor(evt, this.TXTNombres);
     }//GEN-LAST:event_TXTApellidosKeyPressed
 
     private void TXTApellidosFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_TXTApellidosFocusLost
-               //Invocar al Método: Convertir_TextoMayusculas       
-               this.Convertir_TextoMayusculas(this.TXTApellidos); 
+        //Invocar al Método: Convertir_TextoMayusculas       
+        this.Convertir_TextoMayusculas(this.TXTApellidos);
     }//GEN-LAST:event_TXTApellidosFocusLost
 
-    
-    
-    
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel BTN_Desactivado;
