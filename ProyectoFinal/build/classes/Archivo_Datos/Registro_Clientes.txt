@@ -1,0 +1,16 @@
+C001
+TI
+JJE
+04/06/2023
+FEMENINO
+Alemana
+CPP (Carné de Permiso Temporal de Permanencia)
+987456325555
+Arequipa
+Grau
+<Grau>
+D
+987456321
+q@gmail.com
+null
+REGISTRADO

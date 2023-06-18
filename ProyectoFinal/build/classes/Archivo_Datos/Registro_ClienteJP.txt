@@ -1,0 +1,48 @@
+C002
+TIMO
+RUTH
+17/06/2023
+FEMENINO
+Alemana
+Pasaporte
+987445666666
+Arequipa
+Grau
+<Grau>
+225 PACHACUTEC
+987654123
+ruth@gmail.com
+null
+REGISTRADO
+C003
+TASAYCO
+SAYAU
+25/06/2023
+FEMENINO
+Antiguana
+CPP (Carné de Permiso Temporal de Permanencia)
+987456666666
+Arequipa
+Grau
+<Grau>
+MF 58 J6 PACHACITY
+987456321
+yau@gmail.com
+null
+REGISTRADO
+C004
+FERNANDEZ NUÑEZ
+GINO
+24/06/2023
+MASCULINO
+Lesotense
+Carnét de Extranjería
+654123333333
+Lima
+Lima
+Callao
+MZ 9 LT 27 SARITA
+963258741
+gino@gmail.com
+null
+REGISTRADO

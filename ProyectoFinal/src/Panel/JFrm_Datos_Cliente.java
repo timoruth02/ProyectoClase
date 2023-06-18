@@ -45,9 +45,9 @@ public class JFrm_Datos_Cliente extends javax.swing.JPanel {
     String DirectorioNacionalidad = new File("src/Archivo_Datos/Registro_Nacionalidad.txt").getAbsolutePath();
     String DirectorioDocIdentidad = new File("src/Archivo_Datos/Registro_Documentos_Identidad.txt").getAbsolutePath();
     String DirectorioDepartamento = new File("src/Archivo_Datos/Registro_Departamentos.txt").getAbsolutePath();
-    String DirectorioProvincia = new File("src/Archivo_Datos/Registro_Provincia.txt").getAbsolutePath();
-    String DirectorioDistrito = new File("src/Archivo_Datos/Registro_Distrito.txt").getAbsolutePath();
-    String DirectorioCliente = new File("src/Archivo_Datos/Registro_Clientes.txt").getAbsolutePath();
+    String DirectorioProvincia = new File("src/Lugares/Registro_Provincia.txt").getAbsolutePath();
+    String DirectorioDistrito = new File("src/Lugares/Registro_Distrito.txt").getAbsolutePath();
+    String DirectorioCliente = new File("src/Archivo_Datos/Registro_ClienteJP.txt").getAbsolutePath();
     //Instanciar la Clase: Persona, a través de un Objeto 
     Cliente ObjCliente = new Cliente("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "");
 
@@ -107,7 +107,7 @@ public class JFrm_Datos_Cliente extends javax.swing.JPanel {
     //Crear el Método Local: Limpiar()     
     void Limpiar() {
         //Limpiar el Texto de los Controles: JTextField         
-            this.TXTApellidos.setText("");
+        this.TXTApellidos.setText("");
         this.TXTNombres.setText("");
 
         this.TXTNumDoc_Identidad.setText("");
@@ -123,7 +123,6 @@ public class JFrm_Datos_Cliente extends javax.swing.JPanel {
 //        this.CBO_Provincia.setSelectedIndex(0);
 //        this.CBO_Distrito.setSelectedIndex(0);
         //this.CBO_CampoBuscar.setSelectedIndex(0); 
-
         //Limpiar el Texto de los Controles: Labels         
         this.Lb_Codigo.setText("");
 //        this.Lb_Foto.setIcon(null);         
@@ -204,10 +203,15 @@ public class JFrm_Datos_Cliente extends javax.swing.JPanel {
     //Crear Método Local: Cargar_Provincia()     
     void Cargar_Provincia(String NombreDepartamento) {
         //Limpiar todos los Elementos del ComboBox: CBO_Provincia       
-//        this.CBO_Provincia.removeAllItems();
+        //this.CBO_Provincia.removeAllItems();
 
         //Agregar un Primer Elemento al ComboBox: CBO_Provincia        
         this.CBO_Provincia.addItem("<Seleccione>");
+        this.CBO_Provincia.addItem("Lima");
+        this.CBO_Provincia.addItem("Cañete");
+        this.CBO_Provincia.addItem("Huaral");
+        this.CBO_Provincia.addItem("Ica");
+        this.CBO_Provincia.addItem("Acho");
 
         //Invocar al Método: Leer_Provincias 
         ObjCliente.Leer_Provincias(DirectorioProvincia);
@@ -224,11 +228,18 @@ public class JFrm_Datos_Cliente extends javax.swing.JPanel {
     //Crear Método Local: Cargar_Distrito()     
     void Cargar_Distrito(String NombreProvincia) {
         //Limpiar todos los Elementos del ComboBox: CBO_Distrito         
-        this.CBO_Distrito.removeAllItems();
+        //  this.CBO_Distrito.removeAllItems();
 
         //Agregar un Primer Elemento al ComboBox: CBO_Distrito         
         this.CBO_Distrito.addItem("<Seleccione>");
-
+        this.CBO_Distrito.addItem("Callao");
+        this.CBO_Distrito.addItem("San bicente");
+        this.CBO_Distrito.addItem("Huaral");
+        this.CBO_Distrito.addItem("Salas");
+        this.CBO_Distrito.addItem("Huarochiri");
+        this.CBO_Distrito.addItem("Puente Piedra");
+        this.CBO_Distrito.addItem("Cerro Azul");
+        this.CBO_Distrito.addItem("Rimac");
         //Invocar al Método: Leer_Distritos 
         ObjCliente.Leer_Distritos(DirectorioDistrito);
 
@@ -519,7 +530,7 @@ public class JFrm_Datos_Cliente extends javax.swing.JPanel {
     void AutoAjustar_Columnas() {
         //Establecer ancho de columnas
         //definir el tamaño de cada columna del control (jTable):jTable_RegistroNotas
-        int[] Anchos = {60, 120, 120, 180, 60, 60, 60, 60, 60, 80, 160, 200,50,50,50,10};
+        int[] Anchos = {60, 120, 120, 180, 60, 60, 60, 60, 60, 80, 160, 200, 50, 50, 50, 10};
 
         //Recorrer  el número de columnas del objeto(jTable):jTable_RegistroNotas
         for (int Columna = 0; Columna < this.jTable_DatosCliente.getColumnCount(); Columna++) {
@@ -808,7 +819,59 @@ public class JFrm_Datos_Cliente extends javax.swing.JPanel {
                         break;
                     }
                 }
+
+                //Evaluar si el Textodel Botón: BTN_Guardar es Igual al Texto: Actualizar
+                for (int i = 0; i < this.jTable_DatosCliente.getRowCount(); i++) {
+                    //Capturar el Código del Cliente
+                    NumDocIdentidad = this.jTable_DatosCliente.getValueAt(i, 0).toString();//3 Columna: Código
+
+                    //Evaluar si el N° de Código ya Existe
+                    if (this.Lb_Codigo.getText().equals(NumDocIdentidad)) {
+                        //Mostar Mensaje de Errror
+                        JOptionPane.showMessageDialog(null, "El Código N°: ", "" + this.Lb_Codigo.getText() + ", ya se encuentra Registrado",
+                                JOptionPane.ERROR_MESSAGE);
+
+                        //Ubicar el Cursor en la Caja de Texto: TXTRUC
+                        this.Lb_Codigo.requestFocus();
+
+                        //Incrementar el Valor de la Variable: Contador
+                        Contador++;//Contador = COntador + 1;
+
+                        //Fin del Proceso
+                        break;
+                    } else {
+
+                    }
+                }
             }
+        }
+        //Evaluar si la Variable Contador es Igual a Cero(0)
+        if (Contador == 0) {
+
+            //Evaluar si el Texto del Control: BTN_Guardar es Igual a Guardar
+            if (this.BTN_Guardar.getText().toUpperCase() == "GUARDAR") {
+                //Invocar al Método: Agregar_Registro
+                // this.Agregar_Registro();
+
+            } else {
+                //Invocar al Método: Modificar_Registro
+                //  this.Modificar_Registro();
+                // this.Agregar_Tabla();
+            }
+            //Invpocar al Metodo: TotalFilas()
+            //this.TotalFilas();
+
+            //Invocar al Método: 
+            this.Agregar_Registro();
+
+            //Invocar al Método: Guardar
+            this.Guardar_Fichero();
+
+            //Invocar al Método: Habilitar_Controles
+            this.Habilitar_Controles(false);
+
+            //Establecer el Texto (Guardar) en el Botón: BTN_Guardar
+            this.BTN_Guardar.setText("Guardar");
         }
     }
 
@@ -1084,6 +1147,11 @@ public class JFrm_Datos_Cliente extends javax.swing.JPanel {
                 CBO_ProvinciaItemStateChanged(evt);
             }
         });
+        CBO_Provincia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CBO_ProvinciaActionPerformed(evt);
+            }
+        });
         CBO_Provincia.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 CBO_ProvinciaKeyPressed(evt);
@@ -1094,6 +1162,11 @@ public class JFrm_Datos_Cliente extends javax.swing.JPanel {
         CBO_Departamento.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 CBO_DepartamentoItemStateChanged(evt);
+            }
+        });
+        CBO_Departamento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CBO_DepartamentoActionPerformed(evt);
             }
         });
         CBO_Departamento.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -1180,8 +1253,6 @@ public class JFrm_Datos_Cliente extends javax.swing.JPanel {
         });
 
         Lb_TotalFilas.setText("jLabel4");
-
-        Lb_Foto.setText("jLabel4");
 
         javax.swing.GroupLayout BTN_DesactivadoLayout = new javax.swing.GroupLayout(BTN_Desactivado);
         BTN_Desactivado.setLayout(BTN_DesactivadoLayout);
@@ -1369,6 +1440,8 @@ public class JFrm_Datos_Cliente extends javax.swing.JPanel {
 
         BTN_Guardar.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         BTN_Guardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/Guardar.png"))); // NOI18N
+        BTN_Guardar.setSelected(true);
+        BTN_Guardar.setText("GUARDAR");
         BTN_Guardar.setToolTipText("Guardar Registro");
         BTN_Guardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1407,7 +1480,7 @@ public class JFrm_Datos_Cliente extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(BTN_Guardar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(BTN_Nuevo, javax.swing.GroupLayout.DEFAULT_SIZE, 69, Short.MAX_VALUE))
+                                .addComponent(BTN_Nuevo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addComponent(BTN_Editar, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(BTN_Eliminar)
                             .addComponent(BTN_Salir, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1827,6 +1900,14 @@ public class JFrm_Datos_Cliente extends javax.swing.JPanel {
         //Invocar al Método: Convertir_TextoMayusculas       
         this.Convertir_TextoMayusculas(this.TXTApellidos);
     }//GEN-LAST:event_TXTApellidosFocusLost
+
+    private void CBO_ProvinciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CBO_ProvinciaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CBO_ProvinciaActionPerformed
+
+    private void CBO_DepartamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CBO_DepartamentoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CBO_DepartamentoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

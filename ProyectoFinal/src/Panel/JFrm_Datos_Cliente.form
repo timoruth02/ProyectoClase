@@ -32,7 +32,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="BTN_Guardar" max="32767" attributes="0"/>
-                              <Component id="BTN_Nuevo" pref="69" max="32767" attributes="0"/>
+                              <Component id="BTN_Nuevo" max="32767" attributes="0"/>
                           </Group>
                           <Component id="BTN_Editar" alignment="0" min="-2" pref="69" max="-2" attributes="0"/>
                           <Component id="BTN_Eliminar" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -620,6 +620,7 @@
               </Properties>
               <Events>
                 <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="CBO_ProvinciaItemStateChanged"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CBO_ProvinciaActionPerformed"/>
                 <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="CBO_ProvinciaKeyPressed"/>
               </Events>
             </Component>
@@ -634,6 +635,7 @@
               </Properties>
               <Events>
                 <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="CBO_DepartamentoItemStateChanged"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CBO_DepartamentoActionPerformed"/>
                 <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="CBO_DepartamentoKeyPressed"/>
               </Events>
             </Component>
@@ -734,9 +736,6 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="Lb_Foto">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jLabel4"/>
-          </Properties>
         </Component>
       </SubComponents>
     </Container>
@@ -827,6 +826,8 @@
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/Iconos/Guardar.png"/>
         </Property>
+        <Property name="selected" type="boolean" value="true"/>
+        <Property name="text" type="java.lang.String" value="GUARDAR"/>
         <Property name="toolTipText" type="java.lang.String" value="Guardar Registro"/>
       </Properties>
       <Events>
