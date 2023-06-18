@@ -79,6 +79,7 @@ public class MenuFrame extends javax.swing.JFrame {
         btn_DatosCliente = new javax.swing.JButton();
         btn_reports = new javax.swing.JButton();
         lb_NombreSede = new javax.swing.JLabel();
+        btn_Prod = new javax.swing.JButton();
         content = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         BTN_Salir = new javax.swing.JButton();
@@ -198,13 +199,30 @@ public class MenuFrame extends javax.swing.JFrame {
                 btn_reportsActionPerformed(evt);
             }
         });
-        menu.add(btn_reports, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 380, 280, 52));
+        menu.add(btn_reports, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 430, 280, 52));
 
         lb_NombreSede.setFont(new java.awt.Font("Dialog", 1, 15)); // NOI18N
         lb_NombreSede.setForeground(new java.awt.Color(255, 255, 255));
         lb_NombreSede.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lb_NombreSede.setText("jLabel10");
         menu.add(lb_NombreSede, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 251, 25));
+
+        btn_Prod.setBackground(new java.awt.Color(21, 101, 192));
+        btn_Prod.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btn_Prod.setForeground(new java.awt.Color(255, 255, 255));
+        btn_Prod.setText("Productos");
+        btn_Prod.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 13, 1, 1, new java.awt.Color(0, 0, 0)));
+        btn_Prod.setBorderPainted(false);
+        btn_Prod.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_Prod.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btn_Prod.setIconTextGap(13);
+        btn_Prod.setInheritsPopupMenu(true);
+        btn_Prod.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_ProdActionPerformed(evt);
+            }
+        });
+        menu.add(btn_Prod, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 380, 280, 52));
 
         background.add(menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 280, 729));
 
@@ -334,6 +352,10 @@ void Salir() {
         ShowJPanel(new Panel.Principal());
     }//GEN-LAST:event_btn_prinActionPerformed
 
+    private void btn_ProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ProdActionPerformed
+        ShowJPanel(new Panel.JFrm_RegistroProductos());
+    }//GEN-LAST:event_btn_ProdActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -353,6 +375,7 @@ void Salir() {
     private javax.swing.JButton BTN_Salir;
     private javax.swing.JPanel background;
     private javax.swing.JButton btn_DatosCliente;
+    private javax.swing.JButton btn_Prod;
     private javax.swing.JButton btn_lends;
     private javax.swing.JButton btn_mantenimiento;
     private javax.swing.JButton btn_mantenimientocliente;

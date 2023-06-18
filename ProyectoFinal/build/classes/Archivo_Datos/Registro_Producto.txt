@@ -1,0 +1,24 @@
+Peru Cola
+1.50
+perucola.png
+Coca Cola
+2.20
+cocacola.png
+Sprite
+1.70
+sprite.png
+Pepsi
+2.00
+pepsi.png
+Fanta
+1.80
+fanta.png
+Inca Kola
+2.20
+incakola.png
+Guarana
+1.50
+guarana.png
+Agua Cielo
+2.50
+aguacielo.png

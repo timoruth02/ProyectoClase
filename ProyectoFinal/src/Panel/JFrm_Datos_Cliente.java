@@ -224,7 +224,7 @@ public class JFrm_Datos_Cliente extends javax.swing.JPanel {
     //Crear Método Local: Cargar_Distrito()     
     void Cargar_Distrito(String NombreProvincia) {
         //Limpiar todos los Elementos del ComboBox: CBO_Distrito         
-//        this.CBO_Distrito.removeAllItems();
+        this.CBO_Distrito.removeAllItems();
 
         //Agregar un Primer Elemento al ComboBox: CBO_Distrito         
         this.CBO_Distrito.addItem("<Seleccione>");
