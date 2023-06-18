@@ -35,8 +35,8 @@ public class JFrm_RegistroProductos extends javax.swing.JPanel {
     //ESTABLECER EL DIREECTORIO DEL PROYECTO , DONDE SE DESEA GUARDAR EL ARCHIVO DE TEXTO
     String Directorio_Factura = new File("src/Archivo_Datos/Registro_Cuentas.txt").getAbsolutePath();
     String Directorio_DetalleFactura = new File("src/Archivo_Datos/Registro_Detalle_Producto.txt").getAbsolutePath();
-    String Directorio_Clientes = new File("src/Archivo_Datos/Registro_ClienteJP.txt").getAbsolutePath();
-    String Directorio_Productos = new File("src/Archivo_Datos/Registro_Productos.txt").getAbsolutePath();
+    String Directorio_Clientes = new File("src/Archivo_Datos/Registro_Cliente.txt").getAbsolutePath();
+    String Directorio_Productos = new File("src/Archivo_Datos/Registro_Producto.txt").getAbsolutePath();
     
     //CREAR UN VECTOR DE DATOS BIDIMENSIONAL (STRING) MATRIZ DE DATOS
     String[][]Clientes;
@@ -51,7 +51,7 @@ public class JFrm_RegistroProductos extends javax.swing.JPanel {
        // jPanel1_Detalle_Factura.setPreferredSize(new Dimension(378, 396));
          jPanel1_Producto.setPreferredSize(new Dimension(422, 170));
         jPanel1_Producto5.setPreferredSize(new Dimension(72, 601));
-        jPanel1_Producto2.setPreferredSize(new Dimension(280, 180));        
+        jPanel1_Producto2.setPreferredSize(new Dimension(345, 180));     
 //INSTANCIAR VARIABLES PARA LOS CONTROLES JLISTBOX
         this.ListaProducto.setModel(ListaProd);
         this.ListaPrecio.setModel(ListaPrec);
@@ -62,7 +62,7 @@ public class JFrm_RegistroProductos extends javax.swing.JPanel {
 //        //INVOCAR METODOS
       //  this.Limpiar_Controles();
         this.Leer_Clientes();
-  //      this.Leer_Productos();
+        this.Leer_Productos();
         this.Cargar_Productos();
     
         //DESHABILITAR BOTONES
@@ -915,7 +915,7 @@ public class JFrm_RegistroProductos extends javax.swing.JPanel {
         BTN_Guardar = new javax.swing.JButton();
         BTN_Nuevo = new javax.swing.JButton();
         jPanel1_Producto5 = new javax.swing.JPanel();
-        LB_Foto3 = new javax.swing.JLabel();
+        LB_Foto = new javax.swing.JLabel();
 
         jPanel1_Cliente.setBackground(new java.awt.Color(0, 102, 153));
         jPanel1_Cliente.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -961,7 +961,6 @@ public class JFrm_RegistroProductos extends javax.swing.JPanel {
         Lb_Apellidos.setFont(new java.awt.Font("Cambria", 0, 14)); // NOI18N
         Lb_Apellidos.setForeground(new java.awt.Color(0, 0, 0));
         Lb_Apellidos.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        Lb_Apellidos.setText("Lb_Apellidos :");
         Lb_Apellidos.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         Lb_Apellidos.setOpaque(true);
 
@@ -969,7 +968,6 @@ public class JFrm_RegistroProductos extends javax.swing.JPanel {
         Lb_Nombres.setFont(new java.awt.Font("Cambria", 0, 14)); // NOI18N
         Lb_Nombres.setForeground(new java.awt.Color(0, 0, 0));
         Lb_Nombres.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        Lb_Nombres.setText("Lb_Nombres :");
         Lb_Nombres.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         Lb_Nombres.setOpaque(true);
 
@@ -977,7 +975,6 @@ public class JFrm_RegistroProductos extends javax.swing.JPanel {
         TXTRuc_Cliente.setFont(new java.awt.Font("Cambria", 0, 14)); // NOI18N
         TXTRuc_Cliente.setForeground(new java.awt.Color(0, 0, 0));
         TXTRuc_Cliente.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        TXTRuc_Cliente.setText("jTextField1");
         TXTRuc_Cliente.setDisabledTextColor(new java.awt.Color(204, 204, 204));
         TXTRuc_Cliente.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
@@ -989,7 +986,6 @@ public class JFrm_RegistroProductos extends javax.swing.JPanel {
         Lb_Distrito.setFont(new java.awt.Font("Cambria", 0, 14)); // NOI18N
         Lb_Distrito.setForeground(new java.awt.Color(0, 0, 0));
         Lb_Distrito.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        Lb_Distrito.setText("Lb_Distrito :");
         Lb_Distrito.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         Lb_Distrito.setOpaque(true);
 
@@ -997,7 +993,6 @@ public class JFrm_RegistroProductos extends javax.swing.JPanel {
         Lb_Direccion.setFont(new java.awt.Font("Cambria", 0, 14)); // NOI18N
         Lb_Direccion.setForeground(new java.awt.Color(0, 0, 0));
         Lb_Direccion.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        Lb_Direccion.setText("Lb_Dirección :");
         Lb_Direccion.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         Lb_Direccion.setOpaque(true);
 
@@ -1120,14 +1115,12 @@ public class JFrm_RegistroProductos extends javax.swing.JPanel {
         Lb_Precio.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
         Lb_Precio.setForeground(new java.awt.Color(0, 0, 0));
         Lb_Precio.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        Lb_Precio.setText("Lb_Precio");
         Lb_Precio.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         Lb_Precio.setOpaque(true);
 
         CBO_Producto.setBackground(new java.awt.Color(204, 204, 204));
         CBO_Producto.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
         CBO_Producto.setForeground(new java.awt.Color(0, 0, 0));
-        CBO_Producto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         CBO_Producto.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 CBO_ProductoItemStateChanged(evt);
@@ -1138,7 +1131,6 @@ public class JFrm_RegistroProductos extends javax.swing.JPanel {
         TXTCantidad.setFont(new java.awt.Font("Cambria", 1, 16)); // NOI18N
         TXTCantidad.setForeground(new java.awt.Color(0, 0, 0));
         TXTCantidad.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        TXTCantidad.setText("jTextField1");
         TXTCantidad.setDisabledTextColor(new java.awt.Color(204, 204, 204));
         TXTCantidad.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -1156,7 +1148,6 @@ public class JFrm_RegistroProductos extends javax.swing.JPanel {
         Lb_Importe.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
         Lb_Importe.setForeground(new java.awt.Color(0, 0, 0));
         Lb_Importe.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        Lb_Importe.setText("Lb_Importe");
         Lb_Importe.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         Lb_Importe.setOpaque(true);
 
@@ -1303,7 +1294,6 @@ public class JFrm_RegistroProductos extends javax.swing.JPanel {
         Lb_SubTotal.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
         Lb_SubTotal.setForeground(new java.awt.Color(0, 0, 0));
         Lb_SubTotal.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        Lb_SubTotal.setText("Lb_SubTotal");
         Lb_SubTotal.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         Lb_SubTotal.setOpaque(true);
 
@@ -1321,7 +1311,6 @@ public class JFrm_RegistroProductos extends javax.swing.JPanel {
         Lb_IGV.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
         Lb_IGV.setForeground(new java.awt.Color(0, 0, 0));
         Lb_IGV.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        Lb_IGV.setText("Lb_IGV");
         Lb_IGV.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         Lb_IGV.setOpaque(true);
 
@@ -1334,7 +1323,6 @@ public class JFrm_RegistroProductos extends javax.swing.JPanel {
         Lb_Total.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
         Lb_Total.setForeground(new java.awt.Color(0, 0, 0));
         Lb_Total.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        Lb_Total.setText("Lb_Total");
         Lb_Total.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         Lb_Total.setOpaque(true);
 
@@ -1465,26 +1453,28 @@ public class JFrm_RegistroProductos extends javax.swing.JPanel {
         jPanel1_Producto2Layout.setHorizontalGroup(
             jPanel1_Producto2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1_Producto2Layout.createSequentialGroup()
-                .addGap(15, 15, 15)
                 .addGroup(jPanel1_Producto2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1_Producto2Layout.createSequentialGroup()
-                        .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Lb_Estado_Factura, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel1_Producto2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(Lb_NumFactura, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel1_Producto2Layout.createSequentialGroup()
-                            .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(Lb_Fec_Emision, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGap(15, 15, 15)
+                        .addGroup(jPanel1_Producto2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel1_Producto2Layout.createSequentialGroup()
+                                .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Lb_Estado_Factura, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(jPanel1_Producto2Layout.createSequentialGroup()
+                                .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Lb_Fec_Emision, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jPanel1_Producto2Layout.createSequentialGroup()
+                        .addGap(68, 68, 68)
+                        .addComponent(Lb_NumFactura, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1_Producto2Layout.setVerticalGroup(
             jPanel1_Producto2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1_Producto2Layout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(Lb_NumFactura, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1_Producto2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Lb_Fec_Emision, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel22))
@@ -1492,7 +1482,7 @@ public class JFrm_RegistroProductos extends javax.swing.JPanel {
                 .addGroup(jPanel1_Producto2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Lb_Estado_Factura, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel23))
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         BTN_Salir.setBackground(new java.awt.Color(204, 204, 204));
@@ -1535,26 +1525,25 @@ public class JFrm_RegistroProductos extends javax.swing.JPanel {
         jPanel1_Producto5.setBackground(new java.awt.Color(0, 102, 153));
         jPanel1_Producto5.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Foto:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 16), new java.awt.Color(255, 255, 255))); // NOI18N
 
-        LB_Foto3.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
-        LB_Foto3.setForeground(new java.awt.Color(255, 255, 255));
-        LB_Foto3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        LB_Foto3.setText("Lb_Foto");
+        LB_Foto.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
+        LB_Foto.setForeground(new java.awt.Color(255, 255, 255));
+        LB_Foto.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
 
         javax.swing.GroupLayout jPanel1_Producto5Layout = new javax.swing.GroupLayout(jPanel1_Producto5);
         jPanel1_Producto5.setLayout(jPanel1_Producto5Layout);
         jPanel1_Producto5Layout.setHorizontalGroup(
             jPanel1_Producto5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1_Producto5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(LB_Foto3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(35, 35, 35)
+                .addComponent(LB_Foto, javax.swing.GroupLayout.PREFERRED_SIZE, 361, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1_Producto5Layout.setVerticalGroup(
             jPanel1_Producto5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1_Producto5Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(LB_Foto3, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(407, 407, 407))
+                .addComponent(LB_Foto, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(421, 421, 421))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -1564,26 +1553,21 @@ public class JFrm_RegistroProductos extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jPanel1_Producto5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel1_Cliente, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel1_Producto, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jPanel1_Producto, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel1_Producto5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel1_Producto2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(BTN_Salir))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(6, 6, 6)
-                                        .addComponent(BTN_Guardar, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(BTN_Nuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addComponent(jPanel1_Detalle_Factura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 234, Short.MAX_VALUE))
+                        .addGap(6, 6, 6)
+                        .addComponent(BTN_Nuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(40, 40, 40)
+                        .addComponent(BTN_Guardar, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(BTN_Salir))
+                    .addComponent(jPanel1_Detalle_Factura, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel1_Producto2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 24, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1595,18 +1579,19 @@ public class JFrm_RegistroProductos extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel1_Producto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jPanel1_Detalle_Factura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(11, 11, 11)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(BTN_Nuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(BTN_Guardar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(41, 41, 41)
-                        .addComponent(BTN_Salir, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jPanel1_Producto2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jPanel1_Producto5, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel1_Producto5, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(11, 11, 11)
+                        .addComponent(jPanel1_Producto2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(BTN_Nuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BTN_Guardar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BTN_Salir, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -1755,9 +1740,6 @@ public class JFrm_RegistroProductos extends javax.swing.JPanel {
     private javax.swing.JButton BTN_Salir;
     private javax.swing.JComboBox<String> CBO_Producto;
     private javax.swing.JLabel LB_Foto;
-    private javax.swing.JLabel LB_Foto1;
-    private javax.swing.JLabel LB_Foto2;
-    private javax.swing.JLabel LB_Foto3;
     private javax.swing.JLabel Lb_Apellidos;
     private javax.swing.JLabel Lb_CodCliente;
     private javax.swing.JLabel Lb_Direccion;
@@ -1799,10 +1781,7 @@ public class JFrm_RegistroProductos extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel1_Cliente;
     private javax.swing.JPanel jPanel1_Detalle_Factura;
     private javax.swing.JPanel jPanel1_Producto;
-    private javax.swing.JPanel jPanel1_Producto1;
     private javax.swing.JPanel jPanel1_Producto2;
-    private javax.swing.JPanel jPanel1_Producto3;
-    private javax.swing.JPanel jPanel1_Producto4;
     private javax.swing.JPanel jPanel1_Producto5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
