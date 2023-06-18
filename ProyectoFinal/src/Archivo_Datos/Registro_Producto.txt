@@ -1,18 +1,18 @@
-Peru Cola
-1.50
-perucola.png
+Queirolo
+17.00
+Queirolo.png
 Coca Cola
 2.20
 cocacola.png
-Sprite
-1.70
-sprite.png
-Pepsi
-2.00
-pepsi.png
-Fanta
+Piqueo
 1.80
-fanta.png
+Piqueo.png
+Champagne
+18.50
+Champagne.jpg
+Condon
+5.10
+Condon.png
 Inca Kola
 2.20
 incakola.png
