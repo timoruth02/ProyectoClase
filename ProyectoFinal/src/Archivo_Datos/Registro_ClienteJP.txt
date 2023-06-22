@@ -1,48 +1,176 @@
-C002
-TIMO
-RUTH
-17/06/2023
+C001
+TIMO TASAYCO
+RUTH SAYURI 
+02/03/2002
 FEMENINO
-Alemana
-Pasaporte
-987445666666
-Arequipa
-Grau
-<Grau>
-225 PACHACUTEC
-987654123
-ruth@gmail.com
-null
-REGISTRADO
-C003
-TASAYCO
-SAYAU
-25/06/2023
-FEMENINO
-Antiguana
-CPP (Carné de Permiso Temporal de Permanencia)
-987456666666
-Arequipa
-Grau
-<Grau>
-MF 58 J6 PACHACITY
-987456321
-yau@gmail.com
-null
-REGISTRADO
-C004
-FERNANDEZ NUÑEZ
-GINO
-24/06/2023
-MASCULINO
-Lesotense
-Carnét de Extranjería
-654123333333
+Peruana
+D.N.I. (Documento Nacional de Identidad)
+72806236
 Lima
 Lima
 Callao
-MZ 9 LT 27 SARITA
-963258741
+MZ 25 LOS JARDINES
+963258744
+ruth@gmail.com
+null
+REGISTRADO
+C002
+FERNANDEZ NUÑEZ 
+GINO JOEL
+23/06/2000
+MASCULINO
+Peruana
+D.N.I. (Documento Nacional de Identidad)
+32165478
+Lima
+Lima
+Callao
+MZ 85 LOS GIRASOLES
+987654123
 gino@gmail.com
+null
+REGISTRADO
+C003
+VIZCONDE ARTEAGA
+LUIS
+07/06/1998
+MASCULINO
+Peruana
+D.N.I. (Documento Nacional de Identidad)
+14785365
+Lima
+Lima
+Callao
+JR 52 CALLE 2
+987456321
+luis@gmail.com
+null
+REGISTRADO
+C004
+CANCHA COLONIA
+ALEX
+08/06/1997
+MASCULINO
+Peruana
+D.N.I. (Documento Nacional de Identidad)
+45632178
+Lima
+Lima
+Callao
+JR AYACUCHO CALLE2
+963258741
+alex@gmail.com
+null
+REGISTRADO
+C005
+TASAYCO LUGO
+DYLAN 
+16/06/1996
+MASCULINO
+Peruana
+D.N.I. (Documento Nacional de Identidad)
+65412398
+Lima
+Lima
+Callao
+JR MIRASOL CALLE 5
+963258741
+dylan@gmail.com
+null
+REGISTRADO
+C006
+DIAZ ULLOA
+JOSUE
+09/08/2001
+MASCULINO
+Peruana
+D.N.I. (Documento Nacional de Identidad)
+75789592
+Lima
+Lima
+Callao
+JR 75 LOS JARDINES
+951236478
+josue@gmail.com
+null
+REGISTRADO
+C007
+HUAMAN  ROJAS
+DAVID
+18/04/2003
+MASCULINO
+Peruana
+D.N.I. (Documento Nacional de Identidad)
+77681576
+Lima
+Lima
+Callao
+MZM2LT2
+904910782
+esope14@gmail.com
+null
+REGISTRADO
+C008
+ESPINOZA BEJARANO
+JESUS
+12/06/2003
+MASCULINO
+Peruana
+D.N.I. (Documento Nacional de Identidad)
+74059399
+Lima
+Lima
+Callao
+RIMAC
+936844955
+sotochipi@gmail.com
+null
+REGISTRADO
+C009
+FRANCISCO QUISPE
+JEANPIER
+13/07/2002
+MASCULINO
+Peruana
+D.N.I. (Documento Nacional de Identidad)
+76133955
+Lima
+Lima
+Callao
+RIMAC 
+946359973
+francisco@gmail.com
+null
+REGISTRADO
+C010
+RAMOS
+DIEGO
+12/12/2001
+MASCULINO
+Peruana
+D.N.I. (Documento Nacional de Identidad)
+87411215
+Lima
+<Seleccione>
+Callao
+RIMAC 
+98451224
+diego125@gmail.com
+null
+REGISTRADO
+C011
+QUISPE MEZA
+JOSE
+20/12/1997
+MASCULINO
+Peruana
+D.N.I. (Documento Nacional de Identidad)
+74117930
+Lima
+Lima
+San bicente
+RIMAC
+910583052
+jos@gmail.com
 null
 REGISTRADO

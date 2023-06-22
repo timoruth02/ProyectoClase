@@ -1056,8 +1056,9 @@ public class JFrm_Alquiler_Habitacion extends javax.swing.JPanel {
         Item_Data.setImporte(Importe);
 
         DB_AlQ.Save(Item_Data);
-
-        JOptionPane.showMessageDialog(this, "Se genero el alquiler con codigo: " + m_Correlativo, "Mensaje de Alerta", JOptionPane.WARNING_MESSAGE);
+        
+        JOptionPane.showMessageDialog(this, "Se genero el alquiler con codigo: "+m_Correlativo, "Información", JOptionPane.INFORMATION_MESSAGE);
+       // JOptionPane.showMessageDialog(this, "Se genero el alquiler con codigo: " + m_Correlativo, "Mensaje de Alerta", JOptionPane.WARNING_MESSAGE);
 
         int Rpta;
 

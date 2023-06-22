@@ -77,7 +77,6 @@ public class MenuFrame extends javax.swing.JFrame {
         btn_mantenimiento = new javax.swing.JButton();
         btn_mantenimientocliente = new javax.swing.JButton();
         btn_DatosCliente = new javax.swing.JButton();
-        btn_reports = new javax.swing.JButton();
         lb_NombreSede = new javax.swing.JLabel();
         btn_Prod = new javax.swing.JButton();
         content = new javax.swing.JPanel();
@@ -131,7 +130,7 @@ public class MenuFrame extends javax.swing.JFrame {
                 btn_lendsActionPerformed(evt);
             }
         });
-        menu.add(btn_lends, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 280, 52));
+        menu.add(btn_lends, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 280, 52));
 
         btn_mantenimiento.setBackground(new java.awt.Color(21, 101, 192));
         btn_mantenimiento.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -148,7 +147,7 @@ public class MenuFrame extends javax.swing.JFrame {
                 btn_mantenimientoActionPerformed(evt);
             }
         });
-        menu.add(btn_mantenimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 280, 52));
+        menu.add(btn_mantenimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 380, 280, 52));
 
         btn_mantenimientocliente.setBackground(new java.awt.Color(21, 101, 192));
         btn_mantenimientocliente.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -165,7 +164,7 @@ public class MenuFrame extends javax.swing.JFrame {
                 btn_mantenimientoclienteActionPerformed(evt);
             }
         });
-        menu.add(btn_mantenimientocliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 280, 52));
+        menu.add(btn_mantenimientocliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 330, 280, 52));
 
         btn_DatosCliente.setBackground(new java.awt.Color(21, 101, 192));
         btn_DatosCliente.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -182,24 +181,7 @@ public class MenuFrame extends javax.swing.JFrame {
                 btn_DatosClienteActionPerformed(evt);
             }
         });
-        menu.add(btn_DatosCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 330, 280, 52));
-
-        btn_reports.setBackground(new java.awt.Color(21, 101, 192));
-        btn_reports.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btn_reports.setForeground(new java.awt.Color(255, 255, 255));
-        btn_reports.setText("Reportes");
-        btn_reports.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 13, 1, 1, new java.awt.Color(0, 0, 0)));
-        btn_reports.setBorderPainted(false);
-        btn_reports.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btn_reports.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btn_reports.setIconTextGap(13);
-        btn_reports.setInheritsPopupMenu(true);
-        btn_reports.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_reportsActionPerformed(evt);
-            }
-        });
-        menu.add(btn_reports, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 430, 280, 52));
+        menu.add(btn_DatosCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 280, 52));
 
         lb_NombreSede.setFont(new java.awt.Font("Dialog", 1, 15)); // NOI18N
         lb_NombreSede.setForeground(new java.awt.Color(255, 255, 255));
@@ -222,7 +204,7 @@ public class MenuFrame extends javax.swing.JFrame {
                 btn_ProdActionPerformed(evt);
             }
         });
-        menu.add(btn_Prod, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 380, 280, 52));
+        menu.add(btn_Prod, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 280, 52));
 
         background.add(menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 280, 729));
 
@@ -326,10 +308,6 @@ void Salir() {
         this.Salir();
     }//GEN-LAST:event_BTN_SalirActionPerformed
 
-    private void btn_reportsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_reportsActionPerformed
-
-    }//GEN-LAST:event_btn_reportsActionPerformed
-
     private void btn_DatosClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_DatosClienteActionPerformed
         ShowJPanel(new Panel.JFrm_Datos_Cliente());
     }//GEN-LAST:event_btn_DatosClienteActionPerformed
@@ -380,7 +358,6 @@ void Salir() {
     private javax.swing.JButton btn_mantenimiento;
     private javax.swing.JButton btn_mantenimientocliente;
     private javax.swing.JButton btn_prin;
-    private javax.swing.JButton btn_reports;
     private static javax.swing.JPanel content;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
